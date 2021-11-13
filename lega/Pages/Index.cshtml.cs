@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using lega.Core;
+using lega.Core.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System;
@@ -10,16 +12,20 @@ namespace lega.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ICarouselRepasitory _carouselRepasitory;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ICarouselRepasitory carouselRepasitory)
         {
-            _logger = logger;
+            _carouselRepasitory = carouselRepasitory;
+            CarouselList = new List<Carousel> { };
         }
+
+        public List<Carousel> CarouselList { get; set; }
 
         public void OnGet()
         {
 
+            CarouselList = _carouselRepasitory.GetAll().ToList();
         }
     }
 }

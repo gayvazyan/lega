@@ -32,6 +32,9 @@ namespace lega.Core
         {
              services.AddTransient(typeof(IRepositories<>), typeof(Repositories<>));
              services.AddTransient<IUserRepasitory, UserRepasitory>();
+             services.AddTransient<ICarouselRepasitory, CarouselRepasitory>();
+
+            
         }
     }
 }

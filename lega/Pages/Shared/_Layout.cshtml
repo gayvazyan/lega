@@ -1,18 +1,25 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Localization
+@{
+    var requestCultureFeature = Context.Features.Get<IRequestCultureFeature>();
+    var requestCulture = requestCultureFeature.RequestCulture;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    @* <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - lega</title>*@
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    @*<link rel="stylesheet" href="~/css/site.css" />*@
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Lega հաշվապահական կազմակերպություն</title>
+     <link rel="icon" type="image/png" href="~/images/Logo/legaLogo.png">
+     @if (requestCulture.Culture.ToString() == "hy")
+    {
+        <title>Lega հաշվապահական կազմակերպություն</title>
+    }
+    else
+    {
+        <title>Lega accounting company</title>
+    }
+
 
     <link rel="stylesheet" href="~/css/bootstrap.css">
     <!--Stylesheets-->
@@ -29,8 +36,6 @@
     <link rel="stylesheet" href="~/css/owl.carousel.css">
     <link rel="stylesheet" href="~/css/owl.theme.css">
     <link rel="stylesheet" href="~/css/owl.transitions.css">
-
-
 
 </head>
 <body>
@@ -55,15 +60,36 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a class="scroll" href="#menu">Գլխավոր</a></li>
-                            <li><a class="scroll" href="#about">Մեր մասին</a></li>
-                            <li><a class="scroll" href="#service">Ծառայություններ</a></li>
-                            <li><a class="scroll" href="#features">Մեզ վստահում են</a></li>
-                            <li><a class="scroll" href="#portfolio">Հաճախորդներ</a></li>
-                            <li><a class="scroll" href="#pricing">Փաթեթներ</a></li>
-                            <li><a class="scroll" href="#team">Թիմը</a></li>
-                            <li><a class="scroll" href="#blog">Բլոգ</a></li>
-                            <li><a class="scroll" href="#contact">Կապ</a></li>
+
+                            @if (requestCulture.Culture.ToString() == "hy")
+                            {
+                                <li class="active"><a class="scroll" href="#menu">Գլխավոր</a></li>
+                                <li><a class="scroll" href="#about">Մեր մասին</a></li>
+                                <li><a class="scroll" href="#service">Ծառայություններ</a></li>
+                                <li><a class="scroll" href="#features">Մեզ վստահում են</a></li>
+                                <li><a class="scroll" href="#portfolio">Հաճախորդներ</a></li>
+                                <li><a class="scroll" href="#pricing">Փաթեթներ</a></li>
+                                @*  <li><a class="scroll" href="#team">Թիմը</a></li>*@
+                                @*  <li><a class="scroll" href="#blog">Բլոգ</a></li>*@
+                                <li><a class="scroll" href="#contact">Կապ</a></li>
+                                <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/hy.png" /></li>
+
+                            }
+                            else
+                            {
+                                <li class="active"><a class="scroll" href="#menu">Home</a></li>
+                                <li><a class="scroll" href="#about">About us</a></li>
+                                <li><a class="scroll" href="#service">Services</a></li>
+                                <li><a class="scroll" href="#features">They trust us</a></li>
+                                <li><a class="scroll" href="#portfolio">Customers</a></li>
+                                <li><a class="scroll" href="#pricing">Packages</a></li>
+                                @*<li><a class="scroll" href="#team">Թիմը</a></li>*@
+                                @* <li><a class="scroll" href="#blog">Բլոգ</a></li>*@
+                                <li><a class="scroll" href="#contact">Contact</a></li>
+                                <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/en.png" /></li>
+                            }
+
+                            <li style="margin-top:15px;"><vc:culture-switcher /></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -75,44 +101,52 @@
 
 
 
-
     <div class="container">
         <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    @*<footer class="border-top footer text-muted">
-        <div class="container">
-        &copy; 2021 - lega - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-        </footer>*@
 
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>*@
 
-    <footer id="footer">
+
+    @if (requestCulture.Culture.ToString() == "hy")
+    {
+        <footer id="footer">
+            <div class="bg-sec">
+                <div class="container">
+                   <h2><strong>Հետեվեք Մեզ </strong></h2> 
+                </div>
+            </div>
+        </footer>
+
+        <footer id="footer-down">
+            <ul class="social-icon">
+                <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+            <p>Ստեղծվել է : <a href="http://gaitmind.am" target="_blank">GAIT MIND</a> </p>
+        </footer>
+    }
+    else
+    {
+        <footer id="footer">
         <div class="bg-sec">
             <div class="container">
-                <h2>LOOKING FORWARD TO <strong>HEARING </strong>FROM YOU!</h2>
+                  <h2><strong>Follow Us On  </strong></h2> 
             </div>
         </div>
     </footer>
 
     <footer id="footer-down">
-        <h2>Follow Us On</h2>
         <ul class="social-icon">
             <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="twitter hvr-pulse"><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li class="google-plus hvr-pulse"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li class="youtube hvr-pulse"><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li class="instagram hvr-pulse"><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li class="behance hvr-pulse"><a href="#"><i class="fa fa-behance"></i></a></li>
         </ul>
-        <p> &copy; Copyright 2016 Cosmix - Created By : <a href="http://templatestock.co" target="_blank">Template Stock</a> </p>
+        <p>Created By : <a href="http://gaitmind.am" target="_blank">GAIT MIND</a> </p>
     </footer>
+    }
+
 
     <script src="~/js/jquery.min.js"></script>
     <!--Boostrap-Jquery-->

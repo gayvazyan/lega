@@ -1,14 +1,13 @@
 using lega.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+
 
 namespace lega
 {
@@ -34,6 +33,20 @@ namespace lega
 
 
             services.AddRazorPages();
+
+            //add to Localization Services
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                 {
+                     new CultureInfo("hy"),
+                     new CultureInfo("en"),
+      
+                 };
+                options.DefaultRequestCulture = new RequestCulture("hy-AM");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +67,15 @@ namespace lega
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            //add to Localization 
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseRouting();
+
+            var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
+            app.UseRequestLocalization(localizationOptions);
+
 
             app.UseAuthorization();
 

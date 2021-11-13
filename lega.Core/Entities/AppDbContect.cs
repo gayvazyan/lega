@@ -14,5 +14,7 @@ namespace lega.Core.Entities
         {
         }
         public DbSet<Users> UsersDb { get; set; }
+        public DbSet<Carousel> CarouselDb { get; set; }
+        
     }
 }

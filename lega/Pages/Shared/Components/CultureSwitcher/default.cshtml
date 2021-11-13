@@ -1,0 +1,27 @@
+﻿@model CultureSwitcherModel
+
+<div>
+    <form id="culture-switcher">
+        <select name="culture" id="culture-options">
+            @foreach (var culture in Model.SupportedCultures)
+            {
+                if (culture.Name.ToString() == "hy")
+                {
+                    <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)"> ՀԱՅ</option>
+                    
+                }
+                else
+                {
+                    <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)"> ENG</option>
+                }
+            }
+        </select>
+    </form>
+</div>
+
+
+<script>
+    document.getElementById("culture-options").addEventListener("change", () => {
+        document.getElementById("culture-switcher").submit();
+    });
+</script>

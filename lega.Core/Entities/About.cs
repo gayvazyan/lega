@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lega.Core.Entities
 {
-    public class Carousel
+    public class About
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -16,6 +16,6 @@ namespace lega.Core.Entities
         public string Context { get; set; }
         public string ContextEn { get; set; }
         public string ImageUrl { get; set; }
-        public string State { get; set; }
+        public bool Visible { get; set; }
     }
 }

@@ -1,0 +1,42 @@
+﻿@inject IHttpContextAccessor HttpContextAccessor
+
+
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            @if (HttpContextAccessor.HttpContext.Session.GetString("user") == "login")
+            {
+                <li class="nav-title">Կառավարման մենյու</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Management/Carousels">
+                        <i class="nav-icon icon-note"></i> Բաններներ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Management/participant">
+                        <i class="nav-icon icon-people"></i>Մասնակիցներ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Management/community">
+                        <i class="nav-icon icon-list"></i>Համայնքներ
+                    </a>
+                </li>
+            }
+            <li class="nav-item mt-auto">
+                <a target="_blank" class="nav-link nav-link-success" href="https://www.lega.am/" target="_top">
+                    <i class="nav-icon icon-globe"></i>WEB կայք
+                </a>
+            </li>
+            @if (HttpContextAccessor.HttpContext.Session.GetString("user") == "login")
+            {
+                <li class="nav-item">
+                    <a class="nav-link nav-link-info" href="/admin/Logout" target="_top">
+                        <i class="nav-icon icon-logout"></i> ԵԼՔ համակարգից
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>

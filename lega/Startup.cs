@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-
+using System;
 
 namespace lega
 {
@@ -47,6 +47,18 @@ namespace lega
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
+
+
+
+            //part of Session
+            services.AddHttpContextAccessor();
+            services.AddSession(s => s.IdleTimeout = TimeSpan.FromMinutes(30));
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +84,9 @@ namespace lega
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+
+            //part of Session
+            app.UseSession();
 
             var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
             app.UseRequestLocalization(localizationOptions);

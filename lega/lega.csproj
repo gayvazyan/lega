@@ -16,4 +16,8 @@
     <ProjectReference Include="..\lega.Core\lega.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\csv\" />
+  </ItemGroup>
+
 </Project>

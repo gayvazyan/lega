@@ -1,9 +1,11 @@
 using lega.Core;
 using lega.Core.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace lega.Pages.Management.Carousels
@@ -12,9 +14,11 @@ namespace lega.Pages.Management.Carousels
     public class IndexModel : PageModel
     {
         private readonly ICarouselRepasitory _carouselRepasitory;
-        public IndexModel(ICarouselRepasitory carouselRepasitory)
+        private readonly IWebHostEnvironment _env;
+        public IndexModel(ICarouselRepasitory carouselRepasitory, IWebHostEnvironment env)
         {
             _carouselRepasitory = carouselRepasitory;
+            _env = env;
             Input = new InputModel();
             InputList = new List<InputModel>();
         }
@@ -45,7 +49,37 @@ namespace lega.Pages.Management.Carousels
 
         protected void PrepareData()
         {
-            var carouselList = _carouselRepasitory.GetAll().ToList();
+            var carouselList = new List<Carousel>();
+
+            var resultDir = Path.Combine(_env.WebRootPath, "csv");
+            var resultFileName = "carousel.csv";
+            string resultFilePath = Path.Combine(resultDir, resultFileName);
+
+            if (System.IO.File.Exists(resultFilePath))
+            {
+                using (var reader = new StreamReader(@resultFilePath))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+                        var values = line.Split('|');
+
+                        var carousel = new Carousel
+                        {
+                            Id = !String.IsNullOrEmpty(values[0]) ? Convert.ToInt32(values[0]) : 0,
+                            Name = values[1],
+                            NameEn = values[2],
+                            Title = values[3],
+                            TitleEn = values[4],
+                            Context = values[5],
+                            ContextEn = values[6],
+                            ImageUrl = values[7],
+                            State = values[8],
+                        };
+                        carouselList.Add(carousel);
+                    }
+                }
+            }
 
             if (Input.Title != null)
             {

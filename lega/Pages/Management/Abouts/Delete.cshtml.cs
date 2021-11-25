@@ -5,21 +5,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
 
-namespace lega.Pages.Management.Carousels
+namespace lega.Pages.Management.Abouts
 {
     public class DeleteModel : PageModel
     {
-        private readonly ICarouselRepasitory _carouselRepasitory;
-        public DeleteModel(ICarouselRepasitory carouselRepasitory)
+        private readonly IAboutRepasitory _aboutRepasitory;
+        public DeleteModel(IAboutRepasitory aboutRepasitory)
         {
-            _carouselRepasitory = carouselRepasitory;
-            Delete = new DeleteCarouselModel();
+            _aboutRepasitory = aboutRepasitory;
+            Delete = new DeleteAboutModel();
         }
 
-        public class DeleteCarouselModel : Carousel { }
+        public class DeleteAboutModel : About { }
 
         [BindProperty]
-        public DeleteCarouselModel Delete { get; set; }
+        public DeleteAboutModel Delete { get; set; }
 
 
         private List<ServiceError> _errors;
@@ -30,7 +30,7 @@ namespace lega.Pages.Management.Carousels
         }
         protected void PrepareData(int id)
         {
-            var result = _carouselRepasitory.GetByID(id);
+            var result = _aboutRepasitory.GetByID(id);
 
             if (result != null)
             {
@@ -42,7 +42,7 @@ namespace lega.Pages.Management.Carousels
                 Delete.Context = result.Context;
                 Delete.ContextEn = result.ContextEn;
                 Delete.ImageUrl = result.ImageUrl;
-                Delete.State = result.State;
+                Delete.Visible = result.Visible;
             }
         }
 
@@ -57,11 +57,11 @@ namespace lega.Pages.Management.Carousels
             {
                 try
                 {
-                    var carousel = _carouselRepasitory.GetByID(Delete.Id);
+                    var about = _aboutRepasitory.GetByID(Delete.Id);
 
-                    _carouselRepasitory.Delete(carousel);
+                    _aboutRepasitory.Delete(about);
 
-                    return RedirectToPage("/Management/Carousels/Index");
+                    return RedirectToPage("/Management/Abouts/Index");
 
                 }
                 catch (Exception ex)

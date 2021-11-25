@@ -13,12 +13,13 @@ namespace lega.Pages.Management.Carousels
     public class CreateModel : PageModel
     {
         private readonly ICarouselRepasitory _carouselRepasitory;
-        private readonly IWebHostEnvironment _env;
-        public CreateModel(ICarouselRepasitory carouselRepasitory, IWebHostEnvironment env)
+        //private readonly IWebHostEnvironment _env;
+        public CreateModel(ICarouselRepasitory carouselRepasitory)
+                        // IWebHostEnvironment env)
         {
             _carouselRepasitory = carouselRepasitory;
             Create = new CreateCarouselModel();
-            _env = env;
+            //_env = env;
         }
 
         public class CreateCarouselModel : Carousel { }
@@ -56,40 +57,40 @@ namespace lega.Pages.Management.Carousels
                         State = Create.State,
                     };
 
-                    //  var result = _carouselRepasitory.Insert(carousel);
+                    var result = _carouselRepasitory.Insert(carousel);
 
-                    //if (result != null)
-                    //    return RedirectToPage("/Management/Carousels/Index");
+                    if (result != null)
+                        return RedirectToPage("/Management/Carousels/Index");
 
 
-                    if (carousel != null)
-                    {
-                        try
-                        {
-                            var resultDir = Path.Combine(_env.WebRootPath, "csv");
-                            if (!Directory.Exists(resultDir))
-                            {
-                                DirectoryInfo di = Directory.CreateDirectory(resultDir);
-                            }
-                            var resultFileName = "carousel.csv";
-                            string resultFilePath = Path.Combine(resultDir, resultFileName);
+                    //if (carousel != null)
+                    //{
+                    //    try
+                    //    {
+                    //        var resultDir = Path.Combine(_env.WebRootPath, "csv");
+                    //        if (!Directory.Exists(resultDir))
+                    //        {
+                    //            DirectoryInfo di = Directory.CreateDirectory(resultDir);
+                    //        }
+                    //        var resultFileName = "carousel.csv";
+                    //        string resultFilePath = Path.Combine(resultDir, resultFileName);
 
-                            StringBuilder csvCarousel = new StringBuilder();
-                            string row = carousel.Id + " | " + carousel.Title + " | " + carousel.TitleEn +
-                                        " | " + carousel.Name + " | " + carousel.NameEn + " | " + carousel.Context +
-                                        " | " + carousel.ContextEn + " | " + carousel.ImageUrl + " | " + carousel.State;
-                            csvCarousel.Append(row);
-                            csvCarousel.Append(Environment.NewLine);
-                            System.IO.File.AppendAllText(resultFilePath, csvCarousel.ToString());
-                            return RedirectToPage("/Management/Carousels/Index");
-                        }
-                        catch (Exception ex)
-                        {
+                    //        StringBuilder csvCarousel = new StringBuilder();
+                    //        string row = carousel.Id + " | " + carousel.Title + " | " + carousel.TitleEn +
+                    //                    " | " + carousel.Name + " | " + carousel.NameEn + " | " + carousel.Context +
+                    //                    " | " + carousel.ContextEn + " | " + carousel.ImageUrl + " | " + carousel.State;
+                    //        csvCarousel.Append(row);
+                    //        csvCarousel.Append(Environment.NewLine);
+                    //        System.IO.File.AppendAllText(resultFilePath, csvCarousel.ToString());
+                    //        return RedirectToPage("/Management/Carousels/Index");
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
 
-                            Errors.Add(new ServiceError { Code = "004", Description = ex.Message });
-                        }
+                    //        Errors.Add(new ServiceError { Code = "004", Description = ex.Message });
+                    //    }
                        
-                    }
+                    //}
 
                 }
                 catch (Exception ex)

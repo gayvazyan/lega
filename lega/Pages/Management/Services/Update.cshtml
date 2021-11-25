@@ -1,5 +1,5 @@
 ﻿@page "{id:int}"
-@model lega.Pages.Management.Carousels.UpdateModel
+@model lega.Pages.Management.Services.UpdateModel
 @inject IHttpContextAccessor HttpContextAccessor
 @{
     ViewData["Title"] = "Թարմացնել";
@@ -51,19 +51,6 @@
                     </div>
                     <br />
 
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Update.Name">Անուն</label>
-                            <input class="form-control" type="text" asp-for="Update.Name">
-                            <span asp-validation-for="Update.Name" class="text-danger"></span>
-                        </div>
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Update.NameEn">Անուն անգլերեն</label>
-                            <input class="form-control" type="text" asp-for="Update.NameEn">
-                            <span asp-validation-for="Update.NameEn" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <br />
 
                     <div class="row">
                         <div class="col-6">
@@ -81,30 +68,18 @@
 
                     <div class="row">
                         <div class="col-6">
-                            <label class="text-info" asp-for="Update.ImageUrl">Նկար</label>
-                            <input class="form-control" type="text" asp-for="Update.ImageUrl">
-                            <span asp-validation-for="Update.ImageUrl" class="text-danger"></span>
-                        </div>
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Update.State">Տեքստ անգլերեն</label>
-                            <select class="form-control" asp-for="Update.State">
-                                <option value=""> -- ընտրել -- </option>
-                                <option value="active"> -- ակտիվ -- </option>
-
-                            </select>
-                            <span asp-validation-for="Update.State" class="text-danger"></span>
+                            <label class="text-info" asp-for="Update.IconName">Նկար</label>
+                            <input class="form-control" type="text" asp-for="Update.IconName">
+                            <span asp-validation-for="Update.IconName" class="text-danger"></span>
                         </div>
                     </div>
                     <br />
-
-
-
 
                     <div style="height:20px"></div>
                     <div class="row border-top margin-top-20" style="padding-top:20px">
                         <div class="col-12">
                             <button class="btn btn-primary text-white"><i class="cil-sync"></i> Թարմացնել</button>
-                            <a class="btn btn-secondary" asp-page="/Management/Carousels/Index"><i class="cil-x-circle"></i> Չեղարկել</a>
+                            <a class="btn btn-secondary" asp-page="/Management/Services/Index"><i class="cil-x-circle"></i> Չեղարկել</a>
                         </div>
                     </div>
                 </div>
@@ -122,5 +97,6 @@ else
 @section Scripts {
 <partial name="_ValidationScriptsPartial" />
 }
+
 
 

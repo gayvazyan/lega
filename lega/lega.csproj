@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\csv\" />
+    <Folder Include="Pages\Management\Customers\" />
+    <Folder Include="Pages\Management\News\" />
+    <Folder Include="Pages\Management\Pricings\" />
   </ItemGroup>
 
 </Project>

@@ -6,15 +6,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace lega.Pages.Management.Services
+namespace lega.Pages.Management.Abouts
 {
     public class IndexModel : PageModel
     {
-        private readonly IServiceRepasitory _serviceRepasitory;
-        public IndexModel(IServiceRepasitory serviceRepasitory)
+        private readonly IAboutRepasitory _aboutRepasitory;
+        public IndexModel(IAboutRepasitory aboutRepasitory)
 
         {
-            _serviceRepasitory = serviceRepasitory;
+            _aboutRepasitory = aboutRepasitory;
             Input = new InputModel();
             InputList = new List<InputModel>();
         }
@@ -24,7 +24,7 @@ namespace lega.Pages.Management.Services
         public InputModel Input { get; set; }
 
         public List<InputModel> InputList = new List<InputModel>();
-        public class InputModel : Service { }
+        public class InputModel : About { }
 
         //START Part Paging
         [BindProperty(SupportsGet = true)]
@@ -34,7 +34,7 @@ namespace lega.Pages.Management.Services
 
         public int TotalPages => (int)Math.Ceiling(decimal.Divide(Count, PageSize));
 
-        public List<Service> ServiceList { get; set; }
+        public List<About> AboutList { get; set; }
 
         public bool ShowPrevious => CurrentPage > 1;
         public bool ShowNext => CurrentPage < TotalPages;
@@ -45,36 +45,39 @@ namespace lega.Pages.Management.Services
 
         protected void PrepareData()
         {
-            var serviceList = _serviceRepasitory.GetAll().ToList();
+            var aboutList = _aboutRepasitory.GetAll().ToList();
 
            
 
             if (Input.Title != null)
             {
-                serviceList = serviceList.Where(p => p.Title.ToUpper().Contains(Input.Title.ToUpper())).ToList();
+                aboutList = aboutList.Where(p => p.Title.ToUpper().Contains(Input.Title.ToUpper())).ToList();
             }
 
-            if (Input.Context != null)
+            if (Input.Name != null)
             {
-                serviceList = serviceList.Where(p => p.Context.ToUpper().Contains(Input.Context.ToUpper())).ToList();
+                aboutList = aboutList.Where(p => p.Name.ToUpper().Contains(Input.Name.ToUpper())).ToList();
             }
 
 
-            ServiceList = _serviceRepasitory.GetPaginatedResult(serviceList, CurrentPage, PageSize);
+            AboutList = _aboutRepasitory.GetPaginatedResult(aboutList, CurrentPage, PageSize);
 
 
-            Count = _serviceRepasitory.GetCount(serviceList);
+            Count = _aboutRepasitory.GetCount(aboutList);
 
-            InputList = ServiceList.Select(p =>
+            InputList = AboutList.Select(p =>
             {
                 return new InputModel()
                 {
                     Id = p.Id,
                     Title = p.Title,
                     TitleEn = p.TitleEn,
+                    Name = p.Name,
+                    NameEn = p.NameEn,
                     Context = p.Context,
                     ContextEn = p.ContextEn,
-                    IconName = p.IconName,
+                    ImageUrl = p.ImageUrl,
+                    Visible = p.Visible,
                 };
             }).ToList();
         }

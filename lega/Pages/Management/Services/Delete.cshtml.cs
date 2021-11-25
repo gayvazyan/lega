@@ -5,21 +5,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
 
-namespace lega.Pages.Management.Carousels
+namespace lega.Pages.Management.Services
 {
     public class DeleteModel : PageModel
     {
-        private readonly ICarouselRepasitory _carouselRepasitory;
-        public DeleteModel(ICarouselRepasitory carouselRepasitory)
+        private readonly IServiceRepasitory _serviceRepasitory;
+        public DeleteModel(IServiceRepasitory serviceRepasitory)
         {
-            _carouselRepasitory = carouselRepasitory;
-            Delete = new DeleteCarouselModel();
+            _serviceRepasitory = serviceRepasitory;
+            Delete = new DeleteAboutModel();
         }
 
-        public class DeleteCarouselModel : Carousel { }
+        public class DeleteAboutModel : Service { }
 
         [BindProperty]
-        public DeleteCarouselModel Delete { get; set; }
+        public DeleteAboutModel Delete { get; set; }
 
 
         private List<ServiceError> _errors;
@@ -30,19 +30,16 @@ namespace lega.Pages.Management.Carousels
         }
         protected void PrepareData(int id)
         {
-            var result = _carouselRepasitory.GetByID(id);
+            var result = _serviceRepasitory.GetByID(id);
 
             if (result != null)
             {
                 Delete.Id = result.Id;
                 Delete.Title = result.Title;
                 Delete.TitleEn = result.TitleEn;
-                Delete.Name = result.Name;
-                Delete.NameEn = result.NameEn;
                 Delete.Context = result.Context;
                 Delete.ContextEn = result.ContextEn;
-                Delete.ImageUrl = result.ImageUrl;
-                Delete.State = result.State;
+                Delete.IconName = result.IconName;
             }
         }
 
@@ -57,11 +54,11 @@ namespace lega.Pages.Management.Carousels
             {
                 try
                 {
-                    var carousel = _carouselRepasitory.GetByID(Delete.Id);
+                    var service = _serviceRepasitory.GetByID(Delete.Id);
 
-                    _carouselRepasitory.Delete(carousel);
+                    _serviceRepasitory.Delete(service);
 
-                    return RedirectToPage("/Management/Carousels/Index");
+                    return RedirectToPage("/Management/Services/Index");
 
                 }
                 catch (Exception ex)

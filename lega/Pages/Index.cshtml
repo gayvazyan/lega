@@ -8,7 +8,7 @@
 }
 
 
-<!--Slider-Section-Start-->
+<!--Carousel-Section-Start-->
 <section id="slider">
     <div id="home-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -102,8 +102,6 @@
 </div>
 <br>
 
-
-
 <!--Service-Section-Start-->
 <section id="service">
     <div class="container">
@@ -170,9 +168,7 @@
     </div>
 </section>
 
-
-
-<!--Features-Section-Start-->
+<!--Customer-Section-Start-->
 <section id="features">
     <div class="container">
         @if (requestCulture.Culture.ToString() == "hy")
@@ -242,89 +238,99 @@
 <!--Pricing-Section-Start-->
 <section id="pricing">
     <div class="container">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="heading">
-                <h2>ԳՆԱՅԻՆ ՓԱԹԵԹ<span>ՆԵՐ</span></h2>
-                <div class="line"></div>
-                <p><span><strong>Ընտրեք</strong></span> ձեզ հարմար ծառայությունների փաթեթը կամ կապվեք մեզ հետ ինդիվիդուալ փաթեթ կազմելու համար</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="0ms">
-                    <ul class="pricing">
-                        <li class="plan-header">
-                            <div class="price-duration">
-                                <div class="price"> 50000 </div>
-                                <div class="duration"> ամսեկան </div>
-                            </div>
-                            <div class="plan-name"> ՍՏԱՐՏԱՓ </div>
-                        </li>
-                        <li>Մինչև<strong>3</strong> աշխատակից</li>
-                        <li>Մինչև<strong>3 մլն դրամ</strong> շրջանառություն</li>
-                        <li>Եթե դեռ չունեք պետական գրանցում, ՍՊԸ գրանցումն <strong>ԱՆՎՃԱՐ</strong></li>
-                    </ul>
+
+        @if (requestCulture.Culture.ToString() == "hy")
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ԳՆԱՅԻՆ ՓԱԹԵԹ<span>ՆԵՐ</span></h2>
+                    <div class="line"></div>
+                    <p><span><strong>Ընտրեք</strong></span> ձեզ հարմար ծառայությունների փաթեթը կամ կապվեք մեզ հետ ինդիվիդուալ փաթեթ կազմելու համար</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="200ms">
-                    <ul class="pricing">
-                        <li class="plan-header">
-                            <div class="price-duration">
-                                <div class="price"> 100000 </div>
-                                <div class="duration"> ամսեկան </div>
-                            </div>
-                            <div class="plan-name"> ՓՈՔՐ ԲԻԶՆԵՍ </div>
-                        </li>
-                        <li>Մինչև<strong>7</strong> աշխատակից</li>
-                        <li>Մինչև<strong>7 մլն դրամ</strong> շրջանառություն</li>
-                        <li>Խորհրդատվություն, քաղվածքների տրամադրում և այլ աջակցություն աշխ. օրվա ընթացքում  <strong>ԱՆՍԱՀՄԱՆԱՓԱԿ</strong></li>
-                    </ul>
+            <div class="row">
+                @{
+                    var delay = 0;
+                }
+                @foreach (var item in Model.PricingList)
+                {
+                    var delaySec = @delay.ToString() + "ms";
+                    <div class="col-sm-6 col-md-3">
+                        <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="@delaySec">
+                            <ul class="pricing">
+                                <li class="plan-header">
+                                    <div class="price-duration">
+                                        <div class="price">   </div>
+                                        <div class="duration">  </div>
+                                    </div>
+                                    <div class="plan-name"> @item.Name </div>
+                                </li>
+                                <li><strong>@item.EmployeCount</strong> –ից ավել աշխատակից</li>
+                                <li><strong>@item.PriceText</strong>  դրամից ավել շրջանառություն</li>
+                                <li>@item.Context</li>
+                            </ul>
+                        </div>
+                    </div>
+                    delay += 200;
+                }
+            </div>
+        }
+        else
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>PRICE PACKAG<span>ES</span></h2>
+                    <div class="line"></div>
+                    <p><span><strong>Choose</strong></span> the package of services that suits you or contact us to make an individual package</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="400ms">
-                    <ul class="pricing">
-                        <li class="plan-header">
-                            <div class="price-duration">
-                                <div class="price"> 150000 </div>
-                                <div class="duration"> ամսեկան </div>
-                            </div>
-                            <div class="plan-name">  ԲԻԶՆԵՍ </div>
-                        </li>
-                        <li>Մինչև<strong>10</strong> աշխատակից</li>
-                        <li>Մինչև<strong>10 մլն դրամ</strong> շրջանառություն</li>
-                        <li>Խորհրդատվություն, քաղվածքների տրամադրում և այլ աջակցություն աշխ. օրվա ընթացքում  <strong>ԱՆՍԱՀՄԱՆԱՓԱԿ</strong></li>
-                    </ul>
-                </div>
+            <div class="row">
+                @{
+                    var delay = 0;
+                }
+                @foreach (var item in Model.PricingList)
+                {
+                    var delaySec = @delay.ToString() + "ms";
+                    <div class="col-sm-6 col-md-3">
+                        <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="@delaySec">
+                            <ul class="pricing">
+                                <li class="plan-header">
+                                    <div class="price-duration">
+                                        <div class="price">   </div>
+                                        <div class="duration">  </div>
+                                    </div>
+                                    <div class="plan-name"> @item.NameEn </div>
+                                </li>
+                                <li>Up to <strong>@item.EmployeCount</strong> employees</li>
+                                <li>more than <strong>@item.PriceTextEn</strong>  AMD turnover</li>
+                                <li>@item.ContextEn</li>
+                            </ul>
+                        </div>
+                    </div>
+                    delay += 200;
+                }
             </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="600ms">
-                    <ul class="pricing">
-                        <li class="plan-header">
-                            <div class="price-duration">
-                                <div class="price">   </div>
-                                <div class="duration" style="font-size:12px"> պայմանագրային </div>
-                            </div>
-                            <div class="plan-name"> ՀԱՏՈՒԿ ԳՈՐԾԸՆԿԵՐ </div>
-                        </li>
-                        <li><strong>10</strong> –ից ավել աշխատակից</li>
-                        <li><strong>10 մլն</strong>  դրամից ավել շրջանառություն</li>
-                        <li>Խորհրդատվություն, քաղվածքների տրամադրում և այլ աջակցություն աշխ. օրվա ընթացքում <strong> ԱՆՍԱՀՄԱՆԱՓԱԿ </strong> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        }
+
+
+
+
+
+
+
+
     </div>
 </section>
 
 
-<!--Contact-Section-Start-->
-<section id="contact">
+
+<!--News-Section-Start-->
+<section id="blog">
     <div class="container">
+
         <div class="col-md-8 col-md-offset-2">
             <div class="heading">
-                <h2>CONTACT <span>US</span></h2>
+                <h2>LATEST BL<span>OG</span></h2>
                 <div class="line"></div>
                 <p>
                     <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
@@ -332,41 +338,232 @@
                 </p>
             </div>
         </div>
-        <div class="text-center">
-            <div class="col-md-4 col-sm-4 contact-sec-1">
-                <h4>CONTACT IN<span>FO</span></h4>
-                <ul class="contact-form">
-                    <li>
-                        <i class="fa fa-map-marker"></i>
-                        <h6><strong>Address:</strong> No 123 , Wallstreet, India </h6>
-                    </li>
-                    <li>
-                        <i class="fa fa-envelope"></i>
-                        <h6><strong>Mail Us:</strong> <a href="#">Info@yourdomain.com</a></h6>
-                    </li>
-                    <li>
-                        <i class="fa fa-phone"></i>
-                        <h6><strong>Phone:</strong> +91 123-456-7890 </h6>
-                    </li>
-                    <li>
-                        <i class="fa fa-wechat"></i>
-                        <h6><strong>Website:</strong> <a href="#">www.Cosmix.com</a> </h6>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-8 col-sm-8">
-               <div class="mapouter">
-                   <div class="gmap_canvas">
-                       <iframe width="700" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                       <a href="https://123movies-org.net"></a><br>
-                       <style>.mapouter{position:relative;text-align:right;height:400px;width:700px;}
-                       </style><a href="https://www.embedgooglemap.net">
-                       </a>
-                       <style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:700px;}</style>
-                   </div>
-               </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="col-md-4 blog-sec">
+                    <div class="blog-info">
+                        <img src="images/Blog/1.jpg" class="img-responsive" alt="">
+                        <div class="data-meta">
+                            <h4>Jan</h4>
+                            <strong>10</strong><br>
+                            2016
+                        </div>
+                        <a href="#">
+                            <h5>Sed ut perspiciatis unde omnis</h5>
+                        </a>
+                        <ul class="blog-icon">
+                            <li>
+                                <i class="fa fa-pencil"></i><a href="#">
+                                    <h6>John</h6>
+                                </a>
+                            </li>
+                            <li class="comment">
+                                <i class="fa fa-comment"></i><a href="#">
+                                    <h6>13</h6>
+                                </a>
+                            </li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
+                        <a href="#" class="btn-blg">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 blog-sec">
+                    <div class="blog-info">
+                        <img src="images/Blog/2.jpg" class="img-responsive" alt="">
+                        <div class="data-meta">
+                            <h4>Jan</h4>
+                            <strong>20</strong><br>
+                            2016
+                        </div>
+                        <a href="#">
+                            <h5>Sed ut perspiciatis unde omnis</h5>
+                        </a>
+                        <ul class="blog-icon">
+                            <li>
+                                <i class="fa fa-pencil"></i><a href="#">
+                                    <h6>Maria</h6>
+                                </a>
+                            </li>
+                            <li class="comment">
+                                <i class="fa fa-comment"></i><a href="#">
+                                    <h6>04</h6>
+                                </a>
+                            </li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
+                        <a href="#" class="btn-blg">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 blog-sec">
+                    <div class="blog-info">
+                        <img src="images/Blog/3.jpg" class="img-responsive" alt="">
+                        <div class="data-meta">
+                            <h4>Jan</h4>
+                            <strong>31</strong><br>
+                            2016
+                        </div>
+                        <a href="#">
+                            <h5>Sed ut perspiciatis unde omnis</h5>
+                        </a>
+                        <ul class="blog-icon">
+                            <li>
+                                <i class="fa fa-pencil"></i><a href="#">
+                                    <h6>Bear</h6>
+                                </a>
+                            </li>
+                            <li class="comment">
+                                <i class="fa fa-comment"></i><a href="#">
+                                    <h6>05</h6>
+                                </a>
+                            </li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
+                        <a href="#" class="btn-blg">Read More</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+
+
+<!--More News - Line-->
+<div class="bg-sec">
+    <div class="container">
+        <div class="col-md-10 col-sm-10 col-xs-8"></div>
+        @if (requestCulture.Culture.ToString() == "hy")
+        {
+            <div class="col-md-2 col-sm-2 col-xs-4"> <a style="top:0px" class="btn-down" href="/News">Բոլորը</a> </div>
+        }
+        else
+        {
+            <div class="col-md-2 col-sm-2 col-xs-4"> <a style="top:0px" class="btn-down" href="/News">All</a> </div>
+        }
+    </div>
+</div>
+
+
+<!--Contact-Section-Start-->
+<section id="contact">
+    <div class="container">
+        @if (requestCulture.Culture.ToString() == "hy")
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ԿԱՊ <span>ՄԵԶ</span> ՀԵՏ</h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>Ա</strong></span>յստեղ պետք է լինի տեքս որը իչ մուտքագրվի բազայով, այս տեսքտ պետք է լինի ոչ հաճախ փոփոխվող
+                    </p>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="col-md-4 col-sm-4 contact-sec-1">
+                    <h4>ԿՈՆԴԱԿՏԱՅԻՆ ՏՎՅԵԼ<span>ՆԵՐ</span></h4>
+                    <ul class="contact-form">
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <h6><strong>Հասցե:</strong> No 123 , Wallstreet, India </h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <h6><strong>Էլ հասցե:</strong> <a href="#">Info@yourdomain.com</a></h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <h6><strong>Հեռ․:</strong> +91 123-456-7890 </h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-wechat"></i>
+                            <h6><strong>Վեբ կայք:</strong> <a href="#">www.lega.am</a> </h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="700" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 400px;
+                                    width: 700px;
+                                }
+
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 400px;
+                                    width: 700px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>CONTACT <span>US</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="col-md-4 col-sm-4 contact-sec-1">
+                    <h4>CONTACT IN<span>FO</span></h4>
+                    <ul class="contact-form">
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <h6><strong>Address:</strong> No 123 , Wallstreet, India </h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <h6><strong>Mail Us:</strong> <a href="#">Info@yourdomain.com</a></h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <h6><strong>Phone:</strong> +91 123-456-7890 </h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-wechat"></i>
+                            <h6><strong>Website:</strong> <a href="#">www.lega.am</a> </h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="700" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 400px;
+                                    width: 700px;
+                                }
+
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 400px;
+                                    width: 700px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </section>
 

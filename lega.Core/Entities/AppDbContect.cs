@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace lega.Core.Entities
 {
@@ -16,7 +12,10 @@ namespace lega.Core.Entities
         public DbSet<Users> UsersDb { get; set; }
         public DbSet<Carousel> CarouselDb { get; set; }
         public DbSet<About> AboutDb { get; set; }
+        public DbSet<Pricing> PricingDb { get; set; }
         public DbSet<Service> ServiceDb { get; set; }
+        public DbSet<Customer> CustomerDb { get; set; }
+        public DbSet<News> NewsDb { get; set; }
 
     }
 }

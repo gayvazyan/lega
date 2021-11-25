@@ -1,10 +1,12 @@
 ﻿using lega.Core;
 using lega.Core.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,146 +15,98 @@ namespace lega.Pages
     public class IndexModel : PageModel
     {
         private readonly ICarouselRepasitory _carouselRepasitory;
+        private readonly IAboutRepasitory _aboutRepasitory;
+        private readonly IServiceRepasitory _serviceRepasitory;
 
-        public IndexModel(ICarouselRepasitory carouselRepasitory)
+        public IndexModel(ICarouselRepasitory carouselRepasitory,
+                          IAboutRepasitory aboutRepasitory,
+                          IServiceRepasitory serviceRepasitory)
         {
             _carouselRepasitory = carouselRepasitory;
+            _aboutRepasitory = aboutRepasitory;
+            _serviceRepasitory = serviceRepasitory;
+
             CarouselList = new List<Carousel> { };
-            CustomerList = new List<Customer> { };
-            ServiceList = new List<Service> { };
             About = new About { };
-            
+            ServiceList = new List<Service> { };
+            PricingList = new List<Pricing> { };   
+
+
+            CustomerList = new List<Customer> { };
+           
+           
+
+
         }
 
         public List<Carousel> CarouselList { get; set; }
-        public List<Service> ServiceList { get; set; }
-        public List<Customer> CustomerList { get; set; }
         public About About { get; set; }
+        public List<Service> ServiceList { get; set; }
+        public List<Pricing> PricingList { get; set; }
+        public List<Customer> CustomerList { get; set; }
+       
 
         public void OnGet()
         {
-            #region CarouselList
+            CarouselList = _carouselRepasitory.GetAll().ToList();
 
-            // CarouselList = _carouselRepasitory.GetAll().ToList();
+            About = _aboutRepasitory.GetAll().ToList().FirstOrDefault(p=>p.Visible == true);
 
-            CarouselList.Add(new Carousel
+            ServiceList = _serviceRepasitory.GetAll().ToList();
+
+       
+
+            #region Pricing
+
+
+            PricingList.Add(new Pricing
             {
                 Id = 1,
-                Title = "Lega հաշվապահական գրասենյակ",
-                TitleEn = "Lega accounting company",
-                Name = "ԿԱԶՄԱԿԵՐՊՈՒԹՅԱՆ ԳՐԱՆՑՈՒՄ",
-                NameEn = "REGISTRATION ORGANIZATION",
-                Context = "Զբաղվե՛ք բիզնեսով, իսկ հաշվապահությունը վստահեք «Լեգաի» պրոֆեսիոնալ հաշվապահներին։",
-                ContextEn = "Do business, and entrust accounting to 'Lega' professional accountants.",
-                ImageUrl = "/images/Slider/01.jpg",
-                State = "active"
-            });
+                Name = "ՍՏԱՐՏԱՓ",
+                NameEn = "Startup",
+                EmployeCount = 1,
+                PriceText = "10 մլն",
+                PriceTextEn = "10 million",
+                Context = "Եթե դեռ չունեք պետական գրանցում, ՍՊԸ գրանցումն ԱՆՎՃԱՐ ",
+                ContextEn = "Lorem Ipsum is simply dummy text of the printing and  ",
+            }) ;
 
-            CarouselList.Add(new Carousel
+            PricingList.Add(new Pricing
             {
                 Id = 2,
-                Title = "Lega հաշվապահական գրասենյակ",
-                TitleEn = "Lega accounting company",
-                Name = "ՀԱՇՎԱՊԱՀՈՒԹՅԱՆ ՎԱՐՈՒՄ",
-                NameEn = "ACCOUNTING",
-                Context = "Դիմելով մեզ՝ դուք ստանում եք Հայաստանի լավագույն հաշվապահների գիտելիքներն ու հնարավորությունները ավելի քան մատչելի գներով։",
-                ContextEn = "By contacting us, you get the knowledge and opportunities of the best accountants in Armenia at more than affordable prices.",
-                ImageUrl = "/images/Slider/02.jpg",
-                State = ""
+                Name = "ՓՈՔՐ ԲԻԶՆԵՍ",
+                NameEn = "Small Bizzzz",
+                EmployeCount = 2,
+                PriceText = "20 մլն",
+                PriceTextEn = "20 million",
+                Context = "Խորհրդատվություն, քաղվածքների տրամադրում և այլ աջակցություն աշխ. օրվա ընթացքում ԱՆՍԱՀՄԱՆԱՓԱԿ ",
+                ContextEn = "Lorem Ipsum is simply dummy text of the printing and  ",
             });
 
-            CarouselList.Add(new Carousel
+            PricingList.Add(new Pricing
             {
                 Id = 3,
-                Title = "Lega հաշվապահական գրասենյակ",
-                TitleEn = "Lega accounting company",
-                Name = "ՀԱՇՎԵՏՎՈՒԹՅՈՒՆՆԵՐԻ ԿԱԶՄՈՒՄ",
-                NameEn = "COMPILATION OF REPORTS",
-                Context = "«Լեգա» հաշվապահական գրասենյակի նպատակն է՝ նվազեցնել Ձեր բիզնեսի ֆինանսական ռիսկերն ու բարձրացնել էֆեկտիվությունը։",
-                ContextEn = "The goal of 'Lega' accounting office is to reduce the financial risks of your business and increase efficiency.",
-                ImageUrl = "/images/Slider/03.jpg",
-                State = ""
+                Name = "ԲԻԶՆԵՍ",
+                NameEn = "Bizzzz",
+                EmployeCount = 3,
+                PriceText = "30 մլն",
+                PriceTextEn = "30 million",
+                Context = "Խորհրդատվություն, քաղվածքների տրամադրում և այլ աջակցություն աշխ. օրվա ընթացքում ԱՆՍԱՀՄԱՆԱՓԱԿ ",
+                ContextEn = "Lorem Ipsum is simply dummy text of the printing and  ",
             });
 
-            #endregion
-
-            #region About
-            //Get About
-            About = new About
-            {
-                Id = 1,
-                Title = "Հայերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա",
-                TitleEn = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam",
-                Name = "Մենք կրեատիվ ենք և հիասքանչ",
-                NameEn = "We Are Creative And Awesome",
-                Context = "Հայերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա Հայերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա Հայերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա Հայերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա Հայերեն պատահական տեքստ, հայե։",
-                ContextEn = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.Lorem Ipsum is simply dummy text of the printing and typesetting industry. book.",
-                ImageUrl = "/images/Aboutus/01.jpg",
-                Visible = true,
-            };
-            #endregion
-
-            #region Service
-
-            ServiceList.Add(new Service
-            {
-                Id = 1,
-                Title = "UX դիզայն",
-                TitleEn = "UX Design",
-                Context = "Արդյունաբերության որոշ խոշորագույն անունների աջակցությամբ՝ Firefox OS-ը բաց հարթակ է, որը խթանում է ավելին",
-                ContextEn = "Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater",
-                IconName = "line-chart",
-            });
-
-            ServiceList.Add(new Service
-            {
-                Id = 2,
-                Title = "UX դիզայն",
-                TitleEn = "UX Design",
-                Context = "Արդյունաբերության որոշ խոշորագույն անունների աջակցությամբ՝ Firefox OS-ը բաց հարթակ է, որը խթանում է ավելին",
-                ContextEn = "Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater",
-                IconName = "cubes",
-            });
-
-            ServiceList.Add(new Service
-            {
-                Id = 3,
-                Title = "Մարկետինգ",
-                TitleEn = "Marketing",
-                Context = "Արդյունաբերության որոշ խոշորագույն անունների աջակցությամբ՝ Firefox OS-ը բաց հարթակ է, որը խթանում է ավելին",
-                ContextEn = "Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater",
-                IconName = "pie-chart",
-            });
-
-            ServiceList.Add(new Service
+            PricingList.Add(new Pricing
             {
                 Id = 4,
-                Title = "SEO ծառայություններ",
-                TitleEn = "SEO Services",
-                Context = "Արդյունաբերության որոշ խոշորագույն անունների աջակցությամբ՝ Firefox OS-ը բաց հարթակ է, որը խթանում է ավելին",
-                ContextEn = "Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater",
-                IconName = "bar-chart",
+                Name = "ՀԱՏՈՒԿ ԳՈՐԾԸՆԿԵՐ ",
+                NameEn = "Spetical partnior",
+                EmployeCount = 4,
+                PriceText = "40 մլն",
+                PriceTextEn = "40 million",
+                Context = "Խորհրդատվություն, քաղվածքների տրամադրում և այլ աջակցություն աշխ. օրվա ընթացքում ԱՆՍԱՀՄԱՆԱՓԱԿ ",
+                ContextEn = "Lorem Ipsum is simply dummy text of the printing and  ",
             });
 
-            ServiceList.Add(new Service
-            {
-                Id = 5,
-                Title = "UX դիզայն",
-                TitleEn = "UX Design",
-                Context = "Արդյունաբերության որոշ խոշորագույն անունների աջակցությամբ՝ Firefox OS-ը բաց հարթակ է, որը խթանում է ավելին",
-                ContextEn = "Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater",
-                IconName = "language",
-            });
-
-            ServiceList.Add(new Service
-            {
-                Id = 6,
-                Title = "Մարկետինգ",
-                TitleEn = "Marketing",
-                Context = "Արդյունաբերության որոշ խոշորագույն անունների աջակցությամբ՝ Firefox OS-ը բաց հարթակ է, որը խթանում է ավելին",
-                ContextEn = "Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater",
-                IconName = "bullseye",
-            });
             #endregion
 
             #region Customer
@@ -223,11 +177,11 @@ namespace lega.Pages
                 TabState = ""
             });
 
-
-
             #endregion
 
+            #region News
 
+            #endregion
 
         }
     }

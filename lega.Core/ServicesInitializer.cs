@@ -3,11 +3,7 @@ using lega.Core.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace lega.Core
 {
@@ -33,8 +29,16 @@ namespace lega.Core
              services.AddTransient(typeof(IRepositories<>), typeof(Repositories<>));
              services.AddTransient<IUserRepasitory, UserRepasitory>();
              services.AddTransient<ICarouselRepasitory, CarouselRepasitory>();
-
+             services.AddTransient<IAboutRepasitory, AboutRepasitory>();
+             services.AddTransient<IServiceRepasitory, ServiceRepasitory>();
+             services.AddTransient<IPricingRepasitory, PricingRepasitory>();
+             services.AddTransient<ICustomerRepasitory, CustomerRepasitory>();
+             services.AddTransient<INewsRepasitory, NewsRepasitory>();
             
+
+
+
+
         }
     }
 }

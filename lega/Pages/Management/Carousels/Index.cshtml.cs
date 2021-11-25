@@ -14,11 +14,13 @@ namespace lega.Pages.Management.Carousels
     public class IndexModel : PageModel
     {
         private readonly ICarouselRepasitory _carouselRepasitory;
-        private readonly IWebHostEnvironment _env;
-        public IndexModel(ICarouselRepasitory carouselRepasitory, IWebHostEnvironment env)
+        //private readonly IWebHostEnvironment _env;
+        public IndexModel(ICarouselRepasitory carouselRepasitory)
+                        //IWebHostEnvironment env
+     
         {
             _carouselRepasitory = carouselRepasitory;
-            _env = env;
+            //_env = env;
             Input = new InputModel();
             InputList = new List<InputModel>();
         }
@@ -49,37 +51,37 @@ namespace lega.Pages.Management.Carousels
 
         protected void PrepareData()
         {
-            var carouselList = new List<Carousel>();
+            var carouselList = _carouselRepasitory.GetAll().ToList();
 
-            var resultDir = Path.Combine(_env.WebRootPath, "csv");
-            var resultFileName = "carousel.csv";
-            string resultFilePath = Path.Combine(resultDir, resultFileName);
+            //var resultDir = Path.Combine(_env.WebRootPath, "csv");
+            //var resultFileName = "carousel.csv";
+            //string resultFilePath = Path.Combine(resultDir, resultFileName);
 
-            if (System.IO.File.Exists(resultFilePath))
-            {
-                using (var reader = new StreamReader(@resultFilePath))
-                {
-                    while (!reader.EndOfStream)
-                    {
-                        var line = reader.ReadLine();
-                        var values = line.Split('|');
+            //if (System.IO.File.Exists(resultFilePath))
+            //{
+            //    using (var reader = new StreamReader(@resultFilePath))
+            //    {
+            //        while (!reader.EndOfStream)
+            //        {
+            //            var line = reader.ReadLine();
+            //            var values = line.Split('|');
 
-                        var carousel = new Carousel
-                        {
-                            Id = !String.IsNullOrEmpty(values[0]) ? Convert.ToInt32(values[0]) : 0,
-                            Name = values[1],
-                            NameEn = values[2],
-                            Title = values[3],
-                            TitleEn = values[4],
-                            Context = values[5],
-                            ContextEn = values[6],
-                            ImageUrl = values[7],
-                            State = values[8],
-                        };
-                        carouselList.Add(carousel);
-                    }
-                }
-            }
+            //            var carousel = new Carousel
+            //            {
+            //                Id = !String.IsNullOrEmpty(values[0]) ? Convert.ToInt32(values[0]) : 0,
+            //                Name = values[1],
+            //                NameEn = values[2],
+            //                Title = values[3],
+            //                TitleEn = values[4],
+            //                Context = values[5],
+            //                ContextEn = values[6],
+            //                ImageUrl = values[7],
+            //                State = values[8],
+            //            };
+            //            carouselList.Add(carousel);
+            //        }
+            //    }
+            //}
 
             if (Input.Title != null)
             {

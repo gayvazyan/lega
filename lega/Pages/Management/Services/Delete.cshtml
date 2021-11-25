@@ -1,5 +1,5 @@
 ﻿@page "{id:int}"
-@model lega.Pages.Management.Carousels.DeleteModel
+@model lega.Pages.Management.Services.DeleteModel
 @inject IHttpContextAccessor HttpContextAccessor
 @{
     ViewData["Title"] = "Հեռացնել";
@@ -49,7 +49,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th><span class="w-100 text-muted text-value-sm font-weight-bold font-lg">@Model.Delete.Name  </span></th>
+                                    <th><span class="w-100 text-muted text-value-sm font-weight-bold font-lg">@Model.Delete.Context  </span></th>
                                     <th><span class="w-100 text-muted text-value-sm font-weight-bold font-lg">@Model.Delete.Title  </span></th>
                                 </tr>
                             </tbody>
@@ -69,7 +69,7 @@
                     <div class="row border-top margin-top-20" style="padding-top:20px">
                         <div class="col-12">
                             <button type="submit" class="btn btn-danger"><i class="nav-icon icon-trash"></i> Հեռացնել</button>
-                            <a class="btn btn-secondary" asp-page="/Management/Carousels/Index"><i class="nav-icon icon-close"></i> Չեղարկել</a>
+                            <a class="btn btn-secondary" asp-page="/Management/Services/Index"><i class="nav-icon icon-close"></i> Չեղարկել</a>
                         </div>
                     </div>
                 </div>
@@ -85,6 +85,7 @@ else
         <h5>Այս տվյալներին հասանելիություն չունեք։</h5>
     </div>
 }
+
 
 
 

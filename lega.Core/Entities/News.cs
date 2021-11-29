@@ -8,7 +8,7 @@ namespace lega.Core.Entities
 {
     public class News
     {
-        //public int Id { get; set; }
+        public int Id { get; set; }
         //public string Title { get; set; }
         //public string TitleEn { get; set; }
         //public string Name { get; set; }

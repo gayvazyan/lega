@@ -16,6 +16,9 @@ namespace lega.Core.Entities
         public DbSet<Service> ServiceDb { get; set; }
         public DbSet<Customer> CustomerDb { get; set; }
         public DbSet<News> NewsDb { get; set; }
+        public DbSet<Contact> ContactDb { get; set; }
 
+
+        
     }
 }

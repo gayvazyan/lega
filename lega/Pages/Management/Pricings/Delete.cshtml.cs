@@ -5,21 +5,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
 
-namespace lega.Pages.Management.Services
+namespace lega.Pages.Management.Pricings
 {
     public class DeleteModel : PageModel
     {
-        private readonly IServiceRepasitory _serviceRepasitory;
-        public DeleteModel(IServiceRepasitory serviceRepasitory)
+        private readonly IPricingRepasitory _pricingRepasitory;
+        public DeleteModel(IPricingRepasitory pricingRepasitory)
         {
-            _serviceRepasitory = serviceRepasitory;
-            Delete = new DeleteServiceModel();
+            _pricingRepasitory = pricingRepasitory;
+            Delete = new DeletePricingModel();
         }
 
-        public class DeleteServiceModel : Service { }
+        public class DeletePricingModel : Pricing { }
 
         [BindProperty]
-        public DeleteServiceModel Delete { get; set; }
+        public DeletePricingModel Delete { get; set; }
 
 
         private List<ServiceError> _errors;
@@ -30,16 +30,18 @@ namespace lega.Pages.Management.Services
         }
         protected void PrepareData(int id)
         {
-            var result = _serviceRepasitory.GetByID(id);
+            var result = _pricingRepasitory.GetByID(id);
 
             if (result != null)
             {
                 Delete.Id = result.Id;
-                Delete.Title = result.Title;
-                Delete.TitleEn = result.TitleEn;
+                Delete.Name = result.Name;
+                Delete.NameEn = result.NameEn;
+                Delete.PriceText = result.PriceText;
+                Delete.PriceTextEn = result.PriceTextEn;
+                Delete.EmployeCount = result.EmployeCount;
                 Delete.Context = result.Context;
                 Delete.ContextEn = result.ContextEn;
-                Delete.IconName = result.IconName;
             }
         }
 
@@ -54,11 +56,11 @@ namespace lega.Pages.Management.Services
             {
                 try
                 {
-                    var service = _serviceRepasitory.GetByID(Delete.Id);
+                    var pricing = _pricingRepasitory.GetByID(Delete.Id);
 
-                    _serviceRepasitory.Delete(service);
+                    _pricingRepasitory.Delete(pricing);
 
-                    return RedirectToPage("/Management/Services/Index");
+                    return RedirectToPage("/Management/Pricings/Index");
 
                 }
                 catch (Exception ex)

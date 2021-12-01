@@ -455,7 +455,7 @@
                     <h2>ԿԱՊ <span>ՄԵԶ</span> ՀԵՏ</h2>
                     <div class="line"></div>
                     <p>
-                        <span><strong>Ա</strong></span>յստեղ պետք է լինի տեքս որը իչ մուտքագրվի բազայով, այս տեսքտ պետք է լինի ոչ հաճախ փոփոխվող
+                        @Model.Contact.Title
                     </p>
                 </div>
             </div>
@@ -465,19 +465,19 @@
                     <ul class="contact-form">
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            <h6><strong>Հասցե:</strong> No 123 , Wallstreet, India </h6>
+                            <h6><strong>Հասցե:</strong> @Model.Contact.Address </h6>
                         </li>
                         <li>
                             <i class="fa fa-envelope"></i>
-                            <h6><strong>Էլ հասցե:</strong> <a href="#">Info@yourdomain.com</a></h6>
+                            <h6><strong>Էլ հասցե:</strong> <a href="#"> @Model.Contact.Email</a></h6>
                         </li>
                         <li>
                             <i class="fa fa-phone"></i>
-                            <h6><strong>Հեռ․:</strong> +91 123-456-7890 </h6>
+                            <h6><strong>Հեռ․:</strong> @Model.Contact.Phone </h6>
                         </li>
                         <li>
                             <i class="fa fa-wechat"></i>
-                            <h6><strong>Վեբ կայք:</strong> <a href="#">www.lega.am</a> </h6>
+                            <h6><strong>Վեբ կայք:</strong> <a href="#">  @Model.Contact.Website</a> </h6>
                         </li>
                     </ul>
                 </div>
@@ -513,8 +513,7 @@
                     <h2>CONTACT <span>US</span></h2>
                     <div class="line"></div>
                     <p>
-                        <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        et dolore magna aliqua. Ut enim ad minim veniam
+                         @Model.Contact.TitleEn
                     </p>
                 </div>
             </div>
@@ -524,19 +523,19 @@
                     <ul class="contact-form">
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            <h6><strong>Address:</strong> No 123 , Wallstreet, India </h6>
+                            <h6><strong>Address:</strong> @Model.Contact.AddressEn  </h6>
                         </li>
                         <li>
                             <i class="fa fa-envelope"></i>
-                            <h6><strong>Mail Us:</strong> <a href="#">Info@yourdomain.com</a></h6>
+                            <h6><strong>Mail Us:</strong> <a href="#"> @Model.Contact.Email</a></h6>
                         </li>
                         <li>
                             <i class="fa fa-phone"></i>
-                            <h6><strong>Phone:</strong> +91 123-456-7890 </h6>
+                            <h6><strong>Phone:</strong> @Model.Contact.Phone </h6>
                         </li>
                         <li>
                             <i class="fa fa-wechat"></i>
-                            <h6><strong>Website:</strong> <a href="#">www.lega.am</a> </h6>
+                            <h6><strong>Website:</strong> <a href="#"> @Model.Contact.Website</a> </h6>
                         </li>
                     </ul>
                 </div>

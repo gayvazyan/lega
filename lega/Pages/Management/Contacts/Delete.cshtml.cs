@@ -5,21 +5,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
 
-namespace lega.Pages.Management.Services
+namespace lega.Pages.Management.Contacts
 {
     public class DeleteModel : PageModel
     {
-        private readonly IServiceRepasitory _serviceRepasitory;
-        public DeleteModel(IServiceRepasitory serviceRepasitory)
+        private readonly IContactRepasitory _contactRepasitory;
+        public DeleteModel(IContactRepasitory contactRepasitory)
         {
-            _serviceRepasitory = serviceRepasitory;
-            Delete = new DeleteServiceModel();
+            _contactRepasitory = contactRepasitory;
+            Delete = new DeleteContactModel();
         }
 
-        public class DeleteServiceModel : Service { }
+        public class DeleteContactModel : Contact { }
 
         [BindProperty]
-        public DeleteServiceModel Delete { get; set; }
+        public DeleteContactModel Delete { get; set; }
 
 
         private List<ServiceError> _errors;
@@ -30,16 +30,19 @@ namespace lega.Pages.Management.Services
         }
         protected void PrepareData(int id)
         {
-            var result = _serviceRepasitory.GetByID(id);
+            var result = _contactRepasitory.GetByID(id);
 
             if (result != null)
             {
                 Delete.Id = result.Id;
                 Delete.Title = result.Title;
                 Delete.TitleEn = result.TitleEn;
-                Delete.Context = result.Context;
-                Delete.ContextEn = result.ContextEn;
-                Delete.IconName = result.IconName;
+                Delete.Address = result.Address;
+                Delete.AddressEn = result.AddressEn;
+                Delete.Phone = result.Phone;
+                Delete.Email = result.Email;
+                Delete.Website = result.Website;
+                Delete.Visible = result.Visible;
             }
         }
 
@@ -54,11 +57,11 @@ namespace lega.Pages.Management.Services
             {
                 try
                 {
-                    var service = _serviceRepasitory.GetByID(Delete.Id);
+                    var contact = _contactRepasitory.GetByID(Delete.Id);
 
-                    _serviceRepasitory.Delete(service);
+                    _contactRepasitory.Delete(contact);
 
-                    return RedirectToPage("/Management/Services/Index");
+                    return RedirectToPage("/Management/Contacts/Index");
 
                 }
                 catch (Exception ex)

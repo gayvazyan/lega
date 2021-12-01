@@ -17,9 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Management\Customers\" />
     <Folder Include="Pages\Management\News\" />
-    <Folder Include="Pages\Management\Pricings\" />
   </ItemGroup>
 
 </Project>

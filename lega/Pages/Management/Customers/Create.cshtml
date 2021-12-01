@@ -1,5 +1,5 @@
 ﻿@page
-@model lega.Pages.Management.Carousels.CreateModel
+@model lega.Pages.Management.Customers.CreateModel
 @inject IHttpContextAccessor HttpContextAccessor
 @{
     ViewData["Title"] = "Ավելացնել";
@@ -37,6 +37,24 @@
 
                     <div class="row">
                         <div class="col-6">
+                            <label class="text-info" asp-for="Create.OrderNumber">Հերթական համար</label>
+                            <input class="form-control" type="text" asp-for="Create.OrderNumber">
+                            <span asp-validation-for="Create.OrderNumber" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.TabState">Կարգավիճակ</label>
+                            <select class="form-control" asp-for="Create.TabState">
+                                <option value=""> -- ընտրել -- </option>
+                                <option value="active"> -- ակտիվ -- </option>
+
+                            </select>
+                            <span asp-validation-for="Create.TabState" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-6">
                             <label class="text-info" asp-for="Create.Title">Վերնագիր</label>
                             <input class="form-control" type="text" asp-for="Create.Title">
                             <span asp-validation-for="Create.Title" class="text-danger"></span>
@@ -49,29 +67,18 @@
                     </div>
                     <br />
 
-                     <div class="row">
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Create.Name">Անուն</label>
-                            <input class="form-control" type="text" asp-for="Create.Name">
-                            <span asp-validation-for="Create.Name" class="text-danger"></span>
-                        </div>
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Create.NameEn">Անուն անգլերեն</label>
-                            <input class="form-control" type="text" asp-for="Create.NameEn">
-                            <span asp-validation-for="Create.NameEn" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <br />
-
-                     <div class="row">
-                        <div class="col-6">
+                    <div class="row">
+                        <div class="col-12">
                             <label class="text-info" asp-for="Create.Context">Տեքստ</label>
-                            <input class="form-control" type="text" asp-for="Create.Context">
+                            <textarea rows="10" class="form-control" asp-for="Create.Context"></textarea>
                             <span asp-validation-for="Create.Context" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                    </div>
+                      <br />
+                    <div class="row">
+                        <div class="col-12">
                             <label class="text-info" asp-for="Create.ContextEn">Տեքստ անգլերեն</label>
-                            <input class="form-control" type="text" asp-for="Create.ContextEn">
+                            <textarea rows="10" class="form-control" asp-for="Create.ContextEn"></textarea>
                             <span asp-validation-for="Create.ContextEn" class="text-danger"></span>
                         </div>
                     </div>
@@ -79,27 +86,27 @@
 
                     <div class="row">
                         <div class="col-6">
-                            <label class="text-info" asp-for="Create.ImageUrl">Նկար</label>
-                            <input class="form-control" type="text" asp-for="Create.ImageUrl">
-                            <span asp-validation-for="Create.ImageUrl" class="text-danger"></span>
-                        </div>
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Create.State">Կարգավիճակ</label>
-                            <select class="form-control" asp-for="Create.State">
-                                    <option value=""> -- ընտրել -- </option>
-                                    <option value="active"> -- ակտիվ -- </option>
-                                   
-                                </select>
-                            <span asp-validation-for="Create.State" class="text-danger"></span>
+                            <label class="text-info" asp-for="Create.ImageURL">Նկար</label>
+                            <input class="form-control" type="text" asp-for="Create.ImageURL">
+                            <span asp-validation-for="Create.ImageURL" class="text-danger"></span>
                         </div>
                     </div>
                     <br />
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.LogoURL">Լոգո</label>
+                            <input class="form-control" type="text" asp-for="Create.LogoURL">
+                            <span asp-validation-for="Create.LogoURL" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
 
                     <div style="height:20px"></div>
                     <div class="row border-top margin-top-20" style="padding-top:20px">
                         <div class="col-12">
                             <button class="btn btn-success text-white"> <i class="nav-icon icon-check"></i> Ստեղծել</button>
-                            <a class="btn btn-secondary" asp-page="/Management/Carousels/Index"> <i class="nav-icon icon-close"></i> Չեղարկել</a>
+                            <a class="btn btn-secondary" asp-page="/Management/Customers/Index"> <i class="nav-icon icon-close"></i> Չեղարկել</a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +118,7 @@
 
 else
 {
-     <div class="alert alert-danger m-3" role="alert">
+    <div class="alert alert-danger m-3" role="alert">
         <h5>Այս տվյալներին հասանելիություն չունեք։</h5>
     </div>
 }
@@ -119,4 +126,5 @@ else
 @section Scripts {
 <partial name="_ValidationScriptsPartial" />
 }
+
 

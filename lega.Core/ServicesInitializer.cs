@@ -34,6 +34,7 @@ namespace lega.Core
              services.AddTransient<IPricingRepasitory, PricingRepasitory>();
              services.AddTransient<ICustomerRepasitory, CustomerRepasitory>();
              services.AddTransient<INewsRepasitory, NewsRepasitory>();
+             services.AddTransient<IContactRepasitory, ContactRepasitory>();
             
 
 

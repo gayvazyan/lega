@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="features-sec">
+                <div class="customer-sec">
                     @foreach (var item in Model.ServiceList)
                     {
                         <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
@@ -149,7 +149,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="features-sec">
+                <div class="customer-sec">
                     @foreach (var item in Model.ServiceList)
                     {
                         <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
@@ -169,7 +169,7 @@
 </section>
 
 <!--Customer-Section-Start-->
-<section id="features">
+<section id="customer">
     <div class="container">
         @if (requestCulture.Culture.ToString() == "hy")
         {
@@ -325,106 +325,83 @@
 
 
 <!--News-Section-Start-->
-<section id="blog">
+<section id="news">
     <div class="container">
 
-        <div class="col-md-8 col-md-offset-2">
-            <div class="heading">
-                <h2>LATEST BL<span>OG</span></h2>
-                <div class="line"></div>
-                <p>
-                    <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
-            </div>
-        </div>
+         @if (requestCulture.Culture.ToString() == "hy")
+        {
 
-        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ՎԵՐՋԻՆ ՆՈ<span>ՐՈՒԹՅՈՒՆՆԵՐԸ</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>Ա</strong></span>յստեղ կարող է լինել հաստատուն տեքս որը կարող է փոփոխվել բայց ծրագրային կոդով
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
 
             <div class="col-md-12">
-                <div class="col-md-4 blog-sec">
-                    <div class="blog-info">
-                        <img src="images/Blog/1.jpg" class="img-responsive" alt="">
+
+                  @foreach (var item in Model.NewsList)
+            {
+             
+                
+                <div class="col-md-4 news-sec">
+                    <div class="news-info">
+                        <img src="@item.ImageUrl" class="img-responsive" alt="">
                         <div class="data-meta">
                             <h4>Jan</h4>
                             <strong>10</strong><br>
                             2016
                         </div>
                         <a href="#">
-                            <h5>Sed ut perspiciatis unde omnis</h5>
+                            <h5>@item.Title</h5>
                         </a>
-                        <ul class="blog-icon">
+                        <ul class="news-icon">
                             <li>
                                 <i class="fa fa-pencil"></i><a href="#">
-                                    <h6>John</h6>
+                                    <h6>@item.Author</h6>
                                 </a>
                             </li>
-                            <li class="comment">
+                           @* <li class="comment">
                                 <i class="fa fa-comment"></i><a href="#">
                                     <h6>13</h6>
                                 </a>
-                            </li>
+                            </li>*@
                         </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
-                        <a href="#" class="btn-blg">Read More</a>
+                        <p>@item.Context</p>
+                        <a href="/Newss/Item/@item.Id" class="btn-blg">Կարդալ ավելին</a>
                     </div>
                 </div>
-                <div class="col-md-4 blog-sec">
-                    <div class="blog-info">
-                        <img src="images/Blog/2.jpg" class="img-responsive" alt="">
-                        <div class="data-meta">
-                            <h4>Jan</h4>
-                            <strong>20</strong><br>
-                            2016
-                        </div>
-                        <a href="#">
-                            <h5>Sed ut perspiciatis unde omnis</h5>
-                        </a>
-                        <ul class="blog-icon">
-                            <li>
-                                <i class="fa fa-pencil"></i><a href="#">
-                                    <h6>Maria</h6>
-                                </a>
-                            </li>
-                            <li class="comment">
-                                <i class="fa fa-comment"></i><a href="#">
-                                    <h6>04</h6>
-                                </a>
-                            </li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
-                        <a href="#" class="btn-blg">Read More</a>
-                    </div>
-                </div>
-                <div class="col-md-4 blog-sec">
-                    <div class="blog-info">
-                        <img src="images/Blog/3.jpg" class="img-responsive" alt="">
-                        <div class="data-meta">
-                            <h4>Jan</h4>
-                            <strong>31</strong><br>
-                            2016
-                        </div>
-                        <a href="#">
-                            <h5>Sed ut perspiciatis unde omnis</h5>
-                        </a>
-                        <ul class="blog-icon">
-                            <li>
-                                <i class="fa fa-pencil"></i><a href="#">
-                                    <h6>Bear</h6>
-                                </a>
-                            </li>
-                            <li class="comment">
-                                <i class="fa fa-comment"></i><a href="#">
-                                    <h6>05</h6>
-                                </a>
-                            </li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
-                        <a href="#" class="btn-blg">Read More</a>
-                    </div>
+
+               }
+
+            </div>
+            </div>
+
+        }
+
+
+        else
+        {
+            
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>LATEST NE<span>WS</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
                 </div>
             </div>
-        </div>
+            
+        }
+
+
     </div>
 </section>
 

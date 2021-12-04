@@ -20,12 +20,14 @@ namespace lega.Pages
         private readonly ICustomerRepasitory _customerRepasitory;
         private readonly IPricingRepasitory _pricingRepasitory;
         private readonly IContactRepasitory _contactRepasitory;
+        private readonly INewsRepasitory _newsRepasitory;
 
         public IndexModel(ICarouselRepasitory carouselRepasitory,
                           IAboutRepasitory aboutRepasitory,
                           IServiceRepasitory serviceRepasitory,
                           ICustomerRepasitory customerRepasitory,
                           IPricingRepasitory pricingRepasitory,
+                          INewsRepasitory newsRepasitory,
                           IContactRepasitory contactRepasitory)
         {
             _carouselRepasitory = carouselRepasitory;
@@ -33,6 +35,7 @@ namespace lega.Pages
             _serviceRepasitory = serviceRepasitory;
             _customerRepasitory = customerRepasitory;
             _pricingRepasitory = pricingRepasitory;
+            _newsRepasitory = newsRepasitory;
             _contactRepasitory = contactRepasitory;
 
             CarouselList = new List<Carousel> { };
@@ -40,6 +43,7 @@ namespace lega.Pages
             ServiceList = new List<Service> { };
             CustomerList = new List<Customer> { };
             PricingList = new List<Pricing> { };
+            NewsList = new List<News> { };
             Contact = new Contact { };
 
 
@@ -54,6 +58,7 @@ namespace lega.Pages
         public List<Service> ServiceList { get; set; }
         public List<Customer> CustomerList { get; set; }
         public List<Pricing> PricingList { get; set; }
+        public List<News> NewsList { get; set; }
         public Contact Contact { get; set; }
      
        
@@ -71,12 +76,8 @@ namespace lega.Pages
             PricingList = _pricingRepasitory.GetAll().ToList();
 
             Contact = _contactRepasitory.GetAll().FirstOrDefault(p => p.Visible == true);
-
-
-            #region News
-
-            #endregion
-
+           
+            NewsList = _newsRepasitory.GetAll().Where(p => p.Visible == true).Take(3).ToList();
         }
     }
 }

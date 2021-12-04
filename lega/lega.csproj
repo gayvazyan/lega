@@ -16,8 +16,4 @@
     <ProjectReference Include="..\lega.Core\lega.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Management\News\" />
-  </ItemGroup>
-
 </Project>

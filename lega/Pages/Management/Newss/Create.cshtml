@@ -1,0 +1,145 @@
+﻿@page
+@model lega.Pages.Management.Newss.CreateModel
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Ավելացնել";
+    Layout = "/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (HttpContextAccessor.HttpContext.Session.GetString("user") == "login")
+{
+    <form method="post" enctype="multipart/form-data">
+        <div class="card card-input">
+            <div class="card-body p-0 d-flex align-items-center">
+                <i class="nav-icon icon-check bg-success p-4 px-5 font-2xl mr-3 text-white"></i>
+                <div>
+                    <div class="text-value-sm text-info">@ViewData["Title"]</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body row">
+                <div class="m-3 p-3 w-100" style="max-width:600px">
+                    <div>
+                        <partial name="_ValidationSummary" />
+                        @if (Model.Errors.Count > 0)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach (var error in Model.Errors)
+                                    {
+                                        <li>@error.Code: @error.Description</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.Title">Վերնագիր</label>
+                            <input class="form-control" type="text" asp-for="Create.Title">
+                            <span asp-validation-for="Create.Title" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.TitleEn">Վերնագիր անգլերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.TitleEn">
+                            <span asp-validation-for="Create.TitleEn" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                     <div class="row">
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.Author">Հեղինակ</label>
+                            <input class="form-control" type="text" asp-for="Create.Author">
+                            <span asp-validation-for="Create.Author" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.AuthorEn">Հեղինակ անգլերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.AuthorEn">
+                            <span asp-validation-for="Create.AuthorEn" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                     <div class="row">
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.ShortContext">Կարճ տեքստ</label>
+                            <input class="form-control" type="text" asp-for="Create.ShortContext">
+                            <span asp-validation-for="Create.ShortContext" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.ShortContextEn">Կարճ տեքստ անգլերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.ShortContextEn">
+                            <span asp-validation-for="Create.ShortContextEn" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="text-info" asp-for="Create.Context">Տեքստ</label>
+                            <textarea rows="5" class="form-control" asp-for="Create.Context"></textarea>
+                            <span asp-validation-for="Create.Context" class="text-danger"></span>
+                        </div>
+                    </div>
+                      <br />
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="text-info" asp-for="Create.ContextEn">Տեքստ անգլերեն</label>
+                            <textarea rows="5" class="form-control" asp-for="Create.ContextEn"></textarea>
+                            <span asp-validation-for="Create.ContextEn" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.ImageUrl">Նկար</label>
+                            <input class="form-control" type="text" asp-for="Create.ImageUrl">
+                            <span asp-validation-for="Create.ImageUrl" class="text-danger"></span>
+                        </div>
+                       <div class="col-6">
+                            <label class="text-info" asp-for="Create.Date">Ամսաթիվ</label>
+                            <input class="form-control" type="date" asp-for="Create.Date">
+                            <span asp-validation-for="Create.Date" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Create.Visible">Ցուցադրություն</label>
+                             <input class="form-control" type="checkbox" asp-for="Create.Visible">
+                            <span asp-validation-for="Create.Visible" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div style="height:20px"></div>
+                    <div class="row border-top margin-top-20" style="padding-top:20px">
+                        <div class="col-12">
+                            <button class="btn btn-success text-white"> <i class="nav-icon icon-check"></i> Ստեղծել</button>
+                            <a class="btn btn-secondary" asp-page="/Management/Newss/Index"> <i class="nav-icon icon-close"></i> Չեղարկել</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+}
+
+else
+{
+     <div class="alert alert-danger m-3" role="alert">
+        <h5>Այս տվյալներին հասանելիություն չունեք։</h5>
+    </div>
+}
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}
+

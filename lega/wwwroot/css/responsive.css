@@ -56,7 +56,7 @@ font-size:67px;
 .team-main-sec{
 margin-top:30px;
 }
-.blog-sec {
+.news {
 margin-top:30px;
 }
 .hero-section {
@@ -157,7 +157,7 @@ overflow:hidden;
 	.team-main-sec{
 margin-top:30px;
 }
-.blog-sec {
+.news-sec {
 margin-top:30px;
 }
 #footer-down ul li {
@@ -272,7 +272,7 @@ margin-top:30px;
     font-size: 21px;
     padding: 10px 0px 10px 0px;
 }
-.blog-sec {
+.news-sec {
 margin-top:30px;
 }
 .mobilenav li {

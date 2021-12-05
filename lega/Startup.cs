@@ -57,6 +57,8 @@ namespace lega
             services.AddSession();
 
 
+            services.AddMvc().AddRazorRuntimeCompilation();
+
 
 
         }

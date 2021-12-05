@@ -188,7 +188,10 @@ namespace lega.Core.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("State")
+                    b.Property<string>("ShortContext")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortContextEn")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -196,6 +199,9 @@ namespace lega.Core.Migrations
 
                     b.Property<string>("TitleEn")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Visible")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

@@ -1,14 +1,8 @@
 ﻿using lega.Core;
 using lega.Core.Entities;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace lega.Pages
 {
@@ -45,12 +39,6 @@ namespace lega.Pages
             PricingList = new List<Pricing> { };
             NewsList = new List<News> { };
             Contact = new Contact { };
-
-
-
-
-
-
         }
 
         public List<Carousel> CarouselList { get; set; }

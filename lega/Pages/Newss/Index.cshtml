@@ -1,0 +1,139 @@
+﻿@page 
+@using Microsoft.AspNetCore.Localization
+@model lega.Pages.Newss.IndexModel
+@{
+     
+    Layout = "/Pages/Shared/_LayoutNews.cshtml";
+    var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
+    var requestCulture = requestCultureFeature.RequestCulture;
+    ViewData["Title"] = requestCulture.Culture.ToString() == "hy" ? "Նորություններ" : "News";
+}
+
+
+<!--Carousel-Section-Start-->
+<section id="slider">
+    <div id="home-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            @foreach (var item in Model.CarouselList)
+            {
+                <div class="item @item.State" style="background-image:url(@item.ImageUrl)">
+                    <div class="carousel-caption container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                @if (requestCulture.Culture.ToString() == "hy")
+                                {
+                                    <h1 style="font-size:25px">@item.Title</h1>
+                                    <h2 style="font-size:45px">@item.Name</h2>
+                                    <p>@item.Context</p>
+                                }
+                                else
+                                {
+                                    <h1 style="font-size:25px">@item.TitleEn</h1>
+                                    <h2 style="font-size:45px">@item.NameEn</h2>
+                                    <p>@item.ContextEn</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            }
+            <a class="home-carousel-left" href="#home-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="home-carousel-right" href="#home-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+    <!--/#home-carousel-->
+</section>
+
+<!--News-Section-Start-->
+<section id="news">
+    <div class="container">
+
+        @if (requestCulture.Culture.ToString() == "hy")
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ԲՈԼՈՐ ՆՈ<span>ՐՈՒԹՅՈՒՆՆԵՐԸ</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>Ա</strong></span>յստեղ կարող է լինել հաստատուն տեքս որը կարող է փոփոխվել բայց ծրագրային կոդով
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-right:10px;margin-left:-65px">
+
+                <div class="col-md-12">
+
+                    @foreach (var item in Model.NewsList)
+                    {
+                        <div class="col-md-4 news-sec">
+                            <div class="news-info">
+                                <img src="@item.ImageUrl" class="img-responsive" alt="">
+                                <div class="data-meta">
+                                    <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
+                                    <strong>@item.Date.Day</strong><br>
+                                    @item.Date.Year
+                                </div>
+                                    <h5>@item.Title</h5>
+                                <ul class="news-icon">
+                                    <li>
+                                        <i class="fa fa-pencil"></i>
+                                        <h6>@item.Author</h6>
+                                    </li>
+                                </ul>
+                                <p>@item.ShortContext</p>
+                                <a href="/Newss/Item/@item.Id" class="btn-blg">Կարդալ ավելին</a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+        else
+        {
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ALL NE<span>WS</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-right:10px;margin-left:-65px">
+                <div class="col-md-12">
+
+                    @foreach (var item in Model.NewsList)
+                    {
+                        <div class="col-md-4 news-sec">
+                            <div class="news-info">
+                                <img src="@item.ImageUrl" class="img-responsive" alt="">
+                                <div class="data-meta">
+                                    <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
+                                    <strong>@item.Date.Day</strong><br>
+                                    @item.Date.Year
+                                </div>
+                                    <h5>@item.TitleEn</h5>
+                                <ul class="news-icon">
+                                    <li>
+                                        <i class="fa fa-pencil"></i>
+                                            <h6>@item.AuthorEn</h6>
+                                    </li>
+                                </ul>
+                                <p>@item.ShortContextEn</p>
+                                <a href="/Newss/Item/@item.Id" class="btn-blg">Read More</a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+
+
+    </div>
+</section>
+

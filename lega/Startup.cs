@@ -79,17 +79,12 @@ namespace lega
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-            app.UseRouting();
-
-            //add to Localization 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseRouting();
 
             //part of Session
             app.UseSession();
 
+            //add to Localization 
             var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
             app.UseRequestLocalization(localizationOptions);
 

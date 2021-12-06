@@ -1,5 +1,6 @@
 ﻿using lega.Core;
 using lega.Core.Entities;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Linq;

@@ -19,12 +19,32 @@ namespace lega.Pages.Management.Contacts
         }
 
 
-        public class UpdateContactModel : Contact
+        public class UpdateContactModel
         {
-            [EmailAddress(ErrorMessage = "Մուտքագրեք վավեր էլ․ հասցե")]
-            new public string Email { get; set; }
-        }
+            public int Id { get; set; }
 
+            [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
+            public string Title { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
+            public string TitleEn { get; set; }
+
+            [Required(ErrorMessage = "Հասցեն պարտադիր է")]
+            public string Address { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն հասցեն պարտադիր է")]
+            public string AddressEn { get; set; }
+
+            [Required(ErrorMessage = "Հեռախոսահամարը պարտադիր է")]
+            public string Phone { get; set; }
+
+            [EmailAddress(ErrorMessage = "Մուտքագրեք վավեր էլ․ հասցե")]
+            public string Email { get; set; }
+
+            [Required(ErrorMessage = "Վեբ կայքը պարտադիր է")]
+            public string Website { get; set; }
+            public bool Visible { get; set; }
+        }
 
         [BindProperty]
         public UpdateContactModel Update { get; set; }

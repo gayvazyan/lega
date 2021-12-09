@@ -43,14 +43,16 @@
                         <table class="table table-responsive-sm table-striped">
                             <thead>
                                 <tr>
+                                    <td width="65"></td>
                                     <th>Անուն</th>
                                     <th>Վերնագիր</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th><span class="w-100 text-muted text-value-sm font-weight-bold font-lg">@Model.Delete.Name  </span></th>
-                                    <th><span class="w-100 text-muted text-value-sm font-weight-bold font-lg">@Model.Delete.Title  </span></th>
+                                     <td class="text-center"><img src="@Model.Delete.ImageUrl" width="60"></td>
+                                    <td><span class="w-100 text-muted text-value-sm font-weight-bold font-lg">@Model.Delete.Name  </span></td>
+                                    <td><span class="w-100 text-muted text-value-sm font-weight-bold font-lg">@Model.Delete.Title  </span></td>
                                 </tr>
                             </tbody>
                         </table>

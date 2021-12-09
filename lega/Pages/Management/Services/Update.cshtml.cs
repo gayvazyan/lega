@@ -1,9 +1,10 @@
-using lega.Core;
+﻿using lega.Core;
 using lega.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace lega.Pages.Management.Services
 {
@@ -18,7 +19,25 @@ namespace lega.Pages.Management.Services
         }
 
 
-        public class UpdateServiceModel : Service { }
+        public class UpdateServiceModel
+        {
+            public int Id { get; set; }
+
+            [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
+            public string Title { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
+            public string TitleEn { get; set; }
+
+            [Required(ErrorMessage = "Տեքստը պարտադիր է")]
+            public string Context { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
+            public string ContextEn { get; set; }
+
+            [Required(ErrorMessage = "Լոգոն պարտադիր է")]
+            public string IconName { get; set; }
+        }
 
 
         [BindProperty]

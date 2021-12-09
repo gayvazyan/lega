@@ -1,9 +1,10 @@
-using lega.Core;
+﻿using lega.Core;
 using lega.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace lega.Pages.Management.Pricings
 {
@@ -18,7 +19,25 @@ namespace lega.Pages.Management.Pricings
         }
 
 
-        public class UpdatePricingModel : Pricing { }
+        public class UpdatePricingModel
+        {
+            public int Id { get; set; }
+
+            [Required(ErrorMessage = "Անունը պարտադիր է")]
+            public string Name { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն անունը պարտադիր է")]
+            public string NameEn { get; set; }
+            public int? EmployeCount { get; set; }
+            public string PriceText { get; set; }
+            public string PriceTextEn { get; set; }
+
+            [Required(ErrorMessage = "Տեքստը պարտադիր է")]
+            public string Context { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
+            public string ContextEn { get; set; }
+        }
 
 
         [BindProperty]

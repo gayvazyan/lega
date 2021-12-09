@@ -74,7 +74,7 @@
                             <span asp-validation-for="Create.Context" class="text-danger"></span>
                         </div>
                     </div>
-                      <br />
+                    <br />
                     <div class="row">
                         <div class="col-12">
                             <label class="text-info" asp-for="Create.ContextEn">Տեքստ անգլերեն</label>
@@ -84,23 +84,46 @@
                     </div>
                     <br />
 
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Create.ImageURL">Նկար</label>
-                            <input class="form-control" type="text" asp-for="Create.ImageURL">
-                            <span asp-validation-for="Create.ImageURL" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Create.LogoURL">Լոգո</label>
-                            <input class="form-control" type="text" asp-for="Create.LogoURL">
-                            <span asp-validation-for="Create.LogoURL" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <br />
 
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="hidden" asp-for="Create.ImageURL" />
+                            <img width="200" id="photo" src="/images/icons/no-image.png" />
+                            <input id="fileUpload" type="file" onchange="FileUpload()" style="display:none;" />
+                            <div style="width:125px">
+                                <label class="btn btn-brand btn-block btn-twitter text-left" for="fileUpload">
+                                    @* <i class="nav-icon icon-chart">*@
+                                    <span> Վերբեռնել</span>
+                                </label>
+                                <div class="col-12 p-0">
+                                    <input type="submit" name="remove" style="display:none" />
+                                    <a class="btn btn-danger btn-block text-white text-left" onclick="RemovePhoto()">
+                                        @*   <i class="nav-icon icon-chart">*@
+                                        Հեռացնել
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <input type="hidden" asp-for="Create.LogoURL" />
+                            <img width="200" id="logo" src="/images/icons/no-image.png" />
+                            <input id="fileUploadLogo" type="file" onchange="FileUploadLogo()" style="display:none;" />
+                            <div style="width:125px">
+                                <label class="btn btn-brand btn-block btn-twitter text-left" for="fileUploadLogo">
+                                    @* <i class="nav-icon icon-chart">*@
+                                    <span> Վերբեռնել</span>
+                                </label>
+                                <div class="col-12 p-0">
+                                    <input type="submit" name="removeLogo" style="display:none" />
+                                    <a class="btn btn-danger btn-block text-white text-left" onclick="RemoveLogo()">
+                                        @*   <i class="nav-icon icon-chart">*@
+                                        Հեռացնել
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
 
                     <div style="height:20px"></div>
                     <div class="row border-top margin-top-20" style="padding-top:20px">
@@ -125,6 +148,87 @@ else
 
 @section Scripts {
 <partial name="_ValidationScriptsPartial" />
+
+<script>
+
+     function FileUpload() {
+
+        var input = document.getElementById('fileUpload');
+        var file = input.files[0];
+        var formData = new FormData();
+        formData.append("file", file)
+        $.ajax(
+            {
+                url: "/File/GetPicture",
+                data: formData,
+                processData: false,
+                contentType: false,
+                type: "POST",
+                success: function (message) {
+                    if (message.code != "ok") {
+                        alert(message.data);
+                    }
+                    else {
+                        $("#photo").attr("src", message.data);
+                        $("#Create_ImageURL").val(message.data);
+                    }
+                },
+
+                error: function () {
+                        alert("Տեղի է ունեցել սխալ։ Փորձեք ավելի ուշ կամ դիմեք տեխնիկական սպասարկման անձնակազմին:");
+                       },
+
+                complete: function () {}
+
+            });
+
+            }
+
+    function FileUploadLogo() {
+
+        var input = document.getElementById('fileUploadLogo');
+        var file = input.files[0];
+        var formData = new FormData();
+        formData.append("file", file)
+        $.ajax(
+            {
+                url: "/File/GetPicture",
+                data: formData,
+                processData: false,
+                contentType: false,
+                type: "POST",
+                success: function (message) {
+                    if (message.code != "ok") {
+                        alert(message.data);
+                    }
+                    else {
+                        $("#logo").attr("src", message.data);
+                        $("#Create_LogoURL").val(message.data);
+                    }
+                },
+
+                error: function () {
+                        alert("Տեղի է ունեցել սխալ։ Փորձեք ավելի ուշ կամ դիմեք տեխնիկական սպասարկման անձնակազմին:");
+                       },
+
+                complete: function () {}
+
+            });
+
+            }
+
+    function RemovePhoto() {
+        $("#Create_ImageURL").val("");
+        $("#photo").attr("src", "/images/icons/no-image.png");
+    }
+
+    function RemoveLogo() {
+        $("#Create_LogoURL").val("");
+        $("#logo").attr("src", "/images/icons/no-image.png");
+    }
+</script>
+
+
 }
 
 

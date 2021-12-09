@@ -55,6 +55,7 @@
                 <table class="table table-responsive-sm table-striped">
                     <thead>
                         <tr style="text-align:center;color:black">
+                            <td><b>Նկար</b></td>
                             <td><b>Վերնագիր</b></td>
                             <td><b>Հեղինակ</b></td>
                             <td><b>Ամսաթիվ</b></td>
@@ -66,6 +67,7 @@
                         @foreach (var item in Model.NewsList)
                         {
                             <tr style="text-align:center;color:black">
+                                <td><img src="@item.ImageUrl" width="100" ></td>
                                 <td>@item.Title</td>
                                 <td>@item.Author</td>
                                 <td>@item.Date.ToString("dd/MM/yyyy")</td>

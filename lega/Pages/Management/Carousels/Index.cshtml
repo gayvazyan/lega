@@ -55,6 +55,7 @@
                 <table class="table table-responsive-sm table-striped">
                     <thead>
                         <tr style="text-align:center;color:black">
+                            <td width="65"></td>
                             <td><b>Վերնագիր</b></td>
                             <td><b>Անուն</b></td>
                             <td><b>Տեքստ</b></td>
@@ -65,6 +66,7 @@
                         @foreach (var item in Model.CarouselList)
                         {
                             <tr style="text-align:center;color:black">
+                                <td class="text-center"><img src="@item.ImageUrl" width="60"></td>
                                 <td>@item.Title</td>
                                 <td>@item.Name</td>
                                 <td>@item.Context</td>

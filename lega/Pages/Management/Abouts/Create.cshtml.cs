@@ -1,9 +1,10 @@
-using lega.Core;
+﻿using lega.Core;
 using lega.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace lega.Pages.Management.Abouts
 {
@@ -16,7 +17,32 @@ namespace lega.Pages.Management.Abouts
             Create = new CreateAboutModel();
         }
 
-        public class CreateAboutModel : About { }
+        public class CreateAboutModel
+        {
+            public int Id { get; set; }
+
+            [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
+            public string Title { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
+            public string TitleEn { get; set; }
+
+            [Required(ErrorMessage = "Անունը պարտադիր է")]
+            public string Name { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն անունը պարտադիր է")]
+            public string NameEn { get; set; }
+
+            [Required(ErrorMessage = "Տեքստը պարտադիր է")]
+            public string Context { get; set; }
+
+            [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
+            public string ContextEn { get; set; }
+
+            [Required(ErrorMessage = "Նկարը պարտադիր է")]
+            public string ImageUrl { get; set; }
+            public bool Visible { get; set; }
+        }
 
         [BindProperty]
         public CreateAboutModel Create { get; set; }

@@ -39,6 +39,41 @@
 
                     <div class="row">
                         <div class="col-6">
+                                <input type="hidden" asp-for="Update.ImageUrl" />
+                                <img width="200" id="photo" src="@Model.Update.ImageUrl" />
+                                <input id="fileUpload" type="file" onchange="FileUpload()" style="display:none;" />
+                        </div>
+                        <div class="col-6">
+                            <div style="width:125px">
+                                <label class="btn btn-brand btn-block btn-twitter text-left" for="fileUpload">
+                                    @* <i class="nav-icon icon-chart">*@
+                                    <span> Վերբեռնել</span>
+                                </label>
+                                <div class="col-12 p-0">
+                                    <input type="submit" name="remove" style="display:none" />
+                                    <a class="btn btn-danger btn-block text-white text-left" onclick="RemovePhoto()">
+                                        @*   <i class="nav-icon icon-chart">*@
+                                        Հեռացնել
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Update.State">Կարգավիճակ</label>
+                            <select class="form-control" asp-for="Update.State">
+                                <option value=""> -- ընտրել -- </option>
+                                <option value="active"> -- ակտիվ -- </option>
+                            </select>
+                            <span asp-validation-for="Update.State" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-6">
                             <label class="text-info" asp-for="Update.Title">Վերնագիր</label>
                             <input class="form-control" type="text" asp-for="Update.Title">
                             <span asp-validation-for="Update.Title" class="text-danger"></span>
@@ -79,26 +114,6 @@
                     </div>
                     <br />
 
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Update.ImageUrl">Նկար</label>
-                            <input class="form-control" type="text" asp-for="Update.ImageUrl">
-                            <span asp-validation-for="Update.ImageUrl" class="text-danger"></span>
-                        </div>
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Update.State">Տեքստ անգլերեն</label>
-                            <select class="form-control" asp-for="Update.State">
-                                <option value=""> -- ընտրել -- </option>
-                                <option value="active"> -- ակտիվ -- </option>
-
-                            </select>
-                            <span asp-validation-for="Update.State" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <br />
-
-
-
 
                     <div style="height:20px"></div>
                     <div class="row border-top margin-top-20" style="padding-top:20px">
@@ -121,6 +136,50 @@ else
 
 @section Scripts {
 <partial name="_ValidationScriptsPartial" />
+
+<script>
+
+    function FileUpload() {
+
+        var input = document.getElementById('fileUpload');
+        var file = input.files[0];
+        var formData = new FormData();
+        formData.append("file", file)
+        $.ajax(
+            {
+                url: "/File/GetPicture",
+                data: formData,
+                processData: false,
+                contentType: false,
+                type: "POST",
+                success: function (message) {
+                    if (message.code != "ok") {
+                        alert(message.data);
+                    }
+                    else {
+                        $("#photo").attr("src", message.data);
+                        $("#Update_ImageUrl").val(message.data);
+                    }
+                },
+
+                error: function () {
+                        alert("Տեղի է ունեցել սխալ։ Փորձեք ավելի ուշ կամ դիմեք տեխնիկական սպասարկման անձնակազմին:");
+                       },
+
+                complete: function () {}
+
+            });
+
+            }
+
+    function RemovePhoto() {
+        $("#Update_ImageUrl").val("");
+        $("#photo").attr("src", "/images/icons/no-image.png");
+    }
+</script>
+
+
+
 }
 
 

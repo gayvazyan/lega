@@ -66,7 +66,7 @@ namespace lega.Pages
 
             Contact = _contactRepasitory.GetAll().FirstOrDefault(p => p.Visible == true);
            
-            NewsList = _newsRepasitory.GetAll().Where(p => p.Visible == true).Take(3).ToList();
+            NewsList = _newsRepasitory.GetAll().OrderByDescending(o=>o.Date).Where(p => p.Visible == true).Take(3).ToList();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace lega.Pages.Newss
         public void OnGet()
         {
             CarouselList = _carouselRepasitory.GetAll().ToList();
-            NewsList = _newsRepasitory.GetAll().Where(p => p.Visible == true).ToList();
+            NewsList = _newsRepasitory.GetAll().OrderByDescending(o=>o.Date).Where(p => p.Visible == true).ToList();
         }
     }
 }

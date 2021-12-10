@@ -68,7 +68,7 @@
                    
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@Model.News.ImageUrl" class="img-responsive" alt="">
+                                <img style="float:left;margin:0 15px 0 0;" width="400" height="215" src="@Model.News.ImageUrl">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                     <strong>@Model.News.Date.Day</strong><br>
@@ -103,7 +103,7 @@
             <div class="row" style="margin-right:10px;margin-left:-65px">
                         <div class="col-md-12 news-sec">
                             <div class="news-info">
-                                <img style="float:left;margin:0 15px 0 0;" width="400"  src="@Model.News.ImageUrl" class="img-responsive" alt="">
+                                <img style="float:left;margin:0 15px 0 0;" width="400" height="215"  src="@Model.News.ImageUrl">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                     <strong>@Model.News.Date.Day</strong><br>

@@ -66,7 +66,7 @@
                         <br>
                         <p>@Model.About.Context</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img  width="570"  height="290" src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -87,7 +87,7 @@
                         <br>
                         <p>@Model.About.ContextEn</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img  width="570"  height="290" src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -200,7 +200,7 @@
         <ul class="nav nav-tabs" role="tablist">
             @foreach (var item in Model.CustomerList)
             {
-                <li role="presentation" class="@item.TabState"><a href="#tab-@item.OrderNumber" role="tab" data-toggle="tab"><img src="@item.LogoURL" /></a></li>
+                <li role="presentation" class="@item.TabState"><a href="#tab-@item.OrderNumber" role="tab" data-toggle="tab"><img width="80"  height="60" src="@item.LogoURL" /></a></li>
             }
         </ul>
         <div class="tab-content">
@@ -227,7 +227,7 @@
                             </p>
                         }
                     </div>
-                    <div class="col-md-6 tab-img"><img src="@item.ImageURL" class="img-responsive" alt=""></div>
+                    <div class="col-md-6 tab-img"><img width="470" height="270" src="@item.ImageURL"></div>
                 </div>
             }
         </div>
@@ -347,7 +347,7 @@
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" class="img-responsive" alt="">
+                                <img width="350" height="190" src="@item.ImageUrl">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>
@@ -389,7 +389,7 @@
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" class="img-responsive" alt="">
+                                <img src="@item.ImageUrl" width="350" height="190">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>

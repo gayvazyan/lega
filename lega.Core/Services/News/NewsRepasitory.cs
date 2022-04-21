@@ -10,7 +10,7 @@ namespace lega.Core
         public NewsRepasitory(AppDbContext dbContext) : base(dbContext) { }
         public List<News> GetPaginatedResult(List<News> data, int currentPage, int pageSize)
         {
-            return data.OrderBy(d => d.Id).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+            return data.OrderByDescending(d => d.Date).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
         }
         public int GetCount(List<News> data)
         {

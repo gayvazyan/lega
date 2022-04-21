@@ -19,7 +19,7 @@
                     <div class="carousel-caption container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                @if (requestCulture.Culture.ToString() == "hy")
+                                @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                                 {
                                     <h1 style="font-size:25px">@item.Title</h1>
                                     <h2 style="font-size:45px">@item.Name</h2>
@@ -50,7 +50,7 @@
 <!--About-Section-Start-->
 <section id="about">
     <div class="container">
-        @if (requestCulture.Culture.ToString() == "hy")
+   @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -106,7 +106,7 @@
 <section id="service">
     <div class="container">
 
-        @if (requestCulture.Culture.ToString() == "hy")
+     @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -171,7 +171,7 @@
 <!--Customer-Section-Start-->
 <section id="customer">
     <div class="container">
-        @if (requestCulture.Culture.ToString() == "hy")
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -208,7 +208,7 @@
             {
                 <div role="tabpanel" class="tab-pane fade in @item.TabState feat-sec" id="tab-@item.OrderNumber">
                     <div class="col-md-6 tab">
-                        @if (requestCulture.Culture.ToString() == "hy")
+                         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                         {
                             <h5>@item.Title</h5>
                             <div class="line"></div>
@@ -239,7 +239,7 @@
 <section id="pricing">
     <div class="container">
 
-        @if (requestCulture.Culture.ToString() == "hy")
+      @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -328,7 +328,7 @@
 <section id="news">
     <div class="container">
 
-        @if (requestCulture.Culture.ToString() == "hy")
+         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
 
             <div class="col-md-8 col-md-offset-2">
@@ -421,7 +421,7 @@
 <div style="margin-left:50px;margin-right:-30px;"  class="bg-sec">
     <div class="container">
         <div class="col-md-10 col-sm-10 col-xs-8"></div>
-        @if (requestCulture.Culture.ToString() == "hy")
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             var culture = requestCulture.Culture.ToString();
             <div  class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Կարդալ բոլորը</a> </div>
@@ -437,7 +437,7 @@
 <!--Contact-Section-Start-->
 <section id="contact">
     <div class="container">
-        @if (requestCulture.Culture.ToString() == "hy")
+          @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">

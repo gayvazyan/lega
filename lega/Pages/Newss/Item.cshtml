@@ -5,7 +5,7 @@
      Layout = "/Pages/Shared/_LayoutNews.cshtml";
     var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
     var requestCulture = requestCultureFeature.RequestCulture;
-    ViewData["Title"] = requestCulture.Culture.ToString() == "hy" ? "Նորություններ" : "News";
+    ViewData["Title"] = (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy")) ? "Նորություններ" : "News";
 }
 
 
@@ -22,7 +22,7 @@
                     <div class="carousel-caption container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                @if (requestCulture.Culture.ToString() == "hy")
+                                 @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                                 {
                                     <h1 style="font-size:25px">@item.Title</h1>
                                     <h2 style="font-size:45px">@item.Name</h2>
@@ -50,7 +50,7 @@
 <section id="news">
     <div class="container">
 
-        @if (requestCulture.Culture.ToString() == "hy")
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">

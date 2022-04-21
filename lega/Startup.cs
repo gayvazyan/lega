@@ -35,15 +35,17 @@ namespace lega
             services.AddRazorPages();
 
             //add to Localization Services
+            const string defaultCulture = "hy";
+
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 var supportedCultures = new[]
                  {
-                     new CultureInfo("hy"),
-                     new CultureInfo("en"),
-      
+                    new CultureInfo(defaultCulture),
+                    new CultureInfo("en-GB"),
+
                  };
-                options.DefaultRequestCulture = new RequestCulture("hy-AM");
+               // options.DefaultRequestCulture = new RequestCulture("hy-AM");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });

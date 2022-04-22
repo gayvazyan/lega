@@ -8,6 +8,8 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using System;
+using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace lega
 {
@@ -24,6 +26,13 @@ namespace lega
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
 
             ServicesInitializer.ConfigureDbContext(Configuration, services);
 
@@ -35,19 +44,22 @@ namespace lega
             services.AddRazorPages();
 
             //add to Localization Services
-            const string defaultCulture = "hy";
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 var supportedCultures = new[]
                  {
-                    new CultureInfo(defaultCulture),
-                    new CultureInfo("en-GB"),
+                    new CultureInfo("hy"),
+                    new CultureInfo("en"),
 
                  };
-               // options.DefaultRequestCulture = new RequestCulture("hy-AM");
+                options.DefaultRequestCulture = new RequestCulture("hy-AM");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
+                //options.RequestCultureProviders = new List<IRequestCultureProvider>
+                //{
+                //    new CookieRequestCultureProvider()
+                //};
             });
 
 

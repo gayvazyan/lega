@@ -56,10 +56,10 @@ namespace lega
                 options.DefaultRequestCulture = new RequestCulture("hy-AM");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
-                //options.RequestCultureProviders = new List<IRequestCultureProvider>
-                //{
-                //    new CookieRequestCultureProvider()
-                //};
+                options.RequestCultureProviders = new List<IRequestCultureProvider>
+                {
+                    new QueryStringRequestCultureProvider()
+                };
             });
 
 

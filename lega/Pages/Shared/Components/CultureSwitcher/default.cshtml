@@ -11,6 +11,13 @@
                     
                 }
                 else
+
+                if (culture.Name.ToString() == "ru")
+                {
+                    <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)"> РУС</option>
+                    
+                }
+                else
                 {
                     <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)"> ENG</option>
                 }

@@ -50,6 +50,7 @@ namespace lega
                 var supportedCultures = new[]
                  {
                     new CultureInfo("hy"),
+                    new CultureInfo("ru"),
                     new CultureInfo("en"),
 
                  };

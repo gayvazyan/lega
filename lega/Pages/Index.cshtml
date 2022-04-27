@@ -23,8 +23,17 @@
                                 {
                                     <h1 style="font-size:25px">@item.Title</h1>
                                     <h2 style="font-size:45px">@item.Name</h2>
-                                    <p>@item.Context</p>
+                                    <p>@item.ContextRu</p>
                                 }
+
+                                else
+                                             @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                                {
+                                    <h1 style="font-size:25px">@item.TitleRu</h1>
+                                    <h2 style="font-size:45px">@item.NameRu</h2>
+                                    <p>@item.ContextRu</p>
+                                }
+
                                 else
                                 {
                                     <h1 style="font-size:25px">@item.TitleEn</h1>
@@ -50,7 +59,7 @@
 <!--About-Section-Start-->
 <section id="about">
     <div class="container">
-   @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -66,7 +75,30 @@
                         <br>
                         <p>@Model.About.Context</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img  width="570"  height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img width="570" height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                </div>
+            </div>
+        }
+
+        else
+
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>О <span>НАС</span></h2>
+                    <div class="line"></div>
+                    <p>@Model.About.TitleRu</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 ab-sec">
+                    <div class="col-md-6">
+                        <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms"><span>@Model.About.NameRu</span></h3>
+                        <br>
+                        <p>@Model.About.ContextRu</p>
+                    </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img width="570" height="290" src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -87,7 +119,7 @@
                         <br>
                         <p>@Model.About.ContextEn</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img  width="570"  height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img width="570" height="290" src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -106,7 +138,7 @@
 <section id="service">
     <div class="container">
 
-     @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -127,6 +159,38 @@
                                 <div class="media-body">
                                     <h5 class="media-heading">@item.Title</h5>
                                     <p>@item.Context</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+
+        else
+
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>НАШИ СЕРВИСЫ<span>СЫ</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>Л</strong></span> орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="customer-sec">
+                    @foreach (var item in Model.ServiceList)
+                    {
+                        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                            <div class="media service-box">
+                                <div class="pull-left"> <i class="fa fa-@item.IconName"></i> </div>
+                                <div class="media-body">
+                                    <h5 class="media-heading">@item.TitleRu</h5>
+                                    <p>@item.ContextRu</p>
                                 </div>
                             </div>
                         </div>
@@ -179,10 +243,28 @@
                     <div class="line"></div>
                     <p>
                         <span><strong>Հ</strong></span>այերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա:
+
                     </p>
                 </div>
             </div>
         }
+
+        else
+
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>НАМ <span>ДОВЕРЯЮТ</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>Л</strong></span>орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас. Еа ест ферри етиам, фацилиси делицатиссими иус еу.
+                    </p>
+                </div>
+            </div>
+        }
+
         else
         {
             <div class="col-md-8 col-md-offset-2">
@@ -200,7 +282,7 @@
         <ul class="nav nav-tabs" role="tablist">
             @foreach (var item in Model.CustomerList)
             {
-                <li role="presentation" class="@item.TabState"><a href="#tab-@item.OrderNumber" role="tab" data-toggle="tab"><img width="80"  height="60" src="@item.LogoURL" /></a></li>
+                <li role="presentation" class="@item.TabState"><a href="#tab-@item.OrderNumber" role="tab" data-toggle="tab"><img width="80" height="60" src="@item.LogoURL" /></a></li>
             }
         </ul>
         <div class="tab-content">
@@ -208,13 +290,23 @@
             {
                 <div role="tabpanel" class="tab-pane fade in @item.TabState feat-sec" id="tab-@item.OrderNumber">
                     <div class="col-md-6 tab">
-                         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+                        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                         {
                             <h5>@item.Title</h5>
                             <div class="line"></div>
                             <div class="clearfix"></div>
                             <p class="feat-sec">
                                 @item.Context
+                            </p>
+                        }
+                        else
+                       @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                        {
+                            <h5>@item.TitleRu</h5>
+                            <div class="line"></div>
+                            <div class="clearfix"></div>
+                            <p class="feat-sec">
+                                @item.ContextRu
                             </p>
                         }
                         else
@@ -239,7 +331,7 @@
 <section id="pricing">
     <div class="container">
 
-      @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -275,7 +367,47 @@
                 }
             </div>
         }
+
         else
+
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ЦЕНЫ ПАКЕ<span>ТЫ</span></h2>
+                    <div class="line"></div>
+                    <p><span><strong>Выбирать</strong></span> удобный для вас пакет услуг или свяжитесь с нами для составления индивидуального пакета</p>
+                </div>
+            </div>
+            <div class="row">
+                @{
+                    var delay = 0;
+                }
+                @foreach (var item in Model.PricingList)
+                {
+                    var delaySec = @delay.ToString() + "ms";
+                    <div class="col-sm-6 col-md-3">
+                        <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="@delaySec">
+                            <ul class="pricing">
+                                <li class="plan-header">
+                                    <div class="price-duration">
+                                        <div class="price">   </div>
+                                        <div class="duration">  </div>
+                                    </div>
+                                    <div class="plan-name"> @item.NameRu </div>
+                                </li>
+                                <li>Более <strong>@item.EmployeCount</strong> сотрудников</li>
+                                <li>Оборот более <strong>@item.PriceTextRu</strong> AMD</li>
+                                <li>@item.ContextRu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    delay += 200;
+                }
+            </div>
+        }
+        else
+
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -312,13 +444,6 @@
             </div>
         }
 
-
-
-
-
-
-
-
     </div>
 </section>
 
@@ -328,7 +453,7 @@
 <section id="news">
     <div class="container">
 
-         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
 
             <div class="col-md-8 col-md-offset-2">
@@ -353,7 +478,7 @@
                                     <strong>@item.Date.Day</strong><br>
                                     @item.Date.Year
                                 </div>
-                                    <h5>@item.Title</h5>
+                                <h5>@item.Title</h5>
                                 <ul class="news-icon">
                                     <li>
                                         <i class="fa fa-pencil"></i>
@@ -370,6 +495,49 @@
             </div>
         }
         else
+       @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        {
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ПОСЛЕДНИЕ НОВОС<span>ТИ</span></h2>
+                    <div class="line"></div>
+                    <p>
+                         <span><strong>М</strong></span>ожет быть фиксированный текст, который можно изменить, но с исходным кодом 
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+                    @foreach (var item in Model.NewsList)
+                    {
+                        <div class="col-md-4 news-sec">
+                            <div class="news-info">
+                                <img width="350" height="190" src="@item.ImageUrl">
+                                <div class="data-meta">
+                                    <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
+                                    <strong>@item.Date.Day</strong><br>
+                                    @item.Date.Year
+                                </div>
+                                <h5>@item.TitleEn</h5>
+                                <ul class="news-icon">
+                                    <li>
+                                        <i class="fa fa-pencil"></i>
+                                        <h6>@item.AuthorRu</h6>
+                                    </li>
+                                </ul>
+                                <p>@item.ShortContextRu</p>
+                                <a target="_blank" href="/Newss/Item/@item.Id" class="btn-blg">Прочитайте больше</a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+        else
+
         {
 
             <div class="col-md-8 col-md-offset-2">
@@ -395,11 +563,11 @@
                                     <strong>@item.Date.Day</strong><br>
                                     @item.Date.Year
                                 </div>
-                                    <h5>@item.TitleEn</h5>
+                                <h5>@item.TitleEn</h5>
                                 <ul class="news-icon">
                                     <li>
                                         <i class="fa fa-pencil"></i>
-                                            <h6>@item.AuthorEn</h6>
+                                        <h6>@item.AuthorEn</h6>
                                     </li>
                                 </ul>
                                 <p>@item.ShortContextEn</p>
@@ -418,17 +586,25 @@
 
 
 <!--More News - Line-->
-<div style="margin-left:50px;margin-right:-30px;"  class="bg-sec">
+<div style="margin-left:50px;margin-right:-30px;" class="bg-sec">
     <div class="container">
         <div class="col-md-10 col-sm-10 col-xs-8"></div>
         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             var culture = requestCulture.Culture.ToString();
-            <div  class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Կարդալ բոլորը</a> </div>
+            <div class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Կարդալ բոլորը</a> </div>
         }
         else
+
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
         {
-            <div class="col-md-2 col-sm-2 col-xs-4"> <a  target="_blank" style="top:0px;padding-right:5px;padding-left:5px;"  class="btn-down" href="/Newss/Index">Read all</a> </div>
+            var culture = requestCulture.Culture.ToString();
+            <div class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Читать все</a> </div>
+        }
+        else
+
+        {
+            <div class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Read all</a> </div>
         }
     </div>
 </div>
@@ -437,7 +613,7 @@
 <!--Contact-Section-Start-->
 <section id="contact">
     <div class="container">
-          @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -496,6 +672,67 @@
             </div>
         }
         else
+
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>СВЯЗАТЬСЯ <span>С</span> НАМИ</h2>
+                    <div class="line"></div>
+                    <p>
+                        @Model.Contact.TitleRu
+                    </p>
+                </div>
+            </div>
+            <div class="text-center">
+                <div class="col-md-4 col-sm-4 contact-sec-1">
+                    <h4>КОНТАКТНЫЕ ДАН<span>НЫЕ</span></h4>
+                    <ul class="contact-form">
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <h6><strong>Адрес:</strong> @Model.Contact.AddressRu </h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <h6><strong>Эл. адрес:</strong> <a href="#"> @Model.Contact.Email</a></h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <h6><strong>Тел․:</strong> @Model.Contact.Phone </h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-wechat"></i>
+                            <h6><strong>Интернет сайт:</strong> <a href="#">  @Model.Contact.Website</a> </h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="700" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 400px;
+                                    width: 700px;
+                                }
+
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 400px;
+                                    width: 700px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">

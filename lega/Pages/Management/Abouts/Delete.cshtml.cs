@@ -36,10 +36,13 @@ namespace lega.Pages.Management.Abouts
             {
                 Delete.Id = result.Id;
                 Delete.Title = result.Title;
+                Delete.TitleRu = result.TitleRu;
                 Delete.TitleEn = result.TitleEn;
                 Delete.Name = result.Name;
+                Delete.NameRu = result.NameRu;
                 Delete.NameEn = result.NameEn;
                 Delete.Context = result.Context;
+                Delete.ContextRu = result.ContextRu;
                 Delete.ContextEn = result.ContextEn;
                 Delete.ImageUrl = result.ImageUrl;
                 Delete.Visible = result.Visible;

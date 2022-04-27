@@ -6,7 +6,19 @@
     Layout = "/Pages/Shared/_LayoutNews.cshtml";
     var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
     var requestCulture = requestCultureFeature.RequestCulture;
-    ViewData["Title"] =(requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy")) ? "Նորություններ" : "News";
+    @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+    {
+        ViewData["Title"] = "Նորություններ";
+    }
+    else
+    @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+    {
+       ViewData["Title"] = "Новости";
+    }
+    else
+    {
+         ViewData["Title"] = "News";
+    }
 }
 
 
@@ -26,6 +38,14 @@
                                     <h1 style="font-size:25px">@item.Title</h1>
                                     <h2 style="font-size:45px">@item.Name</h2>
                                     <p>@item.Context</p>
+                                }
+                                else
+
+                                @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                                {
+                                    <h1 style="font-size:25px">@item.TitleRu</h1>
+                                    <h2 style="font-size:45px">@item.NameRu</h2>
+                                    <p>@item.ContextRu</p>
                                 }
                                 else
                                 {
@@ -49,7 +69,7 @@
 <section id="news">
     <div class="container">
 
-   @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
@@ -63,7 +83,6 @@
             <div class="row" style="margin-right:10px;margin-left:-65px">
 
                 <div class="col-md-12">
-
                     @foreach (var item in Model.NewsList)
                     {
                         <div class="col-md-4 news-sec">
@@ -83,6 +102,48 @@
                                 </ul>
                                 <p>@item.ShortContext</p>
                                 <a href="/Newss/Item/@item.Id" class="btn-blg">Կարդալ ավելին</a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+        else
+
+         @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        {
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h2>ВСЕ НО<span>ВОСТИ</span></h2>
+                    <div class="line"></div>
+                    <p>
+                        <span><strong>Т</strong></span>ам может быть фиксированный текст, который можно изменить, но программный код
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-right:10px;margin-left:-65px">
+
+                <div class="col-md-12">
+                    @foreach (var item in Model.NewsList)
+                    {
+                        <div class="col-md-4 news-sec">
+                            <div class="news-info">
+                                <img src="@item.ImageUrl" width="350" height="190">
+                                <div class="data-meta">
+                                    <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
+                                    <strong>@item.Date.Day</strong><br>
+                                    @item.Date.Year
+                                </div>
+                                    <h5>@item.TitleRu</h5>
+                                <ul class="news-icon">
+                                    <li>
+                                        <i class="fa fa-pencil"></i>
+                                        <h6>@item.AuthorRu</h6>
+                                    </li>
+                                </ul>
+                                <p>@item.ShortContextRu</p>
+                                <a href="/Newss/Item/@item.Id" class="btn-blg">Прочитайте больше</a>
                             </div>
                         </div>
                     }
@@ -132,7 +193,6 @@
                 </div>
             </div>
         }
-
 
     </div>
 </section>

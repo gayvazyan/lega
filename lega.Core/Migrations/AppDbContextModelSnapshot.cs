@@ -32,6 +32,9 @@ namespace lega.Core.Migrations
                     b.Property<string>("ContextEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ContextRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -41,10 +44,16 @@ namespace lega.Core.Migrations
                     b.Property<string>("NameEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NameRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Visible")
@@ -68,6 +77,9 @@ namespace lega.Core.Migrations
                     b.Property<string>("ContextEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ContextRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
@@ -77,6 +89,9 @@ namespace lega.Core.Migrations
                     b.Property<string>("NameEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NameRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
 
@@ -84,6 +99,9 @@ namespace lega.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -104,6 +122,9 @@ namespace lega.Core.Migrations
                     b.Property<string>("AddressEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("AddressRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -114,6 +135,9 @@ namespace lega.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Visible")
@@ -140,6 +164,9 @@ namespace lega.Core.Migrations
                     b.Property<string>("ContextEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ContextRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
 
@@ -156,6 +183,9 @@ namespace lega.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -176,10 +206,16 @@ namespace lega.Core.Migrations
                     b.Property<string>("AuthorEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("AuthorRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Context")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ContextEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContextRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
@@ -194,10 +230,16 @@ namespace lega.Core.Migrations
                     b.Property<string>("ShortContextEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ShortContextRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Visible")
@@ -221,6 +263,9 @@ namespace lega.Core.Migrations
                     b.Property<string>("ContextEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ContextRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("EmployeCount")
                         .HasColumnType("int");
 
@@ -230,10 +275,16 @@ namespace lega.Core.Migrations
                     b.Property<string>("NameEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NameRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PriceText")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PriceTextEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PriceTextRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -254,6 +305,9 @@ namespace lega.Core.Migrations
                     b.Property<string>("ContextEn")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ContextRu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("IconName")
                         .HasColumnType("nvarchar(max)");
 
@@ -261,6 +315,9 @@ namespace lega.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleRu")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

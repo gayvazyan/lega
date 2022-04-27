@@ -61,6 +61,16 @@
                                 <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/hy.png" /></li>
 
                             }
+
+                            else
+
+                           @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                            {
+                                <li><a class="scroll" href="/Index">Вернуться на основной сайт</a></li>
+                                <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/ru.png" /></li>
+
+                            }
+
                             else
                             {
                                 <li><a class="scroll" href="/Index">Return to main website</a></li>
@@ -85,13 +95,13 @@
         </main>
     </div>
 
-    
+
     @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
     {
         <footer id="footer">
             <div class="bg-sec">
                 <div class="container">
-                   <h2><strong>Հետեվեք Մեզ </strong></h2> 
+                    <h2><strong>Հետեվեք Մեզ </strong></h2>
                 </div>
             </div>
         </footer>
@@ -104,23 +114,45 @@
             <p>Ստեղծվել է : <a>GAIT MIND</a> </p>
         </footer>
     }
+
+    else
+    @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+    {
+        <footer id="footer">
+            <div class="bg-sec">
+                <div class="container">
+                    <h2><strong>Подписывайтесь на нас </strong></h2>
+                </div>
+            </div>
+        </footer>
+
+        <footer id="footer-down">
+            <ul class="social-icon">
+                <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+            <p>Созданный : <a>GAIT MIND</a> </p>
+        </footer>
+    }
+
+
     else
     {
         <footer id="footer">
-        <div class="bg-sec">
-            <div class="container">
-                  <h2><strong>Follow Us On  </strong></h2> 
+            <div class="bg-sec">
+                <div class="container">
+                    <h2><strong>Follow Us On  </strong></h2>
+                </div>
             </div>
-        </div>
-       </footer>
+        </footer>
 
-    <footer id="footer-down">
-        <ul class="social-icon">
-            <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-        <p>Created By : <a>GAIT MIND</a> </p>
-    </footer>
+        <footer id="footer-down">
+            <ul class="social-icon">
+                <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+            <p>Created By : <a>GAIT MIND</a> </p>
+        </footer>
     }
 
 

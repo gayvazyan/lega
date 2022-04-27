@@ -238,10 +238,10 @@ a.navbar-brand img {
 	top:9px;
 }
 #menu {
-	position:absolute;
+	position:center
 }
 #menu .nav {
-	left: 25%;
+	left: 15%;
 	position: relative;
 }
 #menu ul.nav li a {

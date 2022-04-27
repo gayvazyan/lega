@@ -24,17 +24,26 @@ namespace lega.Pages.Management.Abouts
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Անունը պարտադիր է")]
             public string Name { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն անունը պարտադիր է")]
+            public string NameRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն անունը պարտադիր է")]
             public string NameEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -69,9 +78,12 @@ namespace lega.Pages.Management.Abouts
                         Id = Create.Id,
                         Name = Create.Name,
                         NameEn = Create.NameEn,
+                        NameRu = Create.NameRu,
                         Title = Create.Title,
+                        TitleRu = Create.TitleRu,
                         TitleEn = Create.TitleEn,
                         Context = Create.Context,
+                        ContextRu = Create.ContextRu,
                         ContextEn = Create.ContextEn,
                         ImageUrl = Create.ImageUrl,
                         Visible = Create.Visible,

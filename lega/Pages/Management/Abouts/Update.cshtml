@@ -63,8 +63,8 @@
                     <br />
 
                      <div class="row">
-                        <div class="col-6">
-                            <label class="text-info" asp-for="Update.Visible">Ցուցադրել որպես հիմնական</label>
+                        <div class="col-3">
+                            <label class="text-info" asp-for="Update.Visible">Ցուցադրել հիմնական</label>
                              <input class="form-control" type="checkbox" asp-for="Update.Visible">
                             <span asp-validation-for="Update.Visible" class="text-danger"></span>
                         </div>
@@ -72,12 +72,17 @@
                     <br />
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.Title">Վերնագիր</label>
                             <input class="form-control" type="text" asp-for="Update.Title">
                             <span asp-validation-for="Update.Title" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Update.TitleRu">Վերնագիր ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.TitleRu">
+                            <span asp-validation-for="Update.TitleRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.TitleEn">Վերնագիր անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.TitleEn">
                             <span asp-validation-for="Update.TitleEn" class="text-danger"></span>
@@ -86,12 +91,17 @@
                     <br />
 
                      <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.Name">Անուն</label>
                             <input class="form-control" type="text" asp-for="Update.Name">
                             <span asp-validation-for="Update.Name" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Update.NameRu">Անուն ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.NameRu">
+                            <span asp-validation-for="Update.Name" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.NameEn">Անուն անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.NameEn">
                             <span asp-validation-for="Update.NameEn" class="text-danger"></span>
@@ -100,17 +110,24 @@
                     <br />
 
                      <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.Context">Տեքստ</label>
                             <input class="form-control" type="text" asp-for="Update.Context">
                             <span asp-validation-for="Update.Context" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Update.ContextRu">Տեքստ ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.ContextRu">
+                            <span asp-validation-for="Update.ContextRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.ContextEn">Տեքստ անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.ContextEn">
                             <span asp-validation-for="Update.ContextEn" class="text-danger"></span>
                         </div>
                     </div>
+
+
                     <br />
 
                     <div style="height:20px"></div>

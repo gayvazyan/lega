@@ -26,17 +26,26 @@ namespace lega.Pages.Management.Abouts
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Անունը պարտադիր է")]
             public string Name { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն անունը պարտադիր է")]
+            public string NameRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն անունը պարտադիր է")]
             public string NameEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -65,10 +74,13 @@ namespace lega.Pages.Management.Abouts
             {
                 Update.Id = result.Id;
                 Update.Title = result.Title;
+                Update.TitleRu = result.TitleRu;
                 Update.TitleEn = result.TitleEn;
                 Update.Name = result.Name;
+                Update.NameRu = result.NameRu;
                 Update.NameEn = result.NameEn;
                 Update.Context = result.Context;
+                Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
                 Update.ImageUrl = result.ImageUrl;
                 Update.Visible = result.Visible;
@@ -88,10 +100,13 @@ namespace lega.Pages.Management.Abouts
                     var about = _aboutRepasitory.GetByID(Update.Id);
 
                     about.Title = Update.Title;
+                    about.TitleRu = Update.TitleRu;
                     about.TitleEn = Update.TitleEn;
                     about.Name = Update.Name;
+                    about.NameRu = Update.NameRu;
                     about.NameEn = Update.NameEn;
                     about.Context = Update.Context;
+                    about.ContextRu = Update.ContextRu;
                     about.ContextEn = Update.ContextEn;
                     about.ImageUrl = Update.ImageUrl;
                     about.Visible = Update.Visible;

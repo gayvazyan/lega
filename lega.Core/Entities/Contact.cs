@@ -10,8 +10,10 @@ namespace lega.Core.Entities
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string TitleRu { get; set; }
         public string TitleEn { get; set; }
         public string Address { get; set; }
+        public string AddressRu { get; set; }
         public string AddressEn { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }

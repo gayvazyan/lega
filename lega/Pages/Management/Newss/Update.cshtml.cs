@@ -29,11 +29,17 @@ namespace lega.Pages.Management.Newss
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Հեղինակը պարտադիր է")]
             public string Author { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն հեղինսկը պարտադիր է")]
+            public string AuthorRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն հեղինսկը պարտադիր է")]
             public string AuthorEn { get; set; }
@@ -41,11 +47,17 @@ namespace lega.Pages.Management.Newss
             [Required(ErrorMessage = "Կարճ տեքստը պարտադիր է")]
             public string ShortContext { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն կարճ տեքստը պարտադիր է")]
+            public string ShortContextRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն կարճ տեքստը պարտադիր է")]
             public string ShortContextEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -77,12 +89,16 @@ namespace lega.Pages.Management.Newss
             {
                 Update.Id = result.Id;
                 Update.Title = result.Title;
+                Update.TitleRu = result.TitleRu;
                 Update.TitleEn = result.TitleEn;
                 Update.Author = result.Author;
+                Update.AuthorRu = result.AuthorRu;
                 Update.AuthorEn = result.AuthorEn;
                 Update.ShortContext = result.ShortContext;
+                Update.ShortContextRu = result.ShortContextRu;
                 Update.ShortContextEn = result.ShortContextEn;
                 Update.Context = result.Context;
+                Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
                 Update.Date = result.Date;
                 Update.ImageUrl = result.ImageUrl;
@@ -103,12 +119,16 @@ namespace lega.Pages.Management.Newss
                     var news = _newsRepasitory.GetByID(Update.Id);
 
                     news.Title = Update.Title;
+                    news.TitleRu = Update.TitleRu;
                     news.TitleEn = Update.TitleEn;
                     news.Author = Update.Author;
+                    news.AuthorRu = Update.AuthorRu;
                     news.AuthorEn = Update.AuthorEn;
                     news.ShortContext = Update.ShortContext;
+                    news.ShortContextRu = Update.ShortContextRu;
                     news.ShortContextEn = Update.ShortContextEn;
                     news.Context = Update.Context;
+                    news.ContextRu = Update.ContextRu;
                     news.ContextEn = Update.ContextEn;
                     news.Date = Update.Date;
                     news.ImageUrl = Update.ImageUrl;

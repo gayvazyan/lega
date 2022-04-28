@@ -71,11 +71,14 @@ namespace lega.Pages.Management.Pricings
                 {
                     Id = p.Id,
                     Name = p.Name,
+                    NameRu = p.NameRu,
                     NameEn = p.NameEn,
                     EmployeCount = p.EmployeCount,
                     PriceText = p.PriceText,
+                    PriceTextRu = p.PriceTextRu,
                     PriceTextEn = p.PriceTextEn,
                     Context = p.Context,
+                    ContextRu = p.ContextRu,
                     ContextEn = p.ContextEn,
                 };
             }).ToList();

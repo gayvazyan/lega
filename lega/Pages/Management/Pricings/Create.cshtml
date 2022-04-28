@@ -19,7 +19,7 @@
         </div>
         <div class="card">
             <div class="card-body row">
-                <div class="m-3 p-3 w-100" style="max-width:600px">
+                <div class="m-3 p-3 w-100" style="max-width:900px">
                     <div>
                         <partial name="_ValidationSummary" />
                         @if (Model.Errors.Count > 0)
@@ -45,12 +45,17 @@
                     <br />
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.Name">Անուն</label>
                             <input class="form-control" type="text" asp-for="Create.Name">
                             <span asp-validation-for="Create.Name" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.NameRu">Անուն ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.NameRu">
+                            <span asp-validation-for="Create.NameRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.NameEn">Անուն անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Create.NameEn">
                             <span asp-validation-for="Create.NameEn" class="text-danger"></span>
@@ -59,12 +64,17 @@
                     <br />
 
                      <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.PriceText">Փաթեթի արժեք</label>
                             <input class="form-control" type="text" asp-for="Create.PriceText">
                             <span asp-validation-for="Create.PriceText" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.PriceTextRu">Փաթեթի արժեք ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.PriceTextRu">
+                            <span asp-validation-for="Create.PriceTextRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.PriceTextEn">Փաթեթի արժեք անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Create.PriceTextEn">
                             <span asp-validation-for="Create.PriceTextEn" class="text-danger"></span>
@@ -77,6 +87,14 @@
                             <label class="text-info" asp-for="Create.Context">Տեքստ</label>
                             <textarea rows="5" class="form-control" asp-for="Create.Context"></textarea>
                             <span asp-validation-for="Create.Context" class="text-danger"></span>
+                        </div>
+                    </div>
+                      <br />
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="text-info" asp-for="Create.ContextRu">Տեքստ ռուսերեն</label>
+                            <textarea rows="5" class="form-control" asp-for="Create.ContextRu"></textarea>
+                            <span asp-validation-for="Create.ContextRu" class="text-danger"></span>
                         </div>
                     </div>
                       <br />

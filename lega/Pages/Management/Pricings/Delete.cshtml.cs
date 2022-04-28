@@ -36,11 +36,14 @@ namespace lega.Pages.Management.Pricings
             {
                 Delete.Id = result.Id;
                 Delete.Name = result.Name;
+                Delete.NameRu = result.NameRu;
                 Delete.NameEn = result.NameEn;
                 Delete.PriceText = result.PriceText;
+                Delete.PriceTextRu = result.PriceTextRu;
                 Delete.PriceTextEn = result.PriceTextEn;
                 Delete.EmployeCount = result.EmployeCount;
                 Delete.Context = result.Context;
+                Delete.ContextRu = result.ContextRu;
                 Delete.ContextEn = result.ContextEn;
             }
         }

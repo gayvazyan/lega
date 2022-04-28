@@ -21,7 +21,7 @@
         </div>
         <div class="card">
             <div class="card-body row">
-                <div class="m-3 p-3 w-100" style="max-width:600px">
+                <div class="m-3 p-3 w-100" style="max-width:900px">
                     <div>
                         <partial name="_ValidationSummary" />
                         @if (Model.Errors.Count > 0)
@@ -38,12 +38,17 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.Title">Վերնագիր</label>
                             <input class="form-control" type="text" asp-for="Update.Title">
                             <span asp-validation-for="Update.Title" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Update.TitleRu">Վերնագիր ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.TitleRu">
+                            <span asp-validation-for="Update.TitleRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.TitleEn">Վերնագիր անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.TitleEn">
                             <span asp-validation-for="Update.TitleEn" class="text-danger"></span>
@@ -52,12 +57,17 @@
                     <br />
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.Author">Հեղինակ</label>
                             <input class="form-control" type="text" asp-for="Update.Author">
                             <span asp-validation-for="Update.Author" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Update.AuthorRu">Հեղինակ ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.AuthorRu">
+                            <span asp-validation-for="Update.AuthorRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.AuthorEn">Հեղինակ անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.AuthorEn">
                             <span asp-validation-for="Update.AuthorEn" class="text-danger"></span>
@@ -66,12 +76,17 @@
                     <br />
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.ShortContext">Կարճ տեքստ</label>
                             <input class="form-control" type="text" asp-for="Update.ShortContext">
                             <span asp-validation-for="Update.ShortContext" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Update.ShortContextRu">Կարճ տեքստ ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.ShortContextRu">
+                            <span asp-validation-for="Update.ShortContextRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.ShortContextEn">Կարճ տեքստ անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.ShortContextEn">
                             <span asp-validation-for="Update.ShortContextEn" class="text-danger"></span>
@@ -79,14 +94,22 @@
                     </div>
                     <br />
 
-                     <div class="row">
+                    <div class="row">
                         <div class="col-12">
                             <label class="text-info" asp-for="Update.Context">Տեքստ</label>
                             <textarea rows="5" class="form-control" asp-for="Update.Context"></textarea>
                             <span asp-validation-for="Update.Context" class="text-danger"></span>
                         </div>
                     </div>
-                      <br />
+                    <br />
+                     <div class="row">
+                        <div class="col-12">
+                            <label class="text-info" asp-for="Update.ContextRu">Տեքստ ռուսերեն</label>
+                            <textarea rows="5" class="form-control" asp-for="Update.ContextRu"></textarea>
+                            <span asp-validation-for="Update.ContextRu" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
                     <div class="row">
                         <div class="col-12">
                             <label class="text-info" asp-for="Update.ContextEn">Տեքստ անգլերեն</label>

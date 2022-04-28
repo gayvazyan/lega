@@ -36,8 +36,10 @@ namespace lega.Pages.Management.Customers
             {
                 Delete.Id = result.Id;
                 Delete.Title = result.Title;
+                Delete.TitleRu = result.TitleRu;
                 Delete.TitleEn = result.TitleEn;
                 Delete.Context = result.Context;
+                Delete.ContextRu = result.ContextRu;
                 Delete.ContextEn = result.ContextEn;
                 Delete.ImageURL = result.ImageURL;
                 Delete.LogoURL = result.LogoURL;

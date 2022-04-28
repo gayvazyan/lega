@@ -71,8 +71,10 @@ namespace lega.Pages.Management.Services
                 {
                     Id = p.Id,
                     Title = p.Title,
+                    TitleRu = p.TitleRu,
                     TitleEn = p.TitleEn,
                     Context = p.Context,
+                    ContextRu = p.ContextRu,
                     ContextEn = p.ContextEn,
                     IconName = p.IconName,
                 };

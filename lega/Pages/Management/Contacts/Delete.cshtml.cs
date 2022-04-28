@@ -36,8 +36,10 @@ namespace lega.Pages.Management.Contacts
             {
                 Delete.Id = result.Id;
                 Delete.Title = result.Title;
+                Delete.TitleRu = result.TitleRu;
                 Delete.TitleEn = result.TitleEn;
                 Delete.Address = result.Address;
+                Delete.AddressRu = result.AddressRu;
                 Delete.AddressEn = result.AddressEn;
                 Delete.Phone = result.Phone;
                 Delete.Email = result.Email;

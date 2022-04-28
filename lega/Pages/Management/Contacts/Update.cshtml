@@ -21,7 +21,7 @@
         </div>
         <div class="card">
             <div class="card-body row">
-                <div class="m-3 p-3 w-100" style="max-width:600px">
+                <div class="m-3 p-3 w-100" style="max-width:900px">
                     <div>
                         <partial name="_ValidationSummary" />
                         @if (Model.Errors.Count > 0)
@@ -38,12 +38,17 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.Title">Վերնագիր</label>
                             <input class="form-control" type="text" asp-for="Update.Title">
                             <span asp-validation-for="Update.Title" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Update.TitleRu">Վերնագիր ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.TitleRu">
+                            <span asp-validation-for="Update.TitleRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.TitleEn">Վերնագիր անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.TitleEn">
                             <span asp-validation-for="Update.TitleEn" class="text-danger"></span>
@@ -52,12 +57,17 @@
                     <br />
 
                      <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.Address">Հասցե</label>
                             <input class="form-control" type="text" asp-for="Update.Address">
                             <span asp-validation-for="Update.Address" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Update.AddressRu">Հասցե ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.AddressRu">
+                            <span asp-validation-for="Update.AddressRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Update.AddressEn">Հասցե անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Update.AddressEn">
                             <span asp-validation-for="Update.AddressEn" class="text-danger"></span>

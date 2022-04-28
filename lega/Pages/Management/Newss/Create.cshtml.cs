@@ -27,11 +27,17 @@ namespace lega.Pages.Management.Newss
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Հեղինակը պարտադիր է")]
             public string Author { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն հեղինսկը պարտադիր է")]
+            public string AuthorRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն հեղինսկը պարտադիր է")]
             public string AuthorEn { get; set; }
@@ -39,11 +45,17 @@ namespace lega.Pages.Management.Newss
             [Required(ErrorMessage = "Կարճ տեքստը պարտադիր է")]
             public string ShortContext { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն կարճ տեքստը պարտադիր է")]
+            public string ShortContextRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն կարճ տեքստը պարտադիր է")]
             public string ShortContextEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -80,12 +92,16 @@ namespace lega.Pages.Management.Newss
                     {
                         Id = Create.Id,
                         Author = Create.Author,
+                        AuthorRu = Create.AuthorRu,
                         AuthorEn = Create.AuthorEn,
                         Title = Create.Title,
+                        TitleRu = Create.TitleRu,
                         TitleEn = Create.TitleEn,
                         ShortContext = Create.ShortContext,
+                        ShortContextRu = Create.ShortContextRu,
                         ShortContextEn = Create.ShortContextEn,
                         Context = Create.Context,
+                        ContextRu = Create.ContextRu,
                         ContextEn = Create.ContextEn,
                         Date = Create.Date,
                         ImageUrl = Create.ImageUrl,

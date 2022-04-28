@@ -40,17 +40,26 @@ namespace lega.Pages.Management.Carousels
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Անունը պարտադիր է")]
             public string Name { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն անունը պարտադիր է")]
+            public string NameRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն անունը պարտադիր է")]
             public string NameEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -122,10 +131,13 @@ namespace lega.Pages.Management.Carousels
             {
                 Update.Id = result.Id;
                 Update.Title = result.Title;
+                Update.TitleRu = result.TitleRu;
                 Update.TitleEn = result.TitleEn;
                 Update.Name = result.Name;
+                Update.NameRu = result.NameRu;
                 Update.NameEn = result.NameEn;
                 Update.Context = result.Context;
+                Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
                 Update.ImageUrl = result.ImageUrl;
                 Update.State = result.State;
@@ -145,10 +157,13 @@ namespace lega.Pages.Management.Carousels
                     var carousel = _carouselRepasitory.GetByID(Update.Id);
 
                     carousel.Title = Update.Title;
+                    carousel.TitleRu = Update.TitleRu;
                     carousel.TitleEn = Update.TitleEn;
                     carousel.Name = Update.Name;
+                    carousel.NameRu = Update.NameRu;
                     carousel.NameEn = Update.NameEn;
                     carousel.Context = Update.Context;
+                    carousel.ContextRu = Update.ContextRu;
                     carousel.ContextEn = Update.ContextEn;
                     carousel.ImageUrl = Update.ImageUrl;
                     carousel.State = Update.State;

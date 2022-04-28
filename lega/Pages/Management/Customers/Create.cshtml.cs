@@ -24,11 +24,17 @@ namespace lega.Pages.Management.Customers
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -66,8 +72,10 @@ namespace lega.Pages.Management.Customers
                     {
                         Id = Create.Id,
                         Title = Create.Title,
+                        TitleRu = Create.TitleRu,
                         TitleEn = Create.TitleEn,
                         Context = Create.Context,
+                        ContextRu = Create.ContextRu,
                         ContextEn = Create.ContextEn,
                         LogoURL = Create.LogoURL,
                         ImageURL = Create.ImageURL,

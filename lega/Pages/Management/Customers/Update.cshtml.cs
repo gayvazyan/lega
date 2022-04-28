@@ -26,11 +26,17 @@ namespace lega.Pages.Management.Customers
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -63,8 +69,10 @@ namespace lega.Pages.Management.Customers
             {
                 Update.Id = result.Id;
                 Update.Title = result.Title;
+                Update.TitleRu = result.TitleRu;
                 Update.TitleEn = result.TitleEn;
                 Update.Context = result.Context;
+                Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
                 Update.ImageURL = result.ImageURL;
                 Update.LogoURL = result.LogoURL;
@@ -86,8 +94,10 @@ namespace lega.Pages.Management.Customers
                     var customer = _customerRepasitory.GetByID(Update.Id);
 
                     customer.Title = Update.Title;
+                    customer.TitleRu = Update.TitleRu;
                     customer.TitleEn = Update.TitleEn;
                     customer.Context = Update.Context;
+                    customer.ContextRu = Update.ContextRu;
                     customer.ContextEn = Update.ContextEn;
                     customer.ImageURL = Update.ImageURL;
                     customer.OrderNumber = Update.OrderNumber;

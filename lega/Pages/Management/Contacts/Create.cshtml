@@ -19,7 +19,7 @@
         </div>
         <div class="card">
             <div class="card-body row">
-                <div class="m-3 p-3 w-100" style="max-width:600px">
+                <div class="m-3 p-3 w-100" style="max-width:900px">
                     <div>
                         <partial name="_ValidationSummary" />
                         @if (Model.Errors.Count > 0)
@@ -36,12 +36,17 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.Title">Վերնագիր</label>
                             <input class="form-control" type="text" asp-for="Create.Title">
                             <span asp-validation-for="Create.Title" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.TitleRu">Վերնագիր ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.TitleRu">
+                            <span asp-validation-for="Create.TitleRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.TitleEn">Վերնագիր անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Create.TitleEn">
                             <span asp-validation-for="Create.TitleEn" class="text-danger"></span>
@@ -50,12 +55,17 @@
                     <br />
 
                      <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.Address">Հասցե</label>
                             <input class="form-control" type="text" asp-for="Create.Address">
                             <span asp-validation-for="Create.Address" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.AddressRu">Հասցե ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.AddressRu">
+                            <span asp-validation-for="Create.AddressRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.AddressEn">Հասցե անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Create.AddressEn">
                             <span asp-validation-for="Create.AddressEn" class="text-danger"></span>

@@ -19,7 +19,7 @@
         </div>
         <div class="card">
             <div class="card-body row">
-                <div class="m-3 p-3 w-100" style="max-width:600px">
+                <div class="m-3 p-3 w-100" style="max-width:900px">
                     <div>
                         <partial name="_ValidationSummary" />
                         @if (Model.Errors.Count > 0)
@@ -36,12 +36,17 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.Title">Վերնագիր</label>
                             <input class="form-control" type="text" asp-for="Create.Title">
                             <span asp-validation-for="Create.Title" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Create.TitleRu">Վերնագիր ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.TitleRu">
+                            <span asp-validation-for="Create.TitleRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.TitleEn">Վերնագիր անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Create.TitleEn">
                             <span asp-validation-for="Create.TitleEn" class="text-danger"></span>
@@ -50,12 +55,17 @@
                     <br />
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.Author">Հեղինակ</label>
                             <input class="form-control" type="text" asp-for="Create.Author">
                             <span asp-validation-for="Create.Author" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.AuthorRu">Հեղինակ ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.AuthorRu">
+                            <span asp-validation-for="Create.AuthorRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.AuthorEn">Հեղինակ անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Create.AuthorEn">
                             <span asp-validation-for="Create.AuthorEn" class="text-danger"></span>
@@ -64,12 +74,17 @@
                     <br />
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.ShortContext">Կարճ տեքստ</label>
                             <input class="form-control" type="text" asp-for="Create.ShortContext">
                             <span asp-validation-for="Create.ShortContext" class="text-danger"></span>
                         </div>
-                        <div class="col-6">
+                         <div class="col-4">
+                            <label class="text-info" asp-for="Create.ShortContextRu">Կարճ տեքստ ռուսերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.ShortContextRu">
+                            <span asp-validation-for="Create.ShortContextRu" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
                             <label class="text-info" asp-for="Create.ShortContextEn">Կարճ տեքստ անգլերեն</label>
                             <input class="form-control" type="text" asp-for="Create.ShortContextEn">
                             <span asp-validation-for="Create.ShortContextEn" class="text-danger"></span>
@@ -82,6 +97,14 @@
                             <label class="text-info" asp-for="Create.Context">Տեքստ</label>
                             <textarea rows="5" class="form-control" asp-for="Create.Context"></textarea>
                             <span asp-validation-for="Create.Context" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                     <div class="row">
+                        <div class="col-12">
+                            <label class="text-info" asp-for="Create.ContextRu">Տեքստ ռուսերեն</label>
+                            <textarea rows="5" class="form-control" asp-for="Create.ContextRu"></textarea>
+                            <span asp-validation-for="Create.ContextRu" class="text-danger"></span>
                         </div>
                     </div>
                     <br />

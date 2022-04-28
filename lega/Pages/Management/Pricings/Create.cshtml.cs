@@ -24,14 +24,21 @@ namespace lega.Pages.Management.Pricings
             [Required(ErrorMessage = "Անունը պարտադիր է")]
             public string Name { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն անունը պարտադիր է")]
+            public string NameRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն անունը պարտադիր է")]
             public string NameEn { get; set; }
             public int? EmployeCount { get; set; }
             public string PriceText { get; set; }
+            public string PriceTextRu { get; set; }
             public string PriceTextEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -61,11 +68,14 @@ namespace lega.Pages.Management.Pricings
                     {
                         Id = Create.Id,
                         Name = Create.Name,
+                        NameRu = Create.NameRu,
                         NameEn = Create.NameEn,
                         EmployeCount = Create.EmployeCount,
                         PriceText = Create.PriceText,
+                        PriceTextRu = Create.PriceTextRu,
                         PriceTextEn = Create.PriceTextEn,
                         Context = Create.Context,
+                        ContextRu = Create.ContextRu,
                         ContextEn = Create.ContextEn,
                     };
 

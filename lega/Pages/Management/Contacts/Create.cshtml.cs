@@ -24,11 +24,17 @@ namespace lega.Pages.Management.Contacts
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Հասցեն պարտադիր է")]
             public string Address { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն հասցեն պարտադիր է")]
+            public string AddressRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն հասցեն պարտադիր է")]
             public string AddressEn { get; set; }
@@ -68,8 +74,10 @@ namespace lega.Pages.Management.Contacts
                     {
                         Id = Create.Id,
                         Title = Create.Title,
+                        TitleRu = Create.TitleRu,
                         TitleEn = Create.TitleEn,
                         Address = Create.Address,
+                        AddressRu = Create.AddressRu,
                         AddressEn = Create.AddressEn,
                         Phone = Create.Phone,
                         Email = Create.Email,

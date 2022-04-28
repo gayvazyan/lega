@@ -105,10 +105,13 @@ namespace lega.Pages.Management.Carousels
                 {
                     Id = p.Id,
                     Title = p.Title,
+                    TitleRu = p.TitleRu,
                     TitleEn = p.TitleEn,
                     Name = p.Name,
+                    NameRu = p.NameRu,
                     NameEn = p.NameEn,
                     Context = p.Context,
+                    ContextRu = p.ContextRu,
                     ContextEn = p.ContextEn,
                     ImageUrl = p.ImageUrl,
                     State = p.State,

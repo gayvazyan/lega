@@ -26,11 +26,17 @@ namespace lega.Pages.Management.Contacts
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Հասցեն պարտադիր է")]
             public string Address { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն հասցեն պարտադիր է")]
+            public string AddressRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն հասցեն պարտադիր է")]
             public string AddressEn { get; set; }
@@ -64,8 +70,10 @@ namespace lega.Pages.Management.Contacts
             {
                 Update.Id = result.Id;
                 Update.Title = result.Title;
+                Update.TitleRu = result.TitleRu;
                 Update.TitleEn = result.TitleEn;
                 Update.Address = result.Address;
+                Update.AddressRu = result.AddressRu;
                 Update.AddressEn = result.AddressEn;
                 Update.Phone = result.Phone;
                 Update.Email = result.Email;
@@ -87,8 +95,10 @@ namespace lega.Pages.Management.Contacts
                     var contact = _contactRepasitory.GetByID(Update.Id);
 
                     contact.Title = Update.Title;
+                    contact.TitleRu = Update.TitleRu;
                     contact.TitleEn = Update.TitleEn;
                     contact.Address = Update.Address;
+                    contact.AddressRu = Update.AddressRu;
                     contact.AddressEn = Update.AddressEn;
                     contact.Phone = Update.Phone;
                     contact.Email = Update.Email;

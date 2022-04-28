@@ -26,11 +26,17 @@ namespace lega.Pages.Management.Services
             [Required(ErrorMessage = "Վերնագիրը պարտադիր է")]
             public string Title { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն վերնագիրը պարտադիր է")]
+            public string TitleRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -58,8 +64,10 @@ namespace lega.Pages.Management.Services
             {
                 Update.Id = result.Id;
                 Update.Title = result.Title;
+                Update.TitleRu = result.TitleRu;
                 Update.TitleEn = result.TitleEn;
                 Update.Context = result.Context;
+                Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
                 Update.IconName = result.IconName;
             }
@@ -78,8 +86,10 @@ namespace lega.Pages.Management.Services
                     var service = _serviceRepasitory.GetByID(Update.Id);
 
                     service.Title = Update.Title;
+                    service.TitleRu = Update.TitleRu;
                     service.TitleEn = Update.TitleEn;
                     service.Context = Update.Context;
+                    service.ContextRu = Update.ContextRu;
                     service.ContextEn = Update.ContextEn;
                     service.IconName = Update.IconName;
 

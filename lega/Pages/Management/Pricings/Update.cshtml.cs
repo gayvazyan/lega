@@ -26,14 +26,21 @@ namespace lega.Pages.Management.Pricings
             [Required(ErrorMessage = "Անունը պարտադիր է")]
             public string Name { get; set; }
 
+            [Required(ErrorMessage = "Ռուսերեն անունը պարտադիր է")]
+            public string NameRu { get; set; }
+
             [Required(ErrorMessage = "Անգլերեն անունը պարտադիր է")]
             public string NameEn { get; set; }
             public int? EmployeCount { get; set; }
             public string PriceText { get; set; }
+            public string PriceTextRu { get; set; }
             public string PriceTextEn { get; set; }
 
             [Required(ErrorMessage = "Տեքստը պարտադիր է")]
             public string Context { get; set; }
+
+            [Required(ErrorMessage = "Ռուսերեն տեքստը պարտադիր է")]
+            public string ContextRu { get; set; }
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
@@ -58,11 +65,14 @@ namespace lega.Pages.Management.Pricings
             {
                 Update.Id = result.Id;
                 Update.Name = result.Name;
+                Update.NameRu = result.NameRu;
                 Update.NameEn = result.NameEn;
                 Update.PriceText = result.PriceText;
-                Update.PriceTextEn = result.PriceText;
+                Update.PriceTextRu = result.PriceTextRu;
+                Update.PriceTextEn = result.PriceTextEn;
                 Update.EmployeCount = result.EmployeCount;
                 Update.Context = result.Context;
+                Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
             }
         }
@@ -80,11 +90,14 @@ namespace lega.Pages.Management.Pricings
                     var pricing = _pricingRepasitory.GetByID(Update.Id);
 
                     pricing.Name = Update.Name;
+                    pricing.NameRu = Update.NameRu;
                     pricing.NameEn = Update.NameEn;
                     pricing.PriceText = Update.PriceText;
+                    pricing.PriceTextRu = Update.PriceTextRu;
                     pricing.PriceTextEn = Update.PriceTextEn;
                     pricing.EmployeCount = Update.EmployeCount;
                     pricing.Context = Update.Context;
+                    pricing.ContextRu = Update.ContextRu;
                     pricing.ContextEn = Update.ContextEn;
 
 

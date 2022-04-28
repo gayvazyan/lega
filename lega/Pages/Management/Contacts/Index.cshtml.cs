@@ -71,8 +71,10 @@ namespace lega.Pages.Management.Contacts
                 {
                     Id = p.Id,
                     Title = p.Title,
+                    TitleRu = p.TitleRu,
                     TitleEn = p.TitleEn,
                     Address = p.Address,
+                    AddressRu = p.AddressRu,
                     AddressEn = p.Address,
                     Phone = p.Phone,
                     Email = p.Email,

@@ -251,19 +251,19 @@ a.btn-send:hover {
 }
 /*Navigation-stylesheets-include-here*/
 .navbar-default {
-	background:rgba(0, 0, 0, 0);
-	border:rgba(248, 248, 248, 0);
-	padding:5px 5px;
+	background: rgba(0, 0, 0, 0);
+	border: rgba(248, 248, 248, 0);
+	padding: 30px 5px 30px 5px;
 }
 a.navbar-brand img {
 	position:relative;
-	top:9px;
+	top:-11px;
 }
 #menu {
 	position:center
 }
 #menu .nav {
-	left: 15%;
+	
 	position: relative;
 }
 #menu ul.nav li a {

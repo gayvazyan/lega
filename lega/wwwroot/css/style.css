@@ -7,7 +7,7 @@
 * {
 	margin:0 auto;
 }
-/*@font-face {
+@font-face {
  font-family: 'helvetica_ce_55_romanregular';
  src: url('../fonts/helvetica_neue_ce_55_roman-webfont.eot');
  src: url('../fonts/helvetica_neue_ce_55_roman-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica_neue_ce_55_roman-webfont.woff2') format('woff2'), url('../fonts/helvetica_neue_ce_55_roman-webfont.woff') format('woff'), url('../fonts/helvetica_neue_ce_55_roman-webfont.ttf') format('truetype'), url('../fonts/helvetica_neue_ce_55_roman-webfont.svg#helvetica_ce_55_romanregular') format('svg');
@@ -20,32 +20,10 @@
  src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-regular-webfont.woff2') format('woff2'), url('../fonts/opensans-regular-webfont.woff') format('woff'), url('../fonts/opensans-regular-webfont.ttf') format('truetype'), url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
  font-weight: normal;
  font-style: normal;
-}*/
-/*body {
-	font-family: 'helvetica_ce_55_romanregular';
-}*/
-
-
-@font-face {
-	font-family: Arial AMU;
-	src: url(../font/Arial-AMU-Regular.ttf);
 }
-
-@font-face {
-	font-family: Arial AMU;
-	src: url(../font/Arial-AMU-Bold.ttf);
-	font-weight: bold;
-}
-
 body {
-	overflow: hidden;
-	font: 15px/23px 'Open Sans', Segoe UI, Arial, sans-serif;
-	color: #3e474c;
+	font-family: 'helvetica_ce_55_romanregular';
 }
-
-
-
-
 /*for-section-text-start-here*/
 ::selection {
  background: #e73131; /* WebKit/Blink Browsers */
@@ -147,14 +125,14 @@ color: #FFF;
 	background-repeat:no-repeat;
 }
 p {
-	font-size: 13px;
-	color: #666;
-	font-weight: bolder;
-	line-height: 25px;
-	font-family: 'Arial AMU';
+	font-size:13px;
+	color:#666;
+	font-weight:bolder;
+	line-height:25px;
+	font-family: 'open_sansregular';
 }
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-family: 'Arial AMU';
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+ font-family: 'helvetica_ce_55_romanregular';
 }
 h1 {
 	color:#fff;
@@ -251,19 +229,19 @@ a.btn-send:hover {
 }
 /*Navigation-stylesheets-include-here*/
 .navbar-default {
-	background: rgba(0, 0, 0, 0);
-	border: rgba(248, 248, 248, 0);
-	padding: 30px 5px 30px 5px;
+	background:rgba(0, 0, 0, 0);
+	border:rgba(248, 248, 248, 0);
+	padding:5px 5px;
 }
 a.navbar-brand img {
 	position:relative;
-	top:-11px;
+	top:9px;
 }
 #menu {
-	position:center
+	position:absolute;
 }
 #menu .nav {
-	
+	left: 25%;
 	position: relative;
 }
 #menu ul.nav li a {
@@ -423,7 +401,7 @@ ul.nav li.active a:before {
 	text-align:center;
 }
 .heading h2 {
-	font-family: 'Arial AMU';
+	font-family: 'helvetica_ce_55_romanregular';
 }
 .heading p {
 	padding:20px 0px;

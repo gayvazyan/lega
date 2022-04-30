@@ -38,6 +38,7 @@ text-align:justify;
 .slider-wrap{
 position:relative;
 }
+
 .carousel-caption h2{
 font-size:67px;
 }
@@ -56,7 +57,7 @@ font-size:67px;
 .team-main-sec{
 margin-top:30px;
 }
-.news {
+.blog-sec {
 margin-top:30px;
 }
 .hero-section {
@@ -100,7 +101,7 @@ font-size:45px;
     font-size: 15px;
     line-height: 25px;
 	}
-	.ab-sec-img img{
+.ab-sec-img img{
 width:100%;
 }
 a.btn-down {
@@ -157,7 +158,7 @@ overflow:hidden;
 	.team-main-sec{
 margin-top:30px;
 }
-.news-sec {
+.blog-sec {
 margin-top:30px;
 }
 #footer-down ul li {
@@ -210,7 +211,7 @@ font-size:45px;
     font-size: 15px;
     line-height: 25px;
 	}
-	.ab-sec-img img{
+.ab-sec-img img{
 width:100%;
 }
 a.btn-down {
@@ -272,7 +273,7 @@ margin-top:30px;
     font-size: 21px;
     padding: 10px 0px 10px 0px;
 }
-.news-sec {
+.blog-sec {
 margin-top:30px;
 }
 .mobilenav li {

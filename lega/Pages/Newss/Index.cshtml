@@ -80,14 +80,14 @@
                     </p>
                 </div>
             </div>
-            <div class="row" style="margin-right:10px;margin-left:-65px">
+            <div class="row">
 
                 <div class="col-md-12">
                     @foreach (var item in Model.NewsList)
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" width="350" height="190">
+                                <img src="@item.ImageUrl" class="img-responsive">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>
@@ -122,14 +122,14 @@
                     </p>
                 </div>
             </div>
-            <div class="row" style="margin-right:10px;margin-left:-65px">
+            <div class="row">
 
                 <div class="col-md-12">
                     @foreach (var item in Model.NewsList)
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" width="350" height="190">
+                                <img src="@item.ImageUrl" class="img-responsive">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>
@@ -164,14 +164,14 @@
                     </p>
                 </div>
             </div>
-            <div class="row" style="margin-right:10px;margin-left:-65px">
+            <div class="row">
                 <div class="col-md-12">
 
                     @foreach (var item in Model.NewsList)
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" width="350" height="190">
+                                <img src="@item.ImageUrl" class="img-responsive">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>

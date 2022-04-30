@@ -76,24 +76,22 @@
         {
             <div class="col-12">
                 <div class="heading">
-                    <h2>ԲՈԼՈՐ ՆՈ<span>ՐՈՒԹՅՈՒՆՆԵՐԸ</span></h2>
+                    <h2>@Model.News.Title</h2>
                     <div class="line"></div>
-                    <p>
-                        <span><strong>Ա</strong></span>յստեղ կարող է լինել հաստատուն տեքս որը կարող է փոփոխվել բայց ծրագրային կոդով
-                    </p>
+                    <p></p>
                 </div>
             </div>
-            <div class="row" style="margin-right:10px;margin-left:-65px">
+            <div class="row">
                 <div class="col-md-12">
                         <div class="col-md-12 news-sec">
                             <div class="news-info">
-                                <img style="float:left;margin:0 15px 0 0;" width="400" height="215" src="@Model.News.ImageUrl">
+                                <img class="img-responsive" src="@Model.News.ImageUrl">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                     <strong>@Model.News.Date.Day</strong><br>
                                     @Model.News.Date.Year
                                 </div>
-                                    <h5>@Model.News.Title</h5>
+                                 <p></p>
                                 <ul class="news-icon">
                                     <li>
                                         <i class="fa fa-pencil"></i>
@@ -112,24 +110,22 @@
         {
             <div class="col-md-12">
                 <div class="heading">
-                    <h2>ВСЕ НО<span>ВОСТИ</span></h2>
+                     <h2>@Model.News.TitleRu</h2>
                     <div class="line"></div>
-                    <p>
-                        <span><strong>М</strong></span>ожет быть фиксированный текст, который можно изменить, но с исходным кодом
-                    </p>
+                    <p> </p>
                 </div>
             </div>
-            <div class="row" style="margin-right:10px;margin-left:-65px">
+            <div class="row" >
                 <div class="col-md-12">
                         <div class="col-md-12 news-sec">
                             <div class="news-info">
-                                <img style="float:left;margin:0 15px 0 0;" width="400" height="215" src="@Model.News.ImageUrl">
+                                <img class="img-responsive" src="@Model.News.ImageUrl">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                     <strong>@Model.News.Date.Day</strong><br>
                                     @Model.News.Date.Year
                                 </div>
-                                    <h5>@Model.News.TitleRu</h5>
+                                  <p> </p>
                                 <ul class="news-icon">
                                     <li>
                                         <i class="fa fa-pencil"></i>
@@ -146,24 +142,22 @@
         {
             <div class="col-12">
                 <div class="heading">
-                    <h2>ALL N<span>EWS</span></h2>
+                     <h2>@Model.News.TitleEn</h2>
                     <div class="line"></div>
-                    <p>
-                        <span><strong>Th</strong></span>ere may be fixed text that can be changed but with source code
-                    </p>
+                    <p> </p>
                 </div>
             </div>
-             <div class="row" style="margin-right:10px;margin-left:-65px">
+             <div class="row">
                 <div class="col-md-12">
                         <div class="col-md-12 news-sec">
                             <div class="news-info">
-                                <img style="float:left;margin:0 15px 0 0;" width="400" height="215" src="@Model.News.ImageUrl">
+                                <img class="img-responsive" src="@Model.News.ImageUrl">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                     <strong>@Model.News.Date.Day</strong><br>
                                     @Model.News.Date.Year
                                 </div>
-                                    <h5>@Model.News.TitleEn</h5>
+                                   <p> </p>
                                 <ul class="news-icon">
                                     <li>
                                         <i class="fa fa-pencil"></i>

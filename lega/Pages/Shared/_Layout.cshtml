@@ -43,24 +43,26 @@
     <link rel="stylesheet" href="~/css/owl.transitions.css">
 
 </head>
-<body>
 
+
+<body data-spy="scroll" data-target=".navbar-default" data-offset="100">
+
+    <!--Preloader-->
     <div id="preloader">
         <div id="pre-status">
             <div class="preload-placeholder"></div>
         </div>
     </div>
 
-
     <!--Navigation-->
     <header id="menu">
-        <div style="background-color: #000000;" class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                        <a class="navbar-brand" href="/Index"><img src="/images/Logo/legaLogo.png" alt=""></a>
+                        <a class="navbar-brand" href="#menu"><img src="images/Logo/logo.png" alt=""></a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -81,9 +83,9 @@
 
                             }
                             else
-                          @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                                             @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
                             {
-                               <li class="active"><a class="scroll" href="#menu">Главный</a></li>
+                                <li class="active"><a class="scroll" href="#menu">Главный</a></li>
                                 <li><a class="scroll" href="#about">О нас</a></li>
                                 <li><a class="scroll" href="#service">Сервисы</a></li>
                                 @*  <li><a class="scroll" href="#portfolio">Մեզ վստահում են</a></li>*@
@@ -110,6 +112,7 @@
                             }
 
                             <li style="margin-top:15px;"><vc:culture-switcher /></li>
+
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -120,12 +123,9 @@
     </header>
 
 
-
-    <div class="container">
-        <main role="main">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main">
+        @RenderBody()
+    </main>
 
 
 
@@ -145,11 +145,10 @@
                 <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                 <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
-            <p>Ստեղծվել է : <a>GAIT MIND</a> </p>
         </footer>
     }
 
-     else
+    else
     @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
     {
         <footer id="footer">
@@ -165,12 +164,8 @@
                 <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                 <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
-            <p>Созданный : <a>GAIT MIND</a> </p>
         </footer>
     }
-
-
-
     else
     {
         <footer id="footer">
@@ -186,10 +181,10 @@
                 <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                 <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
-            <p>Created By : <a>GAIT MIND</a> </p>
         </footer>
     }
-
+    <br />
+    <br />
 
     <script src="~/js/jquery.min.js"></script>
     <!--Boostrap-Jquery-->
@@ -210,6 +205,9 @@
     <!--Main-Scripts-->
     <script src="~/js/script.js"></script>
 
+    <!-- Hosting24 Analytics Code -->
+    <script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+    <!-- End Of Analytics Code -->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

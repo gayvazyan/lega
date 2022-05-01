@@ -28,20 +28,18 @@ body {
 
 
 @font-face {
-	font-family: Arial AMU;
+	font-family: 'Arial AMU';
 	src: url(../font/Arial-AMU-Regular.ttf);
 }
 
 @font-face {
-	font-family: Arial AMU;
+	font-family: 'Arial AMU';
 	src: url(../font/Arial-AMU-Bold.ttf);
 	font-weight: bold;
 }
 
 body {
-	overflow: hidden;
-	font: 15px/23px 'Open Sans', Segoe UI, Arial, sans-serif;
-	color: #3e474c;
+	font-family: 'Arial AMU';
 }
 
 

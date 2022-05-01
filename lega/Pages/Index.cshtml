@@ -23,7 +23,7 @@
                                 @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                                 {
                                     <h1>@item.Title</h1>
-                                    <h2 >@item.Name</h2>
+                                    <h2>@item.Name</h2>
                                     <p>@item.Context</p>
                                 }
 
@@ -239,16 +239,19 @@
     <div class="container">
         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
-            <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
-                    <h2>ՄԵԶ <span>ՎՍՏԱՀՈՒՄ</span> ԵՆ</h2>
-                    <div class="line"></div>
-                    <p>
-                        <span><strong>Հ</strong></span>այերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա:
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div style="text-align:center" class="heading">
+                        <h2>ՄԵԶ <span>ՎՍՏԱՀՈՒՄ</span> ԵՆ</h2>
+                        <div class="line"></div>
+                        <p>
+                            <span><strong>Հ</strong></span>այերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա:
 
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
+
         }
 
         else
@@ -256,27 +259,32 @@
         @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
 
         {
-            <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
-                    <h2>НАМ <span>ДОВЕРЯЮТ</span></h2>
-                    <div class="line"></div>
-                    <p>
-                        <span><strong>Л</strong></span>орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас. Еа ест ферри етиам, фацилиси делицатиссими иус еу.
-                    </p>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div  style="text-align:center" class="heading">
+                        <h2>НАМ <span>ДОВЕРЯЮТ</span></h2>
+                        <div class="line"></div>
+                        <p>
+                            <span><strong>Л</strong></span>орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас. Еа ест ферри етиам, фацилиси делицатиссими иус еу.
+                        </p>
+                    </div>
                 </div>
             </div>
         }
 
         else
         {
-            <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
-                    <h2>THEY <span>TRUST</span> US</h2>
-                    <div class="line"></div>
-                    <p>
-                        <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        et dolore magna aliqua. Ut enim ad minim veniam
-                    </p>
+            <div class="row">
+                <div   style="text-align:center" class="col-md-8 col-md-offset-2">
+                    <div class="heading">
+                        <h2>THEY <span>TRUST</span> US</h2>
+                        <div class="line"></div>
+                        <p>
+                            <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            et dolore magna aliqua. Ut enim ad minim veniam
+                        </p>
+                    </div>
                 </div>
             </div>
         }
@@ -302,7 +310,7 @@
                             </p>
                         }
                         else
-                       @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                             @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
                         {
                             <h5>@item.TitleRu</h5>
                             <div class="line"></div>
@@ -459,7 +467,7 @@
         {
 
             <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
+                <div style="text-align:center" class="heading">
                     <h2>ՆՈՐՈՒԹՅՈՒՆՆ<span>ԵՐԸ</span></h2>
                     <div class="line"></div>
                     <p>
@@ -499,15 +507,15 @@
             </div>
         }
         else
-       @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
         {
 
             <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
+                <div style="text-align:center" class="heading">
                     <h2>НОВОС<span>ТИ</span></h2>
                     <div class="line"></div>
                     <p>
-                         <span><strong>М</strong></span>ожет быть фиксированный текст, который можно изменить, но с исходным кодом 
+                        <span><strong>М</strong></span>ожет быть фиксированный текст, который можно изменить, но с исходным кодом
                     </p>
                 </div>
             </div>
@@ -545,7 +553,7 @@
         {
 
             <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
+                <div style="text-align:center" class="heading">
                     <h2>NE<span>WS</span></h2>
                     <div class="line"></div>
                     <p>
@@ -667,7 +675,7 @@
                                     overflow: hidden;
                                     background: none !important;
                                     height: 400px;
-                                   width: 100%;
+                                    width: 100%;
                                 }
                             </style>
                         </div>
@@ -711,7 +719,7 @@
                     </ul>
                 </div>
                 <div class="col-md-8 col-sm-8">
-                   <div class="mapouter">
+                    <div class="mapouter">
                         <div class="gmap_canvas">
                             <iframe height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                             <br>
@@ -727,7 +735,7 @@
                                     overflow: hidden;
                                     background: none !important;
                                     height: 400px;
-                                   width: 100%;
+                                    width: 100%;
                                 }
                             </style>
                         </div>
@@ -770,7 +778,7 @@
                     </ul>
                 </div>
                 <div class="col-md-8 col-sm-8">
-                  <div class="mapouter">
+                    <div class="mapouter">
                         <div class="gmap_canvas">
                             <iframe height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                             <br>
@@ -786,7 +794,7 @@
                                     overflow: hidden;
                                     background: none !important;
                                     height: 400px;
-                                   width: 100%;
+                                    width: 100%;
                                 }
                             </style>
                         </div>

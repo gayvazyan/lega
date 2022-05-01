@@ -19,7 +19,7 @@
                 <div class="item @item.State" style="background-image:url(@item.ImageUrl)">
                     <div class="carousel-caption container">
                         <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:7mm">
                                 @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                                 {
                                     <h1>@item.Title</h1>
@@ -262,7 +262,7 @@
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div  style="text-align:center" class="heading">
+                    <div style="text-align:center" class="heading">
                         <h2>НАМ <span>ДОВЕРЯЮТ</span></h2>
                         <div class="line"></div>
                         <p>
@@ -276,7 +276,7 @@
         else
         {
             <div class="row">
-                <div   style="text-align:center" class="col-md-8 col-md-offset-2">
+                <div style="text-align:center" class="col-md-8 col-md-offset-2">
                     <div class="heading">
                         <h2>THEY <span>TRUST</span> US</h2>
                         <div class="line"></div>
@@ -491,12 +491,7 @@
                                     @item.Date.Year
                                 </div>
                                 <h5>@item.Title</h5>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@item.Author</h6>
-                                    </li>
-                                </ul>
+                                <h6><i class="fa fa-pencil"></i> @item.Author</h6>
                                 <p>@item.ShortContext</p>
                                 <a target="_blank" href="/Newss/Item/@item.Id" class="btn-blg">Կարդալ ավելին</a>
                             </div>
@@ -533,12 +528,7 @@
                                     @item.Date.Year
                                 </div>
                                 <h5>@item.TitleRu</h5>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@item.AuthorRu</h6>
-                                    </li>
-                                </ul>
+                                <h6><i class="fa fa-pencil"></i> @item.AuthorRu</h6>
                                 <p>@item.ShortContextRu</p>
                                 <a target="_blank" href="/Newss/Item/@item.Id" class="btn-blg">Прочитайте больше</a>
                             </div>
@@ -576,12 +566,7 @@
                                     @item.Date.Year
                                 </div>
                                 <h5>@item.TitleEn</h5>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@item.AuthorEn</h6>
-                                    </li>
-                                </ul>
+                                <h6><i class="fa fa-pencil"></i> @item.AuthorEn</h6>
                                 <p>@item.ShortContextEn</p>
                                 <a href="/Newss/Item/@item.Id" class="btn-blg">Read More</a>
                             </div>

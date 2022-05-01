@@ -1,8 +1,8 @@
-﻿@page 
+﻿@page
 @using Microsoft.AspNetCore.Localization
 @model lega.Pages.Newss.IndexModel
 @{
-     
+
     Layout = "/Pages/Shared/_LayoutNews.cshtml";
     var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
     var requestCulture = requestCultureFeature.RequestCulture;
@@ -13,11 +13,11 @@
     else
     @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
     {
-       ViewData["Title"] = "Новости";
+        ViewData["Title"] = "Новости";
     }
     else
     {
-         ViewData["Title"] = "News";
+        ViewData["Title"] = "News";
     }
 }
 
@@ -32,8 +32,8 @@
                 <div class="item @item.State" style="background-image:url(@item.ImageUrl)">
                     <div class="carousel-caption container">
                         <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                 @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:7mm">
+                                @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                                 {
                                     <h1 style="font-size:25px">@item.Title</h1>
                                     <h2 style="font-size:45px">@item.Name</h2>
@@ -41,7 +41,7 @@
                                 }
                                 else
 
-                                @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                                             @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
                                 {
                                     <h1 style="font-size:25px">@item.TitleRu</h1>
                                     <h2 style="font-size:45px">@item.NameRu</h2>
@@ -72,7 +72,7 @@
         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
+                <div style="text-align:center" class="heading">
                     <h2>ԲՈԼՈՐ ՆՈ<span>ՐՈՒԹՅՈՒՆՆԵՐԸ</span></h2>
                     <div class="line"></div>
                     <p>
@@ -93,13 +93,8 @@
                                     <strong>@item.Date.Day</strong><br>
                                     @item.Date.Year
                                 </div>
-                                    <h5>@item.Title</h5>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@item.Author</h6>
-                                    </li>
-                                </ul>
+                                <h5>@item.Title</h5>
+                                <h6><i class="fa fa-pencil"></i> @item.Author</h6>
                                 <p>@item.ShortContext</p>
                                 <a href="/Newss/Item/@item.Id" class="btn-blg">Կարդալ ավելին</a>
                             </div>
@@ -111,10 +106,10 @@
         }
         else
 
-         @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
         {
             <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
+                <div style="text-align:center" class="heading">
                     <h2>ВСЕ НО<span>ВОСТИ</span></h2>
                     <div class="line"></div>
                     <p>
@@ -135,13 +130,8 @@
                                     <strong>@item.Date.Day</strong><br>
                                     @item.Date.Year
                                 </div>
-                                    <h5>@item.TitleRu</h5>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@item.AuthorRu</h6>
-                                    </li>
-                                </ul>
+                                <h5>@item.TitleRu</h5>
+                                <h6><i class="fa fa-pencil"></i> @item.AuthorRu</h6>
                                 <p>@item.ShortContextRu</p>
                                 <a href="/Newss/Item/@item.Id" class="btn-blg">Прочитайте больше</a>
                             </div>
@@ -155,7 +145,7 @@
         {
 
             <div class="col-md-8 col-md-offset-2">
-                <div class="heading">
+                <div style="text-align:center" class="heading">
                     <h2>ALL NE<span>WS</span></h2>
                     <div class="line"></div>
                     <p>
@@ -177,13 +167,8 @@
                                     <strong>@item.Date.Day</strong><br>
                                     @item.Date.Year
                                 </div>
-                                    <h5>@item.TitleEn</h5>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                            <h6>@item.AuthorEn</h6>
-                                    </li>
-                                </ul>
+                                <h5>@item.TitleEn</h5>
+                                <h6><i class="fa fa-pencil"></i> @item.AuthorEn</h6>
                                 <p>@item.ShortContextEn</p>
                                 <a href="/Newss/Item/@item.Id" class="btn-blg">Read More</a>
                             </div>

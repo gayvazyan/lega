@@ -2,22 +2,22 @@
 @using Microsoft.AspNetCore.Localization
 @model lega.Pages.Newss.ItemModel
 @{
-     Layout = "/Pages/Shared/_LayoutNews.cshtml";
+    Layout = "/Pages/Shared/_LayoutNews.cshtml";
     var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
     var requestCulture = requestCultureFeature.RequestCulture;
 
-     @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+    @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
     {
         ViewData["Title"] = "Նորություններ";
     }
     else
     @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
     {
-       ViewData["Title"] = "Новости";
+        ViewData["Title"] = "Новости";
     }
     else
     {
-         ViewData["Title"] = "News";
+        ViewData["Title"] = "News";
     }
 }
 
@@ -34,8 +34,8 @@
                 <div class="item @item.State" style="background-image:url(@item.ImageUrl)">
                     <div class="carousel-caption container">
                         <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                 @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:7mm">
+                                @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                                 {
                                     <h1 style="font-size:25px">@item.Title</h1>
                                     <h2 style="font-size:45px">@item.Name</h2>
@@ -43,7 +43,7 @@
                                 }
                                 else
 
-                                @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                                             @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
                                 {
                                     <h1 style="font-size:25px">@item.TitleRu</h1>
                                     <h2 style="font-size:45px">@item.NameRu</h2>
@@ -75,7 +75,7 @@
         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             <div class="col-12">
-                <div class="heading">
+                <div style="text-align:center" class="heading">
                     <h2>@Model.News.Title</h2>
                     <div class="line"></div>
                     <p></p>
@@ -83,24 +83,19 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                        <div class="col-md-12 news-sec">
-                            <div class="news-info">
-                                <img class="img-responsive" src="@Model.News.ImageUrl">
-                                <div class="data-meta">
-                                    <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
-                                    <strong>@Model.News.Date.Day</strong><br>
-                                    @Model.News.Date.Year
-                                </div>
-                                 <p></p>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@Model.News.Author</h6>
-                                    </li>
-                                </ul>
-                                <p>@Model.News.Context</p>
+                    <div class="col-md-12 news-sec">
+                        <div class="news-info">
+                            <img class="img-responsive" src="@Model.News.ImageUrl">
+                            <div class="data-meta">
+                                <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
+                                <strong>@Model.News.Date.Day</strong><br>
+                                @Model.News.Date.Year
                             </div>
+                            <p></p>
+                            <h6><i class="fa fa-pencil"></i> @Model.News.Author</h6>
+                            <p>@Model.News.Context</p>
                         </div>
+                    </div>
                 </div>
             </div>
         }
@@ -109,64 +104,54 @@
         @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
         {
             <div class="col-md-12">
-                <div class="heading">
-                     <h2>@Model.News.TitleRu</h2>
+                <div style="text-align:center" class="heading">
+                    <h2>@Model.News.TitleRu</h2>
                     <div class="line"></div>
                     <p> </p>
                 </div>
             </div>
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-12">
-                        <div class="col-md-12 news-sec">
-                            <div class="news-info">
-                                <img class="img-responsive" src="@Model.News.ImageUrl">
-                                <div class="data-meta">
-                                    <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
-                                    <strong>@Model.News.Date.Day</strong><br>
-                                    @Model.News.Date.Year
-                                </div>
-                                  <p> </p>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@Model.News.AuthorRu</h6>
-                                    </li>
-                                </ul>
-                                <p>@Model.News.ContextRu</p>
+                    <div class="col-md-12 news-sec">
+                        <div class="news-info">
+                            <img class="img-responsive" src="@Model.News.ImageUrl">
+                            <div class="data-meta">
+                                <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
+                                <strong>@Model.News.Date.Day</strong><br>
+                                @Model.News.Date.Year
                             </div>
+                            <p> </p>
+                            <h6><i class="fa fa-pencil"></i> @Model.News.AuthorRu</h6>
+                            <p>@Model.News.ContextRu</p>
                         </div>
+                    </div>
                 </div>
             </div>
         }
         else
         {
             <div class="col-12">
-                <div class="heading">
-                     <h2>@Model.News.TitleEn</h2>
+                <div style="text-align:center" class="heading">
+                    <h2>@Model.News.TitleEn</h2>
                     <div class="line"></div>
                     <p> </p>
                 </div>
             </div>
-             <div class="row">
+            <div class="row">
                 <div class="col-md-12">
-                        <div class="col-md-12 news-sec">
-                            <div class="news-info">
-                                <img class="img-responsive" src="@Model.News.ImageUrl">
-                                <div class="data-meta">
-                                    <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
-                                    <strong>@Model.News.Date.Day</strong><br>
-                                    @Model.News.Date.Year
-                                </div>
-                                   <p> </p>
-                                <ul class="news-icon">
-                                    <li>
-                                        <i class="fa fa-pencil"></i>
-                                        <h6>@Model.News.AuthorEn</h6>
-                                    </li>
-                                </ul>
-                                <p>@Model.News.ContextEn</p>
+                    <div class="col-md-12 news-sec">
+                        <div class="news-info">
+                            <img class="img-responsive" src="@Model.News.ImageUrl">
+                            <div class="data-meta">
+                                <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
+                                <strong>@Model.News.Date.Day</strong><br>
+                                @Model.News.Date.Year
                             </div>
+                            <p> </p>
+                            <h6><i class="fa fa-pencil"></i> @Model.News.AuthorEn</h6>
+                            <p>@Model.News.ContextEn</p>
                         </div>
+                    </div>
                 </div>
             </div>
         }

@@ -35,22 +35,22 @@
                             <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:7mm">
                                 @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                                 {
-                                    <h1 style="font-size:25px">@item.Title</h1>
-                                    <h2 style="font-size:45px">@item.Name</h2>
+                                    <h1>@item.Title</h1>
+                                    <h2>@item.Name</h2>
                                     <p>@item.Context</p>
                                 }
                                 else
 
                                              @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
                                 {
-                                    <h1 style="font-size:25px">@item.TitleRu</h1>
-                                    <h2 style="font-size:45px">@item.NameRu</h2>
+                                    <h1>@item.TitleRu</h1>
+                                    <h2>@item.NameRu</h2>
                                     <p>@item.ContextRu</p>
                                 }
                                 else
                                 {
-                                    <h1 style="font-size:25px">@item.TitleEn</h1>
-                                    <h2 style="font-size:45px">@item.NameEn</h2>
+                                    <h1>@item.TitleEn</h1>
+                                    <h2>@item.NameEn</h2>
                                     <p>@item.ContextEn</p>
                                 }
                             </div>

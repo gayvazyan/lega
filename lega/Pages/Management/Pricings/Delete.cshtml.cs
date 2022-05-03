@@ -45,6 +45,11 @@ namespace lega.Pages.Management.Pricings
                 Delete.Context = result.Context;
                 Delete.ContextRu = result.ContextRu;
                 Delete.ContextEn = result.ContextEn;
+
+                Delete.Price = result.Price;
+                Delete.PriceValue = result.PriceValue;
+                Delete.PriceValueEn = result.PriceValueEn;
+                Delete.PriceValueRu = result.PriceValueRu;
             }
         }
 

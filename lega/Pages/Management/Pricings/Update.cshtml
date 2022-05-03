@@ -21,7 +21,7 @@
         </div>
         <div class="card">
             <div class="card-body row">
-                <div class="m-3 p-3 w-100" style="max-width:600px">
+                <div class="m-3 p-3 w-100" style="max-width:900px">
                     <div>
                         <partial name="_ValidationSummary" />
                         @if (Model.Errors.Count > 0)
@@ -43,8 +43,36 @@
                             <input class="form-control" type="text" asp-for="Update.EmployeCount">
                             <span asp-validation-for="Update.EmployeCount" class="text-danger"></span>
                         </div>
+                        <div class="col-6">
+                            <label class="text-info" asp-for="Update.Price">Փաթեթի արժեք</label>
+                            <input class="form-control" type="text" asp-for="Update.Price">
+                            <span asp-validation-for="Update.Price" class="text-danger"></span>
+                        </div>
                     </div>
                     <br />
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Update.PriceValue">Փաթեթի արժեքի տեքստ</label>
+                            <input class="form-control" type="text" asp-for="Update.PriceValue">
+                            <span asp-validation-for="Update.PriceValue" class="text-danger"></span>
+                        </div>
+                    
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Update.PriceValueRu">Փաթեթի արժեքի տեքստ ռուսերեն</label>
+                            <input  class="form-control" type="text" asp-for="Update.PriceValueRu">
+                            <span asp-validation-for="Update.PriceValueRu" class="text-danger"></span>
+                        </div>
+                   
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Update.PriceValueEn">Փաթեթի արժեքի տեքստ անգլերեն</label>
+                            <input class="form-control" type="text" asp-for="Update.PriceValueEn">
+                            <span asp-validation-for="Update.PriceValueEn" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
 
                    <div class="row">
                         <div class="col-4">

@@ -20,5 +20,11 @@ namespace lega.Core.Entities
         public string ContextRu { get; set; }
         public string ContextEn { get; set; }
 
+        public string Price { get; set; }
+        public string PriceValue { get; set; }
+        public string PriceValueRu { get; set; }
+        public string PriceValueEn { get; set; }
+
+
     }
 }

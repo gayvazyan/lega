@@ -41,6 +41,32 @@
                             <input class="form-control" type="text" asp-for="Create.EmployeCount">
                             <span asp-validation-for="Create.EmployeCount" class="text-danger"></span>
                         </div>
+                         <div class="col-6">
+                            <label class="text-info" asp-for="Create.Price">Փաթեթի արժեք</label>
+                            <input class="form-control" type="text" asp-for="Create.Price">
+                            <span asp-validation-for="Create.Price" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+
+                     <div class="row">
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.PriceValue">Փաթեթի արժեքի տեքստ</label>
+                            <input class="form-control" type="text" asp-for="Create.PriceValue">
+                            <span asp-validation-for="Create.PriceValue" class="text-danger"></span>
+                        </div>
+                    
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.PriceValueRu">Փաթեթի արժեքի տեքստ ռուսերեն</label>
+                            <input  class="form-control" type="text" asp-for="Create.PriceValueRu">
+                            <span asp-validation-for="Create.PriceValueRu" class="text-danger"></span>
+                        </div>
+                   
+                        <div class="col-4">
+                            <label class="text-info" asp-for="Create.PriceValueEn">Փաթեթի արժեքի տեքստ անգլերեն</label>
+                            <input class="form-control" type="text" asp-for="Create.PriceValueEn">
+                            <span asp-validation-for="Create.PriceValueEn" class="text-danger"></span>
+                        </div>
                     </div>
                     <br />
 
@@ -106,6 +132,8 @@
                         </div>
                     </div>
                     <br />
+
+                   
 
 
 

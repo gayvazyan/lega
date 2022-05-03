@@ -47,7 +47,7 @@ namespace lega.Pages.Management.Pricings
         {
             var pricingsList = _pricingRepasitory.GetAll().ToList();
 
-           
+
 
             if (Input.Name != null)
             {
@@ -80,6 +80,10 @@ namespace lega.Pages.Management.Pricings
                     Context = p.Context,
                     ContextRu = p.ContextRu,
                     ContextEn = p.ContextEn,
+                    Price = p.Price,
+                    PriceValue = p.PriceValue,
+                    PriceValueEn = p.PriceValueEn,
+                    PriceValueRu = p.PriceValueRu,
                 };
             }).ToList();
         }

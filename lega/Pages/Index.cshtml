@@ -362,8 +362,16 @@
                             <ul class="pricing">
                                 <li class="plan-header">
                                     <div class="price-duration">
-                                        <div class="price">   </div>
-                                        <div class="duration">  </div>
+                                       @if(!String.IsNullOrWhiteSpace(item.Price))
+                                        {
+                                            <div class="price"> @item.Price  </div>
+                                            <div class="duration"> @item.PriceValue  </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="price"></div>
+                                            <div  class="duration" style="font-size:12px;padding-top:12px"> @item.PriceValue  </div>
+                                        }
                                     </div>
                                     <div class="plan-name"> @item.Name </div>
                                 </li>
@@ -401,8 +409,16 @@
                             <ul class="pricing">
                                 <li class="plan-header">
                                     <div class="price-duration">
-                                        <div class="price">   </div>
-                                        <div class="duration">  </div>
+                                         @if(!String.IsNullOrWhiteSpace(item.Price))
+                                        {
+                                            <div class="price"> @item.Price  </div>
+                                            <div class="duration"> @item.PriceValueRu  </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="price"></div>
+                                            <div  class="duration" style="font-size:12px;padding-top:12px"> @item.PriceValueRu  </div>
+                                        }
                                     </div>
                                     <div class="plan-name"> @item.NameRu </div>
                                 </li>
@@ -438,8 +454,16 @@
                             <ul class="pricing">
                                 <li class="plan-header">
                                     <div class="price-duration">
-                                        <div class="price">   </div>
-                                        <div class="duration">  </div>
+                                        @if(!String.IsNullOrWhiteSpace(item.Price))
+                                        {
+                                            <div class="price"> @item.Price  </div>
+                                            <div class="duration"> @item.PriceValueEn  </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="price"></div>
+                                            <div  class="duration" style="font-size:12px;padding-top:12px"> @item.PriceValueEn  </div>
+                                        }
                                     </div>
                                     <div class="plan-name"> @item.NameEn </div>
                                 </li>

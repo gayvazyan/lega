@@ -42,6 +42,13 @@ namespace lega.Pages.Management.Pricings
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
+
+
+           
+            public string Price { get; set; }
+            public string PriceValue { get; set; }
+            public string PriceValueRu { get; set; }
+            public string PriceValueEn { get; set; }
         }
 
         [BindProperty]
@@ -77,6 +84,10 @@ namespace lega.Pages.Management.Pricings
                         Context = Create.Context,
                         ContextRu = Create.ContextRu,
                         ContextEn = Create.ContextEn,
+                        Price = Create.Price,
+                        PriceValue = Create.PriceValue,
+                        PriceValueEn = Create.PriceValueEn,
+                        PriceValueRu = Create.PriceValueRu
                     };
 
                     var result = _pricingRepasitory.Insert(pricings);

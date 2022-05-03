@@ -44,6 +44,11 @@ namespace lega.Pages.Management.Pricings
 
             [Required(ErrorMessage = "Անգլերեն տեքստը պարտադիր է")]
             public string ContextEn { get; set; }
+
+            public string Price { get; set; }
+            public string PriceValue { get; set; }
+            public string PriceValueRu { get; set; }
+            public string PriceValueEn { get; set; }
         }
 
 
@@ -74,6 +79,11 @@ namespace lega.Pages.Management.Pricings
                 Update.Context = result.Context;
                 Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
+
+                Update.Price = result.Price;
+                Update.PriceValue = result.PriceValue;
+                Update.PriceValueRu = result.PriceValueRu;
+                Update.PriceValueEn = result.PriceValueEn;
             }
         }
         public void OnGet(int id)
@@ -99,6 +109,11 @@ namespace lega.Pages.Management.Pricings
                     pricing.Context = Update.Context;
                     pricing.ContextRu = Update.ContextRu;
                     pricing.ContextEn = Update.ContextEn;
+
+                    pricing.Price = Update.Price;
+                    pricing.PriceValue = Update.PriceValue;
+                    pricing.PriceValueEn = Update.PriceValueEn;
+                    pricing.PriceValueRu = Update.PriceValueRu;
 
 
                     _pricingRepasitory.Update(pricing);

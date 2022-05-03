@@ -29,17 +29,17 @@ body {
 
 @font-face {
 	font-family: 'Arial AMU';
-	src: url(../font/Arial-AMU-Regular.ttf);
+	src: url(../fonts/Arial-AMU-Regular.ttf);
 }
 
 @font-face {
 	font-family: 'Arial AMU';
-	src: url(../font/Arial-AMU-Bold.ttf);
+	src: url(../fonts/Arial-AMU-Bold.ttf);
 	font-weight: bold;
 }
 
 body {
-	font-family: 'Arial AMU';
+	font:'Open Sans', Segoe UI, Arial, sans-serif;
 }
 
 

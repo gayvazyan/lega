@@ -65,7 +65,7 @@
                 <div class="heading">
                     <h2>ՄԵՐ <span>ՄԱՍԻՆ</span></h2>
                     <div class="line"></div>
-                    <p>@Model.About.Title</p>
+                    <p style="font-size:20px">@Model.About.Title</p>
                 </div>
             </div>
             <div class="row">
@@ -75,7 +75,7 @@
                         <br>
                         <p>@Model.About.Context</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px" height="290" src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -88,7 +88,7 @@
                 <div class="heading">
                     <h2>О <span>НАС</span></h2>
                     <div class="line"></div>
-                    <p>@Model.About.TitleRu</p>
+                    <p style="font-size:20px">@Model.About.TitleRu</p>
                 </div>
             </div>
             <div class="row">
@@ -98,7 +98,7 @@
                         <br>
                         <p>@Model.About.ContextRu</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px" height="290" src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -109,7 +109,7 @@
                 <div class="heading">
                     <h2>ABOUT <span>US</span></h2>
                     <div class="line"></div>
-                    <p>@Model.About.TitleEn</p>
+                    <p style="font-size:20px">@Model.About.TitleEn</p>
                 </div>
             </div>
             <div class="row">
@@ -119,7 +119,7 @@
                         <br>
                         <p>@Model.About.ContextEn</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px" height="290" src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -146,9 +146,9 @@
                     <br>
                     <h2>ԾԱՌԱՅՈՒԹՅՈՒՆ<span>ԵՐ</span></h2>
                     <div class="line"></div>
-                    <p>
-                        @*  <span><strong>Հ</strong></span> Հայերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա:*@
-                    </p>
+                    @* <p>
+                        <span><strong>Հ</strong></span> Հայերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա:
+                        </p>*@
                 </div>
             </div>
             <div class="row">
@@ -180,9 +180,9 @@
                     <br>
                     <h2>СЕРВИ<span>СЫ</span></h2>
                     <div class="line"></div>
-                    <p>
-                        @*<span><strong>Л</strong></span> орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас.*@
-                    </p>
+                    @*  <p>
+                        <span><strong>Л</strong></span> орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас.
+                        </p>*@
                 </div>
             </div>
             <div class="row">
@@ -212,10 +212,10 @@
                     <br>
                     <h2>SERVI<span>CE</span></h2>
                     <div class="line"></div>
-                    <p>
-                        @*<span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            et dolore magna aliqua. Ut enim ad minim veniam*@
-                    </p>
+                    @* <p>
+                        <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        et dolore magna aliqua. Ut enim ad minim veniam
+                        </p>*@
                 </div>
             </div>
             <div class="row">
@@ -238,6 +238,7 @@
     </div>
 </section>
 
+<br>
 
 
 <!--Customer-Section-Start-->
@@ -250,12 +251,13 @@
                     <div style="text-align:center" class="heading">
                         <br>
                         <br>
+                        <br>
                         <h2>ՄԵԶ <span>ՎՍՏԱՀՈՒՄ</span> ԵՆ</h2>
                         <div class="line"></div>
-                        <p>
+                        @* <p>
                             <span><strong>Հ</strong></span>այերեն պատահական տեքստ, հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պատահական տեքստ հայերեն պա:
 
-                        </p>
+                            </p>*@
                     </div>
                 </div>
             </div>
@@ -273,11 +275,12 @@
                     <div style="text-align:center" class="heading">
                         <br>
                         <br>
+                        <br>
                         <h2>НАМ <span>ДОВЕРЯЮТ</span></h2>
                         <div class="line"></div>
-                        <p>
+                        @* <p>
                             <span><strong>Л</strong></span>орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас. Еа ест ферри етиам, фацилиси делицатиссими иус еу.
-                        </p>
+                            </p>*@
                     </div>
                 </div>
             </div>
@@ -290,12 +293,13 @@
                     <div class="heading">
                         <br>
                         <br>
+                        <br>
                         <h2>THEY <span>TRUST</span> US</h2>
                         <div class="line"></div>
-                        <p>
+                        @*<p>
                             <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                             et dolore magna aliqua. Ut enim ad minim veniam
-                        </p>
+                            </p>*@
                     </div>
                 </div>
             </div>
@@ -314,29 +318,32 @@
                     <div class="col-md-6 tab">
                         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                         {
-                            <h5>@item.Title</h5>
+                            <h5 style="font-size:25px;text-align:center">@item.Title</h5>
                             <div class="line"></div>
+                            <br />
                             <div class="clearfix"></div>
-                            <p class="feat-sec">
+                            <p style="font-size:14px" class="feat-sec">
                                 @item.Context
                             </p>
                         }
                         else
                              @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
                         {
-                            <h5>@item.TitleRu</h5>
+                            <h5 style="font-size:25px;text-align:center">@item.TitleRu</h5>
                             <div class="line"></div>
+                            <br />
                             <div class="clearfix"></div>
-                            <p class="feat-sec">
+                            <p style="font-size:14px" class="feat-sec">
                                 @item.ContextRu
                             </p>
                         }
                         else
                         {
-                            <h5>@item.TitleEn</h5>
+                            <h5 style="font-size:25px;text-align:center">@item.TitleEn</h5>
                             <div class="line"></div>
+                            <br />
                             <div class="clearfix"></div>
-                            <p class="feat-sec">
+                            <p style="font-size:14px" class="feat-sec">
                                 @item.ContextEn
                             </p>
                         }
@@ -348,6 +355,8 @@
     </div>
 </section>
 
+<br>
+<br>
 
 <!--Pricing-Section-Start-->
 <section id="pricing">
@@ -359,7 +368,7 @@
                 <div class="heading">
                     <h2>ԳՆԱՅԻՆ ՓԱԹԵԹ<span>ՆԵՐ</span></h2>
                     <div class="line"></div>
-                    <p><span><strong>Ընտրեք</strong></span> ձեզ հարմար ծառայությունների փաթեթը կամ կապվեք մեզ հետ ինդիվիդուալ փաթեթ կազմելու համար</p>
+                    <p style="font-size:15px"><span><strong>Ընտրեք</strong></span> ձեզ հարմար ծառայությունների փաթեթը կամ կապվեք մեզ հետ ինդիվիդուալ փաթեթ կազմելու համար</p>
                 </div>
             </div>
             <div class="row">
@@ -417,7 +426,7 @@
                 <div class="heading">
                     <h2>ЦЕНЫ ПАКЕ<span>ТЫ</span></h2>
                     <div class="line"></div>
-                    <p><span><strong>Выбирать</strong></span> удобный для вас пакет услуг или свяжитесь с нами для составления индивидуального пакета</p>
+                    <p style="font-size:15px"><span><strong>Выбирать</strong></span> удобный для вас пакет услуг или свяжитесь с нами для составления индивидуального пакета</p>
                 </div>
             </div>
             <div class="row">
@@ -462,7 +471,7 @@
                 <div class="heading">
                     <h2>PRICE PACKAG<span>ES</span></h2>
                     <div class="line"></div>
-                    <p><span><strong>Choose</strong></span> the package of services that suits you or contact us to make an individual package</p>
+                    <p style="font-size:15px"><span><strong>Choose</strong></span> the package of services that suits you or contact us to make an individual package</p>
                 </div>
             </div>
             <div class="row">
@@ -504,7 +513,7 @@
     </div>
 </section>
 
-
+<br>>
 
 <!--News-Section-Start-->
 <section id="news">
@@ -514,12 +523,16 @@
         {
 
             <div class="col-md-8 col-md-offset-2">
+                <br>
+                <br>
+                <br>
                 <div style="text-align:center" class="heading">
                     <h2>ՆՈՐՈՒԹՅՈՒՆՆ<span>ԵՐ</span></h2>
                     <div class="line"></div>
-                    <p>
+                    <br>
+                    @*<p>
                         <span><strong>Ա</strong></span>յստեղ կարող է լինել հաստատուն տեքս որը կարող է փոփոխվել բայց ծրագրային կոդով
-                    </p>
+                        </p>*@
                 </div>
             </div>
 
@@ -554,11 +567,15 @@
 
             <div class="col-md-8 col-md-offset-2">
                 <div style="text-align:center" class="heading">
+                    <br>
+                    <br>
+                    <br>
                     <h2>НОВОС<span>ТИ</span></h2>
                     <div class="line"></div>
-                    <p>
+                    <br>
+                    @* <p>
                         <span><strong>М</strong></span>ожет быть фиксированный текст, который можно изменить, но с исходным кодом
-                    </p>
+                        </p>*@
                 </div>
             </div>
             <div class="row">
@@ -591,12 +608,16 @@
 
             <div class="col-md-8 col-md-offset-2">
                 <div style="text-align:center" class="heading">
+                    <br>
+                    <br>
+                    <br>
                     <h2>NE<span>WS</span></h2>
                     <div class="line"></div>
-                    <p>
+                    <br>
+                    @*<p>
                         <span><strong>L</strong></span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         et dolore magna aliqua. Ut enim ad minim veniam
-                    </p>
+                    </p>*@
                 </div>
             </div>
             <div class="row">
@@ -615,7 +636,7 @@
                                 <h5>@item.TitleEn</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.AuthorEn</h6>
                                 <p>@item.ShortContextEn</p>
-                                <a href="/Newss/Item/@item.Id" class="btn-blg">Read More</a>
+                                <a href="/Newss/Item/@item.Id/" class="btn-blg">Read More</a>
                             </div>
                         </div>
                     }
@@ -628,6 +649,7 @@
     </div>
 </section>
 
+ <br>
 
 <!--More News - Line-->
 <div class="bg-sec">
@@ -653,6 +675,7 @@
     </div>
 </div>
 
+ <br>
 
 <!--Contact-Section-Start-->
 <section id="contact">

@@ -1389,4 +1389,8 @@ em.lang-separator::after {
 	padding: 0 8px;
 }
 
-
+@media (max-width: 768px) {
+	.navbar-collapse {
+		margin-top:50px;
+	}
+}

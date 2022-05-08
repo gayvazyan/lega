@@ -17,7 +17,7 @@ $(document).ready(function() {
     singleItem : true,
     transitionStyle : "fade"
   });
- 
+
 });
 
 
@@ -105,8 +105,9 @@ $(document).ready(function() {
 	
 	
  $(window).bind('scroll', function() {
-        var navHeight = $(window).height() - 100;
-        if ($(window).scrollTop() > navHeight) {
+        //var navHeight = $(window).height() - 100;
+        const maxHeight = $("#home-carousel").height();
+        if ($(window).scrollTop() > maxHeight) {
             $('.navbar').addClass('on');
         } else {
             $('.navbar').removeClass('on');
@@ -302,4 +303,8 @@ $(document).ready(function() {
   });
  
 });
-	
+$(document).ready(function() {
+    $("header .navbar-collapse a").click(function(e) {
+        $(".navbar-collapse").removeClass("in")
+    })
+});

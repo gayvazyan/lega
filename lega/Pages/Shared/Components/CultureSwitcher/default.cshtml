@@ -6,7 +6,7 @@
     {
         if (culture.Name.ToString() == "hy")
         {
-            <a class="@(Model.CurrentUICulture.Name == culture.Name ? 'active' : '')" href="?culture=@culture.Name">հայ</a>
+            <a class="@(Model.CurrentUICulture.Name == culture.Name ? "active" : "")" href="?culture=@culture.Name">հայ</a>
             if (culture != Model.SupportedCultures.Last())
             {
                <em class="lang-separator"></em>
@@ -16,7 +16,7 @@
 
         if (culture.Name.ToString() == "ru")
         {
-            <a class="@(Model.CurrentUICulture.Name == culture.Name ? 'active' : '')" href="?culture=@culture.Name">рус</a>
+            <a class="@(Model.CurrentUICulture.Name == culture.Name ? "active" : "")" href="?culture=@culture.Name">рус</a>
             if (culture != Model.SupportedCultures.Last())
             {
                <em class="lang-separator"></em>
@@ -24,10 +24,10 @@
         }
         else
         {
-            <a class="@(Model.CurrentUICulture.Name == culture.Name ? 'active' : '')" href="?culture=@culture.Name">eng</a>
+            <a class="@(Model.CurrentUICulture.Name == culture.Name ? "active" : "")" href="?culture=@culture.Name">eng</a>
             if (culture != Model.SupportedCultures.Last())
             {
-               <span class="lang-separator"></em>
+               <em class="lang-separator"></em>
             }
         }
     }

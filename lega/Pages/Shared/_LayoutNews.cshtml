@@ -61,7 +61,7 @@
                             @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
                             {
                                 <li><a class="scroll" href="/Index">Վերադարձ հիմնական կայք</a></li>
-                                <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/hy.png" /></li>
+                              @*  <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/hy.png" /></li>*@
 
                             }
 
@@ -70,17 +70,17 @@
                            @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
                             {
                                 <li><a class="scroll" href="/Index">Вернуться на основной сайт</a></li>
-                                <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/ru.png" /></li>
+                             @*   <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/ru.png" /></li>*@
 
                             }
 
                             else
                             {
                                 <li><a class="scroll" href="/Index">Return to main website</a></li>
-                                <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/en.png" /></li>
+                               @* <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/en.png" /></li>*@
                             }
 
-                            <li style="margin-top:15px;"><vc:culture-switcher /></li>
+                            <li><vc:culture-switcher /></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->

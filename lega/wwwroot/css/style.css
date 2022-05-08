@@ -1376,3 +1376,18 @@ color:#fff;
 }
 
 /*Basic-Stylesheets-End-Here*/
+.language-select-nav {
+	padding: 15px 0;
+}
+
+#menu ul.nav li .language-select-nav > a {
+	font-size: 13px
+}
+
+em.lang-separator::after {
+	content: "|";
+	color: #fff;
+	padding: 0 8px;
+}
+
+

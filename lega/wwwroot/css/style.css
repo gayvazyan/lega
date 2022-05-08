@@ -119,16 +119,15 @@ color: #FFF;
 	right: 0;
 	top: 0;
 	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 #pre-status, .preload-placeholder {
 	background-image:url(../preloader.gif);
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 296px;
-	left: 38%;
-	margin: -20px 0 0 -20px;
-	position: absolute;
-	top: 32%;
 	width: 296px;
 }
 .preload-placeholder {

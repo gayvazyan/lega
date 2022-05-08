@@ -155,7 +155,7 @@
                 <div class="customer-sec">
                     @foreach (var item in Model.ServiceList)
                     {
-                        <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
                             <div class="media service-box">
                                 <div class="pull-left"> <i class="fa fa-@item.IconName"></i> </div>
                                 <div class="media-body">
@@ -654,23 +654,23 @@
 <!--More News - Line-->
 <div class="bg-sec">
     <div class="container">
-        <div class="col-md-10 col-sm-10 col-xs-8"></div>
+        <div class="col-md-10 col-sm-10 col-xs-6"></div>
         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             var culture = requestCulture.Culture.ToString();
-            <div class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Կարդալ բոլորը</a> </div>
+            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Կարդալ բոլորը</a> </div>
         }
         else
 
         @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
         {
             var culture = requestCulture.Culture.ToString();
-            <div class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Читать все</a> </div>
+            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Читать все</a> </div>
         }
         else
 
         {
-            <div class="col-md-2 col-sm-2 col-xs-4"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Read all</a> </div>
+            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Read all</a> </div>
         }
     </div>
 </div>

@@ -1,34 +1,34 @@
 ﻿@model CultureSwitcherModel
 
-<div>
-    <form id="culture-switcher">
-        <select name="culture" id="culture-options">
-            @foreach (var culture in Model.SupportedCultures)
+<div class="language-select-nav">
+
+    @foreach (var culture in Model.SupportedCultures)
+    {
+        if (culture.Name.ToString() == "hy")
+        {
+            <a class="@(Model.CurrentUICulture.Name == culture.Name ? 'active' : '')" href="?culture=@culture.Name">հայ</a>
+            if (culture != Model.SupportedCultures.Last())
             {
-                if (culture.Name.ToString() == "hy")
-                {
-                    <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)"> ՀԱՅ</option>
-                    
-                }
-                else
-
-                if (culture.Name.ToString() == "ru")
-                {
-                    <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)"> РУС</option>
-                    
-                }
-                else
-                {
-                    <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)"> ENG</option>
-                }
+               <em class="lang-separator"></em>
             }
-        </select>
-    </form>
+        }
+        else
+
+        if (culture.Name.ToString() == "ru")
+        {
+            <a class="@(Model.CurrentUICulture.Name == culture.Name ? 'active' : '')" href="?culture=@culture.Name">рус</a>
+            if (culture != Model.SupportedCultures.Last())
+            {
+               <em class="lang-separator"></em>
+            }
+        }
+        else
+        {
+            <a class="@(Model.CurrentUICulture.Name == culture.Name ? 'active' : '')" href="?culture=@culture.Name">eng</a>
+            if (culture != Model.SupportedCultures.Last())
+            {
+               <span class="lang-separator"></em>
+            }
+        }
+    }
 </div>
-
-
-<script>
-    document.getElementById("culture-options").addEventListener("change", () => {
-        document.getElementById("culture-switcher").submit();
-    });
-</script>

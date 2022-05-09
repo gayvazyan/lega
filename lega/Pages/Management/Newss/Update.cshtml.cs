@@ -35,13 +35,13 @@ namespace lega.Pages.Management.Newss
             [Required(ErrorMessage = "Անգլերեն վերնագիրը պարտադիր է")]
             public string TitleEn { get; set; }
 
-            [Required(ErrorMessage = "Հեղինակը պարտադիր է")]
+            //[Required(ErrorMessage = "Հեղինակը պարտադիր է")]
             public string Author { get; set; }
 
-            [Required(ErrorMessage = "Ռուսերեն հեղինսկը պարտադիր է")]
+            //[Required(ErrorMessage = "Ռուսերեն հեղինսկը պարտադիր է")]
             public string AuthorRu { get; set; }
 
-            [Required(ErrorMessage = "Անգլերեն հեղինսկը պարտադիր է")]
+           // [Required(ErrorMessage = "Անգլերեն հեղինսկը պարտադիր է")]
             public string AuthorEn { get; set; }
 
             [Required(ErrorMessage = "Կարճ տեքստը պարտադիր է")]

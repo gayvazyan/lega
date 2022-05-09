@@ -1,17 +1,14 @@
-﻿@page "{id:int}"
+﻿@page "{id:int}/{languageId:int}"
 @using Microsoft.AspNetCore.Localization
 @model lega.Pages.Newss.ItemModel
 @{
     Layout = "/Pages/Shared/_LayoutNews.cshtml";
-    var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
-    var requestCulture = requestCultureFeature.RequestCulture;
-
-    @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+    @if (Model.LanguageId == 1)
     {
         ViewData["Title"] = "Նորություններ";
     }
     else
-    @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+    @if (Model.LanguageId == 2)
     {
         ViewData["Title"] = "Новости";
     }
@@ -21,6 +18,67 @@
     }
 }
 
+
+
+<head>
+    @if (Model.LanguageId == 1)
+    {
+        <title>Lega հաշվապահական կազմակերպություն</title>
+    }
+    else
+    @if (Model.LanguageId == 2)
+    {
+        <title>Lega бухгалтерская компания</title>
+    }
+    else
+    {
+        <title>Lega accounting company</title>
+    }
+</head>
+
+
+<header id="menu">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="#menu"><img width="145" height="60" src="~/images/Logo/logo.png" alt=""></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                        @if (Model.LanguageId == 1)
+                        {
+                            <li><a class="scroll" href="/Index">Վերադարձ հիմնական կայք</a></li>
+                            @*  <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/hy.png"/></li>*@
+
+                        }
+                        else
+                                     @if (Model.LanguageId == 2)
+                        {
+                            <li><a class="scroll" href="/Index">Вернуться на основной сайт</a></li>
+                            @*    <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/ru.png" /></li>*@
+                        }
+
+                        else
+                        {
+                            <li><a class="scroll" href="/Index">Return to main website</a></li>
+                            @*  <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/en.png" /></li>*@
+                        }
+
+                        @*   <li><vc:culture-switcher /></li>*@
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+    </div>
+</header>
 
 
 
@@ -35,7 +93,7 @@
                     <div class="carousel-caption container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:7mm">
-                                @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+                                @if (Model.LanguageId == 1)
                                 {
                                     <h1>@item.Title</h1>
                                     <h2>@item.Name</h2>
@@ -43,7 +101,7 @@
                                 }
                                 else
 
-                                             @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+                                @if (Model.LanguageId == 2)
                                 {
                                     <h1>@item.TitleRu</h1>
                                     <h2>@item.NameRu</h2>
@@ -72,7 +130,7 @@
 <section id="news">
     <div class="container">
 
-        @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
+        @if (Model.LanguageId == 1)
         {
             <div class="col-12">
                 <div style="text-align:center" class="heading">
@@ -101,7 +159,7 @@
         }
         else
 
-        @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
+        @if (Model.LanguageId == 2)
         {
             <div class="col-md-12">
                 <div style="text-align:center" class="heading">
@@ -159,3 +217,37 @@
 </section>
 
 
+
+@if (Model.LanguageId == 1)
+{
+
+    <footer id="footer">
+        <div class="bg-sec">
+            <div class="container">
+                <h2><strong>Հետեվեք Մեզ </strong></h2>
+            </div>
+        </div>
+    </footer>
+
+}
+else
+    @if (Model.LanguageId == 2)
+{
+    <footer id="footer">
+        <div class="bg-sec">
+            <div class="container">
+                <h2><strong>Подписывайтесь на нас </strong></h2>
+            </div>
+        </div>
+    </footer>
+}
+else
+{
+    <footer id="footer">
+        <div class="bg-sec">
+            <div class="container">
+                <h2><strong>Follow Us On  </strong></h2>
+            </div>
+        </div>
+    </footer>
+}

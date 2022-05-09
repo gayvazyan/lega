@@ -21,10 +21,14 @@ namespace lega.Pages.Newss
             News = new News { };
         }
 
+        [BindProperty]
+        public int LanguageId { get; set; }
+
         public List<Carousel> CarouselList { get; set; }
         public News News { get; set; }
-        public void OnGet(int id)
+        public void OnGet(int id, int languageId)
         {
+            LanguageId= languageId;
             CarouselList = _carouselRepasitory.GetAll().ToList();
             News = _newsRepasitory.GetAll().FirstOrDefault(p => p.Visible == true && p.Id ==id);
         }

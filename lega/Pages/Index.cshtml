@@ -553,7 +553,7 @@
                                 <h5>@item.Title</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.Author</h6>
                                 <p>@item.ShortContext</p>
-                                <a target="_blank" href="/Newss/Item/@item.Id" class="btn-blg">Կարդալ ավելին</a>
+                                <a target="_blank" href="/Newss/Item/@item.Id/1" class="btn-blg">Կարդալ ավելին</a>
                             </div>
                         </div>
                     }
@@ -594,7 +594,7 @@
                                 <h5>@item.TitleRu</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.AuthorRu</h6>
                                 <p>@item.ShortContextRu</p>
-                                <a target="_blank" href="/Newss/Item/@item.Id" class="btn-blg">Прочитайте больше</a>
+                                <a target="_blank" href="/Newss/Item/@item.Id/2" class="btn-blg">Прочитайте больше</a>
                             </div>
                         </div>
                     }
@@ -636,7 +636,7 @@
                                 <h5>@item.TitleEn</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.AuthorEn</h6>
                                 <p>@item.ShortContextEn</p>
-                                <a href="/Newss/Item/@item.Id/" class="btn-blg">Read More</a>
+                                <a target="_blank" href="/Newss/Item/@item.Id/3" class="btn-blg">Read More</a>
                             </div>
                         </div>
                     }
@@ -658,19 +658,19 @@
         @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
         {
             var culture = requestCulture.Culture.ToString();
-            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Կարդալ բոլորը</a> </div>
+            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index/1">Կարդալ բոլորը</a> </div>
         }
         else
 
         @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
         {
             var culture = requestCulture.Culture.ToString();
-            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Читать все</a> </div>
+            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index/2">Читать все</a> </div>
         }
         else
 
         {
-            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index">Read all</a> </div>
+            <div class="col-md-2 col-sm-2 col-xs-6"> <a target="_blank" style="top:0px;padding-right:5px;padding-left:5px;" class="btn-down" href="/Newss/Index/3">Read all</a> </div>
         }
     </div>
 </div>

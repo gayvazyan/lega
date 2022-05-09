@@ -62,7 +62,7 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                        <a class="navbar-brand" href="#menu"><img width="145" height="60"  src="images/Logo/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="#menu"><img width="145" height="60" src="images/Logo/logo.png" alt=""></a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -79,7 +79,7 @@
                                 @*  <li><a class="scroll" href="#team">Թիմը</a></li>*@
                                 <li><a class="scroll" href="#news">Նորություններ</a></li>
                                 <li><a class="scroll" href="#contact">Կապ</a></li>
-                              @*  <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/hy.png"/></li>*@
+                                @*  <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/hy.png"/></li>*@
 
                             }
                             else
@@ -94,7 +94,7 @@
                                 @*  <li><a class="scroll" href="#team">Թիմը</a></li>*@
                                 <li><a class="scroll" href="#news">Новости</a></li>
                                 <li><a class="scroll" href="#contact">Контакт</a></li>
-                            @*    <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/ru.png" /></li>*@
+                                @*    <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/ru.png" /></li>*@
                             }
 
                             else
@@ -108,7 +108,7 @@
                                 @*<li><a class="scroll" href="#team">Թիմը</a></li>*@
                                 <li><a class="scroll" href="#news">News</a></li>
                                 <li><a class="scroll" href="#contact">Contact</a></li>
-                              @*  <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/en.png" /></li>*@
+                                @*  <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/en.png" /></li>*@
                             }
 
                             <li><vc:culture-switcher /></li>
@@ -132,6 +132,7 @@
 
     @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
     {
+
         <footer id="footer">
             <div class="bg-sec">
                 <div class="container">
@@ -140,14 +141,7 @@
             </div>
         </footer>
 
-        <footer id="footer-down">
-            <ul class="social-icon">
-                <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-        </footer>
     }
-
     else
     @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
     {
@@ -157,13 +151,6 @@
                     <h2><strong>Подписывайтесь на нас </strong></h2>
                 </div>
             </div>
-        </footer>
-
-        <footer id="footer-down">
-            <ul class="social-icon">
-                <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
         </footer>
     }
     else
@@ -175,14 +162,15 @@
                 </div>
             </div>
         </footer>
-
-        <footer id="footer-down">
-            <ul class="social-icon">
-                <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-        </footer>
     }
+
+    <footer id="footer-down">
+        <ul class="social-icon">
+            <li class="facebook hvr-pulse"><a target="_blank" href="https://www.facebook.com/Lega-Finance-and-Accounting-157079067764088"><i class="fa fa-facebook-f"></i></a></li>
+            @* <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>*@
+        </ul>
+    </footer>
+
     <br />
     <br />
 
@@ -205,7 +193,7 @@
     <!--Main-Scripts-->
     <script src="~/js/script.js"></script>
 
-   
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

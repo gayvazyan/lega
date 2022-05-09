@@ -1394,3 +1394,27 @@ em.lang-separator::after {
 		margin-top:50px;
 	}
 }
+
+
+.mapouter {
+	position: relative;
+	text-align: center;
+	height: 400px;
+	width: 100%;
+}
+
+.gmap_canvas {
+	display: inline-block;
+	overflow: hidden;
+	background: none !important;
+	height: 400px;
+	width: 100%;
+}
+
+.iframestyle {
+	position: relative;
+	top: -70px;
+	border: none;
+	height: 470px;
+}
+

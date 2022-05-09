@@ -71,11 +71,11 @@
             <div class="row">
                 <div class="col-md-12 ab-sec">
                     <div class="col-md-6">
-                        <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms"><span>@Model.About.Name</span></h3>
+                        <h3 class="wow fadeInDown"  style="text-align:center" data-wow-duration="1000ms" data-wow-delay="300ms"><span>@Model.About.Name</span></h3>
                         <br>
                         <p>@Model.About.Context</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px" height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px"  src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -94,11 +94,11 @@
             <div class="row">
                 <div class="col-md-12 ab-sec">
                     <div class="col-md-6">
-                        <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms"><span>@Model.About.NameRu</span></h3>
+                        <h3 class="wow fadeInDown"  style="text-align:center" data-wow-duration="1000ms" data-wow-delay="300ms"><span>@Model.About.NameRu</span></h3>
                         <br>
                         <p>@Model.About.ContextRu</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px" height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px"  src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -115,11 +115,11 @@
             <div class="row">
                 <div class="col-md-12 ab-sec">
                     <div class="col-md-6">
-                        <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms"><span>@Model.About.NameEn</span></h3>
+                        <h3  class="wow fadeInDown"  style="text-align:center" data-wow-duration="1000ms" data-wow-delay="300ms"><span>@Model.About.NameEn</span></h3>
                         <br>
                         <p>@Model.About.ContextEn</p>
                     </div>
-                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px" height="290" src="@Model.About.ImageUrl" alt=""> </div>
+                    <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img style="margin-top:20px"  src="@Model.About.ImageUrl" alt=""> </div>
                 </div>
             </div>
         }
@@ -697,42 +697,27 @@
                     <ul class="contact-form">
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            <h6><strong>Հասցե:</strong> @Model.Contact.Address </h6>
+                            <h6><strong>Հասցե:</strong> <a href="https://www.google.com/maps/d/u/0/viewer?mid=1cma9104lTGAVf_mqVtSTMZl98zRSFmer&ll=40.205396000000036%2C44.503536399999994&z=16" target="_blank">@Model.Contact.Address</a></h6>
                         </li>
                         <li>
                             <i class="fa fa-envelope"></i>
-                            <h6><strong>Էլ հասցե:</strong> <a href="#"> @Model.Contact.Email</a></h6>
+                            <h6><strong>Էլ հասցե:</strong> @Model.Contact.Email</h6>
                         </li>
                         <li>
                             <i class="fa fa-phone"></i>
                             <h6><strong>Հեռ․:</strong> @Model.Contact.Phone </h6>
                         </li>
-                        <li>
+                       @* <li>
                             <i class="fa fa-wechat"></i>
                             <h6><strong>Վեբ կայք:</strong> <a href="#">  @Model.Contact.Website</a> </h6>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="mapouter">
                         <div class="gmap_canvas">
-                            <iframe height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <iframe class="iframestyle" id="gmap_canvas" src="https://www.google.com/maps/d/embed?mid=1cma9104lTGAVf_mqVtSTMZl98zRSFmer&ehbc=2E312F&z=16" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                             <br>
-                            <style>
-                                .mapouter {
-                                    position: relative;
-                                    text-align: center;
-                                    height: 400px;
-                                    width: 100%;
-                                }
-
-                                .gmap_canvas {
-                                    overflow: hidden;
-                                    background: none !important;
-                                    height: 400px;
-                                    width: 100%;
-                                }
-                            </style>
                         </div>
                     </div>
                 </div>
@@ -752,12 +737,12 @@
                 </div>
             </div>
             <div class="text-center">
-                <div class="col-md-4 col-sm-4 contact-sec-1">
+                <div class="col-md-6 col-sm-6 contact-sec-1">
                     <h4>КОНТАКТНЫЕ ДАН<span>НЫЕ</span></h4>
                     <ul class="contact-form">
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            <h6><strong>Адрес:</strong> @Model.Contact.AddressRu </h6>
+                            <h6><strong>Адрес:</strong> <a href="https://www.google.com/maps/d/u/0/viewer?mid=1cma9104lTGAVf_mqVtSTMZl98zRSFmer&ll=40.205396000000036%2C44.503536399999994&z=16" target="_blank">@Model.Contact.AddressRu</a></h6>
                         </li>
                         <li>
                             <i class="fa fa-envelope"></i>
@@ -767,32 +752,17 @@
                             <i class="fa fa-phone"></i>
                             <h6><strong>Тел․:</strong> @Model.Contact.Phone </h6>
                         </li>
-                        <li>
+                       @* <li>
                             <i class="fa fa-wechat"></i>
                             <h6><strong>Интернет сайт:</strong> <a href="#">  @Model.Contact.Website</a> </h6>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
-                <div class="col-md-8 col-sm-8">
+               <div class="col-md-6 col-sm-6">
                     <div class="mapouter">
                         <div class="gmap_canvas">
-                            <iframe height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <iframe class="iframestyle" id="gmap_canvas" src="https://www.google.com/maps/d/embed?mid=1cma9104lTGAVf_mqVtSTMZl98zRSFmer&ehbc=2E312F&z=16" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                             <br>
-                            <style>
-                                .mapouter {
-                                    position: relative;
-                                    text-align: center;
-                                    height: 400px;
-                                    width: 100%;
-                                }
-
-                                .gmap_canvas {
-                                    overflow: hidden;
-                                    background: none !important;
-                                    height: 400px;
-                                    width: 100%;
-                                }
-                            </style>
                         </div>
                     </div>
                 </div>
@@ -811,12 +781,12 @@
                 </div>
             </div>
             <div class="text-center">
-                <div class="col-md-4 col-sm-4 contact-sec-1">
+                <div class="col-md-6 col-sm-6 contact-sec-1">
                     <h4>CONTACT IN<span>FO</span></h4>
                     <ul class="contact-form">
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            <h6><strong>Address:</strong> @Model.Contact.AddressEn  </h6>
+                            <h6><strong>Address:</strong> <a href="https://www.google.com/maps/d/u/0/viewer?mid=1cma9104lTGAVf_mqVtSTMZl98zRSFmer&ll=40.205396000000036%2C44.503536399999994&z=16" target="_blank">@Model.Contact.AddressEn</a></h6>
                         </li>
                         <li>
                             <i class="fa fa-envelope"></i>
@@ -826,32 +796,17 @@
                             <i class="fa fa-phone"></i>
                             <h6><strong>Phone:</strong> @Model.Contact.Phone </h6>
                         </li>
-                        <li>
+                        @*<li>
                             <i class="fa fa-wechat"></i>
                             <h6><strong>Website:</strong> <a href="#"> @Model.Contact.Website</a> </h6>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
-                <div class="col-md-8 col-sm-8">
+                <div class="col-md-6 col-sm-6">
                     <div class="mapouter">
                         <div class="gmap_canvas">
-                            <iframe height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Yerevan%20Armenia,%20Komitas%20%2025/8&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <iframe class="iframestyle" id="gmap_canvas" src="https://www.google.com/maps/d/embed?mid=1cma9104lTGAVf_mqVtSTMZl98zRSFmer&ehbc=2E312F&z=16" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                             <br>
-                            <style>
-                                .mapouter {
-                                    position: relative;
-                                    text-align: center;
-                                    height: 400px;
-                                    width: 100%;
-                                }
-
-                                .gmap_canvas {
-                                    overflow: hidden;
-                                    background: none !important;
-                                    height: 400px;
-                                    width: 100%;
-                                }
-                            </style>
                         </div>
                     </div>
                 </div>

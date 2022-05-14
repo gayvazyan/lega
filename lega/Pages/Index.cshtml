@@ -552,7 +552,7 @@
                                 </div>
                                 <h5>@item.Title</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.Author</h6>
-                                <p>@item.ShortContext</p>
+                                  <p>@Html.Raw(item.ShortContext)</p>
                                 <a target="_blank" href="/Newss/Item/@item.Id/1" class="btn-blg">Կարդալ ավելին</a>
                             </div>
                         </div>
@@ -593,7 +593,7 @@
                                 </div>
                                 <h5>@item.TitleRu</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.AuthorRu</h6>
-                                <p>@item.ShortContextRu</p>
+                                    <p>@Html.Raw(item.ShortContextRu)</p>
                                 <a target="_blank" href="/Newss/Item/@item.Id/2" class="btn-blg">Прочитайте больше</a>
                             </div>
                         </div>
@@ -635,7 +635,7 @@
                                 </div>
                                 <h5>@item.TitleEn</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.AuthorEn</h6>
-                                <p>@item.ShortContextEn</p>
+                                    <p>@Html.Raw(item.ShortContextEn)</p>
                                 <a target="_blank" href="/Newss/Item/@item.Id/3" class="btn-blg">Read More</a>
                             </div>
                         </div>

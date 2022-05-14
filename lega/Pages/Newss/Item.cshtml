@@ -57,7 +57,7 @@
 
                         }
                         else
-                                     @if (Model.LanguageId == 2)
+                        @if (Model.LanguageId == 2)
                         {
                             <li><a class="scroll" href="/Index">Вернуться на основной сайт</a></li>
                             @*    <li><img style="margin-top:10px;margin-right:10px" src="~/images/Flags/ru.png" /></li>*@
@@ -97,7 +97,7 @@
                                 {
                                     <h1>@item.Title</h1>
                                     <h2>@item.Name</h2>
-                                    <p>@item.Context</p>
+                                    <p>@Html.Raw(item.Context)</p>
                                 }
                                 else
 
@@ -105,14 +105,14 @@
                                 {
                                     <h1>@item.TitleRu</h1>
                                     <h2>@item.NameRu</h2>
-                                    <p>@item.ContextRu</p>
+                                    <p>@Html.Raw(item.ContextRu)</p>
                                 }
                                 else
 
                                 {
                                     <h1>@item.TitleEn</h1>
                                     <h2>@item.NameEn</h2>
-                                    <p>@item.ContextEn</p>
+                                    <p>@Html.Raw(item.ContextEn)</p>
                                 }
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                             </div>
                             <p></p>
                             <h6><i class="fa fa-pencil"></i> @Model.News.Author</h6>
-                            <p>@Model.News.Context</p>
+                            <p>@Html.Raw(Model.News.Context)</p>
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                             </div>
                             <p> </p>
                             <h6><i class="fa fa-pencil"></i> @Model.News.AuthorRu</h6>
-                            <p>@Model.News.ContextRu</p>
+                          <p>@Html.Raw(Model.News.ContextRu)</p>
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                             </div>
                             <p> </p>
                             <h6><i class="fa fa-pencil"></i> @Model.News.AuthorEn</h6>
-                            <p>@Model.News.ContextEn</p>
+                             <p>@Html.Raw(Model.News.ContextEn)</p>
                         </div>
                     </div>
                 </div>

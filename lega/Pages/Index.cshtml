@@ -178,11 +178,11 @@
                 <div class="heading">
                     <br>
                     <br>
-                    <h2>СЕРВИ<span>СЫ</span></h2>
+                    <h2>УСЛУГ<span>И</span></h2> 
                     <div class="line"></div>
                     @*  <p>
-                        <span><strong>Л</strong></span> орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас.
-                        </p>*@
+        <span><strong>Л</strong></span> орем ипсум долор сит амет, не цум малис тамяуам саперет, ад цонгуе цонституто еам. Вис ид регионе фабулас.
+        </p>*@
                 </div>
             </div>
             <div class="row">
@@ -424,9 +424,9 @@
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
-                    <h2>ЦЕНЫ ПАКЕ<span>ТЫ</span></h2>
+                    <h2>ЦЕНОВЫЕ ПАКЕ<span>ТЫ</span></h2>
                     <div class="line"></div>
-                    <p style="font-size:15px"><span><strong>Выбирать</strong></span> удобный для вас пакет услуг или свяжитесь с нами для составления индивидуального пакета</p>
+                    <p style="font-size:15px"><span><strong>Выберите</strong></span> удобный для Вас пакет, или свяжитесь с нами, для получения индивидуального предложения</p>
                 </div>
             </div>
             <div class="row">
@@ -454,8 +454,8 @@
                                     </div>
                                     <div class="plan-name"> @item.NameRu </div>
                                 </li>
-                                <li>Более <strong>@item.EmployeCount</strong> сотрудников</li>
-                                <li>Оборот более <strong>@item.PriceTextRu</strong> AMD</li>
+                                <li>До <strong>@item.EmployeCount</strong> сотрудников</li>
+                                <li>До <strong>@item.PriceTextRu</strong> оборот</li>
                                 <li>@item.ContextRu</li>
                             </ul>
                         </div>
@@ -594,7 +594,7 @@
                                 <h5>@item.TitleRu</h5>
                                 <h6><i class="fa fa-pencil"></i> @item.AuthorRu</h6>
                                     <p>@Html.Raw(item.ShortContextRu)</p>
-                                <a target="_blank" href="/Newss/Item/@item.Id/2" class="btn-blg">Прочитайте больше</a>
+                                    <a target="_blank" href="/Newss/Item/@item.Id/2" class="btn-blg">Читать далее</a>
                             </div>
                         </div>
                     }
@@ -729,7 +729,7 @@
         {
             <div class="col-md-8 col-md-offset-2">
                 <div class="heading">
-                    <h2>СВЯЗАТЬСЯ <span>С</span> НАМИ</h2>
+                    <h2>СВЯЗЬ <span>С</span> НАМИ</h2>
                     <div class="line"></div>
                     <p>
                         @Model.Contact.TitleRu
@@ -738,7 +738,7 @@
             </div>
             <div class="text-center">
                 <div class="col-md-6 col-sm-6 contact-sec-1">
-                    <h4>КОНТАКТНЫЕ ДАН<span>НЫЕ</span></h4>
+                    <h4>КОНТАК<span>ТЫ</span></h4>
                     <ul class="contact-form">
                         <li>
                             <i class="fa fa-map-marker"></i>
@@ -752,10 +752,10 @@
                             <i class="fa fa-phone"></i>
                             <h6><strong>Тел․:</strong> @Model.Contact.Phone </h6>
                         </li>
-                       @* <li>
-                            <i class="fa fa-wechat"></i>
-                            <h6><strong>Интернет сайт:</strong> <a href="#">  @Model.Contact.Website</a> </h6>
-                        </li>*@
+                        @* <li>
+                <i class="fa fa-wechat"></i>
+                <h6><strong>Интернет сайт:</strong> <a href="#">  @Model.Contact.Website</a> </h6>
+            </li>*@
                     </ul>
                 </div>
                <div class="col-md-6 col-sm-6">

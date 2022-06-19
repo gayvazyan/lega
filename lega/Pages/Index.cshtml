@@ -454,8 +454,18 @@
                                     </div>
                                     <div class="plan-name"> @item.NameRu </div>
                                 </li>
-                                <li>До <strong>@item.EmployeCount</strong> сотрудников</li>
-                                <li>До <strong>@item.PriceTextRu</strong> оборот</li>
+
+                                @if (!String.IsNullOrWhiteSpace(item.Price))
+                                {
+                                    <li>До <strong>@item.EmployeCount</strong> сотрудников</li>
+                                    <li>До <strong>@item.PriceTextRu</strong> оборот</li>
+                                }
+                                else
+                                {
+                                    <li>Более <strong>@item.EmployeCount</strong> сотрудников</li>
+                                    <li>Более <strong>@item.PriceTextRu</strong> оборот</li>
+                                }
+
                                 <li>@item.ContextRu</li>
                             </ul>
                         </div>
@@ -499,8 +509,18 @@
                                     </div>
                                     <div class="plan-name"> @item.NameEn </div>
                                 </li>
-                                <li>Up to <strong>@item.EmployeCount</strong> employees</li>
-                                <li>more than <strong>@item.PriceTextEn</strong>  AMD turnover</li>
+
+                                @if (!String.IsNullOrWhiteSpace(item.Price))
+                                {
+                                    <li>Up to <strong>@item.EmployeCount</strong> employees</li>
+                                    <li>more than <strong>@item.PriceTextEn</strong>  AMD turnover</li>
+                                }
+                                else
+                                {
+                                    <li>Up to <strong>@item.EmployeCount</strong> employees</li>
+                                    <li>more than <strong>@item.PriceTextEn</strong>  AMD turnover</li>
+                                }
+
                                 <li>@item.ContextEn</li>
                             </ul>
                         </div>

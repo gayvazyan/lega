@@ -51,7 +51,7 @@ namespace lega
                  {
                     new CultureInfo("hy"),
                     new CultureInfo("ru"),
-                    new CultureInfo("en"),
+                    //new CultureInfo("en"),
 
                  };
                 options.DefaultRequestCulture = new RequestCulture("hy-AM");

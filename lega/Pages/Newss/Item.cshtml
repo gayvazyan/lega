@@ -180,7 +180,7 @@
                             </div>
                             <p> </p>
                             <h6><i class="fa fa-pencil"></i> @Model.News.AuthorRu</h6>
-                          <p>@Html.Raw(Model.News.ContextRu)</p>
+                            <p>@Html.Raw(Model.News.ContextRu)</p>
                         </div>
                     </div>
                 </div>
@@ -207,13 +207,29 @@
                             </div>
                             <p> </p>
                             <h6><i class="fa fa-pencil"></i> @Model.News.AuthorEn</h6>
-                             <p>@Html.Raw(Model.News.ContextEn)</p>
+                            <p>@Html.Raw(Model.News.ContextEn)</p>
                         </div>
                     </div>
                 </div>
             </div>
         }
-    </div>
+
+        <!-- Post Meta Track -->
+        <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12 team-main-sec wow slideInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                <div class="team-desc">
+                    <ul class="team-social-icon">
+                        <li class="facebook"><a href="#" class="tooltip-ontop" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="twitter"><a href="#" class="tooltip-ontop" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li class="google"><a href="#" class="tooltip-ontop" data-toggle="tooltip" data-placement="top" title="Google"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="pinterest"><a href="#" class="tooltip-ontop" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /Post Meta Track -->
+
+
+        </div>
 </section>
 
 
@@ -251,3 +267,30 @@ else
         </div>
     </footer>
 }
+
+
+
+@section Scripts {
+
+<script>
+
+    $(document).ready(function () {
+        /* Social Share Buttons */
+        $('.team-social-icon').each(function () {
+
+            var page_url = encodeURIComponent(document.URL);
+
+            $(this).find('.facebook>a').attr('href', 'http://www.facebook.com/sharer/sharer.php?u=' + page_url).attr('target', '_blank');
+            $(this).find('.twitter>a').attr('href', 'https://twitter.com/home?status=' + page_url).attr('target', '_blank');
+            $(this).find('.google>a').attr('href', 'https://plus.google.com/share?url=' + page_url).attr('target', '_blank');
+            $(this).find('.pinterest>a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + page_url).attr('target', '_blank');
+
+        });
+
+    });
+
+</script>
+
+    }
+
+

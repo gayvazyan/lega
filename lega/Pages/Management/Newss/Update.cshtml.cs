@@ -1,6 +1,7 @@
 ﻿using lega.Core;
 using lega.Core.Entities;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
@@ -15,9 +16,11 @@ namespace lega.Pages.Management.Newss
     public class UpdateModel : PageModel
     {
         private readonly INewsRepasitory _newsRepasitory;
-        public UpdateModel(INewsRepasitory newsRepasitory)
+        private readonly IHostingEnvironment _hostingEnvironment;
+        public UpdateModel(INewsRepasitory newsRepasitory, IHostingEnvironment hostingEnvironment)
         {
             _newsRepasitory = newsRepasitory;
+            _hostingEnvironment = hostingEnvironment;
             Update = new UpdateNewsModel();
         }
 
@@ -73,6 +76,9 @@ namespace lega.Pages.Management.Newss
         [BindProperty]
         public UpdateNewsModel Update { get; set; }
 
+        [BindProperty]
+        public string UniqueFileName { get; set; }
+
         private List<ServiceError> _errors;
         public List<ServiceError> Errors
         {
@@ -101,8 +107,10 @@ namespace lega.Pages.Management.Newss
                 Update.ContextRu = result.ContextRu;
                 Update.ContextEn = result.ContextEn;
                 Update.Date = result.Date;
-                Update.ImageUrl = result.ImageUrl;
+                Update.ImageUrl = "/images/News/" + result.ImageUrl;
                 Update.Visible = result.Visible;
+
+                UniqueFileName = result.ImageUrl;
             }
         }
         public void OnGet(int id)
@@ -114,6 +122,35 @@ namespace lega.Pages.Management.Newss
         {
             if (ModelState.IsValid)
             {
+                //save Image to Folder
+
+                if (Update.ImageUrl != null && Update.ImageUrl.ToString().Contains("data:image/jpeg;base64"))
+                {
+                    var folderPath = Path.Combine(_hostingEnvironment.WebRootPath, "images\\News");
+                    var oldFilePath = Path.Combine(folderPath, UniqueFileName);
+
+                    UniqueFileName = Guid.NewGuid().ToString() + ".jpg";
+                    var filePath = Path.Combine(folderPath, UniqueFileName);
+
+                    var stringImage = Update.ImageUrl.ToString().Split(',')[1];
+
+                    byte[] bytes = Convert.FromBase64String(stringImage);
+
+                    using (MemoryStream stream = new MemoryStream(bytes))
+                    {
+                        IFormFile file = new FormFile(stream, 0, bytes.Length, UniqueFileName, UniqueFileName);
+                        file.CopyTo(new FileStream(filePath, FileMode.Create));
+                        stream.Close();
+                    }
+
+                    //delete old image from folder 
+                    if (System.IO.File.Exists(oldFilePath))
+                    {
+                        System.IO.File.Delete(oldFilePath);
+                    }
+                }
+
+
                 try
                 {
                     var news = _newsRepasitory.GetByID(Update.Id);
@@ -131,7 +168,7 @@ namespace lega.Pages.Management.Newss
                     news.ContextRu = Update.ContextRu;
                     news.ContextEn = Update.ContextEn;
                     news.Date = Update.Date;
-                    news.ImageUrl = Update.ImageUrl;
+                    news.ImageUrl = UniqueFileName;
                     news.Visible = Update.Visible;
 
 

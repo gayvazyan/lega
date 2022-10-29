@@ -1,5 +1,7 @@
 ﻿@page "{id:int}/{languageId:int}"
 @using Microsoft.AspNetCore.Localization
+@using lega.Common
+
 @model lega.Pages.Newss.ItemModel
 @{
     Layout = "/Pages/Shared/_LayoutNews.cshtml";
@@ -16,6 +18,11 @@
     {
         ViewData["Title"] = "News";
     }
+
+    ViewData["UrlFb"] = "https://lega.am/Newss/Item/" + Model.News.Id + "/1";
+    ViewData["TitleFb"] = Model.News.Title;
+    ViewData["DescriptionFb"] = CommonFunctions.RemovePrubel(CommonFunctions.HtmlToPlainText(Model.News.Context));
+    ViewData["ImageFb"] = "https://lega.am/images/News/" + Model.News.ImageUrl;
 }
 
 
@@ -143,7 +150,7 @@
                 <div class="col-md-12">
                     <div class="col-md-12 news-sec">
                         <div class="news-info">
-                            <img class="img-responsive" src="@Model.News.ImageUrl">
+                            <img class="img-responsive" src="~/images/News/@Model.News.ImageUrl">
                             <div class="data-meta">
                                 <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                 <strong>@Model.News.Date.Day</strong><br>
@@ -172,7 +179,7 @@
                 <div class="col-md-12">
                     <div class="col-md-12 news-sec">
                         <div class="news-info">
-                            <img class="img-responsive" src="@Model.News.ImageUrl">
+                            <img class="img-responsive" src="~/images/News/@Model.News.ImageUrl">
                             <div class="data-meta">
                                 <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                 <strong>@Model.News.Date.Day</strong><br>
@@ -199,7 +206,7 @@
                 <div class="col-md-12">
                     <div class="col-md-12 news-sec">
                         <div class="news-info">
-                            <img class="img-responsive" src="@Model.News.ImageUrl">
+                            <img class="img-responsive" src="~/images/News/@Model.News.ImageUrl">
                             <div class="data-meta">
                                 <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(Model.News.Date.Month)</h4>
                                 <strong>@Model.News.Date.Day</strong><br>
@@ -227,9 +234,9 @@
                 </div>
             </div>
             <!-- /Post Meta Track -->
-
-
         </div>
+    </div>
+
 </section>
 
 
@@ -247,7 +254,7 @@
 
 }
 else
-    @if (Model.LanguageId == 2)
+@if (Model.LanguageId == 2)
 {
     <footer id="footer">
         <div class="bg-sec">
@@ -272,25 +279,25 @@ else
 
 @section Scripts {
 
-<script>
+    <script>
 
-    $(document).ready(function () {
-        /* Social Share Buttons */
-        $('.team-social-icon').each(function () {
+        $(document).ready(function () {
+            /* Social Share Buttons */
+            $('.team-social-icon').each(function () {
 
-            var page_url = encodeURIComponent(document.URL);
+                var page_url = encodeURIComponent(document.URL);
 
-            $(this).find('.facebook>a').attr('href', 'http://www.facebook.com/sharer/sharer.php?u=' + page_url).attr('target', '_blank');
-            $(this).find('.twitter>a').attr('href', 'https://twitter.com/home?status=' + page_url).attr('target', '_blank');
-            $(this).find('.google>a').attr('href', 'https://plus.google.com/share?url=' + page_url).attr('target', '_blank');
-            $(this).find('.pinterest>a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + page_url).attr('target', '_blank');
+                $(this).find('.facebook>a').attr('href', 'http://www.facebook.com/sharer/sharer.php?u=' + page_url).attr('target', '_blank');
+                $(this).find('.twitter>a').attr('href', 'https://twitter.com/home?status=' + page_url).attr('target', '_blank');
+                $(this).find('.google>a').attr('href', 'https://plus.google.com/share?url=' + page_url).attr('target', '_blank');
+                $(this).find('.pinterest>a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + page_url).attr('target', '_blank');
+
+            });
 
         });
 
-    });
+    </script>
 
-</script>
-
-    }
+}
 
 

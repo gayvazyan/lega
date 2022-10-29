@@ -89,7 +89,7 @@
 
             @foreach (var item in Model.CarouselList)
             {
-                <div class="item @item.State" style="background-image:url(@item.ImageUrl)">
+                <div class="item @item.State" style="background-image: url(@item.ImageUrl )">
                     <div class="carousel-caption container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:7mm">
@@ -148,7 +148,7 @@
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" class="img-responsive">
+                                <img src="~/images/News/@item.ImageUrl" class="img-responsive">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>
@@ -186,7 +186,7 @@
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" class="img-responsive">
+                                <img src="~/images/News/@item.ImageUrl" class="img-responsive">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("ru-RU").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>
@@ -224,7 +224,7 @@
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img src="@item.ImageUrl" class="img-responsive">
+                                <img src="~/images/News/@item.ImageUrl" class="img-responsive">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("en-US").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>

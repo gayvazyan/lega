@@ -1,18 +1,22 @@
 using lega.Core;
 using lega.Core.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace lega.Pages.Management.Newss
 {
     public class DeleteModel : PageModel
     {
         private readonly INewsRepasitory _newsRepasitory;
-        public DeleteModel(INewsRepasitory newsRepasitory)
+        private readonly IHostingEnvironment _hostingEnvironment;
+        public DeleteModel(INewsRepasitory newsRepasitory, IHostingEnvironment hostingEnvironment)
         {
             _newsRepasitory = newsRepasitory;
+            _hostingEnvironment = hostingEnvironment;
             Delete = new DeleteNewsModel();
         }
 
@@ -21,6 +25,8 @@ namespace lega.Pages.Management.Newss
         [BindProperty]
         public DeleteNewsModel Delete { get; set; }
 
+        [BindProperty]
+        public string UniqueFileName { get; set; }
 
         private List<ServiceError> _errors;
         public List<ServiceError> Errors
@@ -37,6 +43,7 @@ namespace lega.Pages.Management.Newss
                 Delete.Id = result.Id;
                 Delete.Title = result.Title;
                 Delete.Author = result.Author;
+                UniqueFileName = result.ImageUrl;
             }
         }
 
@@ -54,6 +61,15 @@ namespace lega.Pages.Management.Newss
                     var news = _newsRepasitory.GetByID(Delete.Id);
 
                     _newsRepasitory.Delete(news);
+
+                    //delete old image from folder 
+
+                    var folderPath = Path.Combine(_hostingEnvironment.WebRootPath, "images\\News");
+                    var oldFilePath = Path.Combine(folderPath, UniqueFileName);
+                    if (System.IO.File.Exists(oldFilePath))
+                    {
+                        System.IO.File.Delete(oldFilePath);
+                    }
 
                     return RedirectToPage("/Management/Newss/Index");
 

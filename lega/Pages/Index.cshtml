@@ -3,6 +3,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    ViewData["ImageFb"] = "https://lega.am/images/Logo/LegaOffice.jpg";
     var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
     var requestCulture = requestCultureFeature.RequestCulture;
 }
@@ -564,7 +565,7 @@
                     {
                         <div class="col-md-4 news-sec">
                             <div class="news-info">
-                                <img class="img-responsive" src="@item.ImageUrl">
+                                <img class="img-responsive" src="~/images/News/@item.ImageUrl">
                                 <div class="data-meta">
                                     <h4>@CultureInfo.CreateSpecificCulture("hy-HY").DateTimeFormat.GetAbbreviatedMonthName(item.Date.Month)</h4>
                                     <strong>@item.Date.Day</strong><br>

@@ -3,26 +3,35 @@
     var requestCultureFeature = Context.Features.Get<IRequestCultureFeature>();
     var requestCulture = requestCultureFeature.RequestCulture;
 }
-<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <meta property="og:url" content="@ViewData["UrlFb"]" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewData["TitleFb"]" />
+    <meta property="og:description" content="@ViewData["DescriptionFb"]" />
+    <meta property="og:image" content="@ViewData["ImageFb"]" />
+
+
     <link rel="icon" type="image/png" href="~/images/icons/lega.ico">
     @if (requestCulture.Culture.Name.ToString() == "hy-AM" || (requestCulture.Culture.Name.ToString() == "hy"))
     {
-        <title>Lega հաշվապահական կազմակերպություն</title>
+    <title>Lega հաշվապահական կազմակերպություն</title>
     }
     else
     @if (requestCulture.Culture.Name.ToString() == "ru-RU" || (requestCulture.Culture.Name.ToString() == "ru"))
     {
-        <title>Lega бухгалтерская компания</title>
+    <title>Lega бухгалтерская компания</title>
     }
     else
     {
-        <title>Lega accounting company</title>
+    <title>Lega accounting company</title>
     }
 
 
@@ -43,7 +52,6 @@
     <link rel="stylesheet" href="~/css/owl.transitions.css">
 
 </head>
-
 
 <body data-spy="scroll" data-target=".navbar-default" data-offset="100">
 
@@ -206,4 +214,5 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

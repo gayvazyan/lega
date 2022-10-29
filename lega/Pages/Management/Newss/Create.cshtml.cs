@@ -1,6 +1,7 @@
 ﻿using lega.Core;
 using lega.Core.Entities;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
@@ -14,9 +15,11 @@ namespace lega.Pages.Management.Newss
     public class CreateModel : PageModel
     {
         private readonly INewsRepasitory _newsRepasitory;
-        public CreateModel(INewsRepasitory newsRepasitory)
+        private readonly IHostingEnvironment _hostingEnvironment;
+        public CreateModel(INewsRepasitory newsRepasitory, IHostingEnvironment hostingEnvironment)
         {
             _newsRepasitory = newsRepasitory;
+            _hostingEnvironment = hostingEnvironment;
             Create = new CreateNewsModel();
         }
 
@@ -71,6 +74,8 @@ namespace lega.Pages.Management.Newss
         [BindProperty]
         public CreateNewsModel Create { get; set; }
 
+        private string _uniqueFileName;
+
 
         private List<ServiceError> _errors;
         public List<ServiceError> Errors
@@ -88,6 +93,26 @@ namespace lega.Pages.Management.Newss
             {
                 try
                 {
+                    //save Image to Folder
+                    if (Create.ImageUrl != null)
+                    {
+                        var folderPath = Path.Combine(_hostingEnvironment.WebRootPath, "images\\News");
+                        _uniqueFileName = Guid.NewGuid().ToString() + ".jpg";
+                        var filePath = Path.Combine(folderPath, _uniqueFileName);
+
+                        var stringImage = Create.ImageUrl.ToString().Split(',')[1];
+
+                        byte[] bytes = Convert.FromBase64String(stringImage);
+                        using (MemoryStream stream = new MemoryStream(bytes))
+                        {
+                            IFormFile file = new FormFile(stream, 0, bytes.Length, _uniqueFileName, _uniqueFileName);
+                            file.CopyTo(new FileStream(filePath, FileMode.Create));
+                            stream.Close();
+                        }
+                            
+                        
+                    }
+
                     var news = new News
                     {
                         Id = Create.Id,
@@ -104,7 +129,7 @@ namespace lega.Pages.Management.Newss
                         ContextRu = Create.ContextRu,
                         ContextEn = Create.ContextEn,
                         Date = Create.Date,
-                        ImageUrl = Create.ImageUrl,
+                        ImageUrl = _uniqueFileName,
                         Visible = Create.Visible,
                     };
 

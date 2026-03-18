@@ -1418,3 +1418,6 @@ em.lang-separator::after {
 	height: 470px;
 }
 
+html {
+	overflow: auto !important;
+}
